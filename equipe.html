@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre équipe — Ramo | Les visages derrière la mission</title>
+  <meta name="description" content="Découvrez l'équipe Ramo : 75 passionnés d'environnement qui travaillent chaque jour à protéger et restaurer la nature grâce aux solutions basées sur la nature.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/equipe/">
+  <meta name="geo.region" content="CA-QC">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Notre équipe — Ramo">
+  <meta property="og:description" content="Découvrez les 75 passionnés d'environnement qui composent l'équipe Ramo.">
+  <meta property="og:image" content="https://ramo.eco/wp-content/uploads/2023/02/Saules_4-scaled.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Notre équipe — Ramo",
+    "description": "L'équipe Ramo : 75 passionnés d'environnement spécialisés en solutions basées sur la nature.",
+    "publisher": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/carrieres.css">
+  <style>
+    /* --- Team Page Styles --- */
+    .team-hero {
+      position: relative; min-height: 70vh;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .team-hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
+    }
+    .team-hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(220, 242, 30, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 70%, rgba(124, 198, 141, 0.08) 0%, transparent 50%);
+    }
+    .team-hero-content {
+      position: relative; z-index: 2;
+      max-width: var(--container-width); margin: 0 auto;
+      padding: clamp(140px, 18vw, 200px) clamp(20px, 4vw, 60px) clamp(80px, 10vw, 120px);
+    }
+    .team-hero-label {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--color-accent-3);
+      margin-bottom: 24px; display: inline-block;
+      position: relative; padding-left: 32px;
+    }
+    .team-hero-label::before {
+      content: ''; position: absolute; left: 0; top: 50%;
+      width: 20px; height: 1px; background: var(--color-accent-3);
+    }
+    .team-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 96px); font-weight: 700;
+      color: var(--color-white); line-height: 1.05; margin-bottom: 28px;
+      max-width: 900px;
+    }
+    .team-hero-desc {
+      font-size: clamp(17px, 2vw, 22px); color: var(--color-text-light);
+      font-weight: 300; max-width: 650px; line-height: 1.7;
+    }
+
+    /* --- Team Grid --- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .team-card {
+      text-decoration: none;
+      display: block;
+    }
+    .team-card-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      overflow: hidden;
+    }
+    .team-card-initials {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      user-select: none;
+    }
+    a.team-card:hover .team-card-photo {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .team-card-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .team-card-title {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Light section (Sable bg) cards */
+    .section--light .team-card-photo {
+      background: rgba(0, 60, 56, 0.10);
+    }
+    .section--light .team-card-initials {
+      color: var(--color-primary);
+      opacity: 0.4;
+    }
+    .section--light .team-card-name {
+      color: var(--color-primary);
+    }
+    .section--light .team-card-title {
+      color: var(--color-accent-2);
+    }
+    .section--light a.team-card:hover .team-card-name {
+      color: var(--color-accent-2);
+    }
+
+    /* Dark section (Forêt bg) cards */
+    .section--dark .team-card-photo {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .section--dark .team-card-initials {
+      color: rgba(255, 255, 255, 0.3);
+    }
+    .section--dark .team-card-name {
+      color: var(--color-white);
+    }
+    .section--dark .team-card-title {
+      color: var(--color-text-light);
+    }
+
+    /* Section dark override */
+    .section--dark {
+      background: var(--color-primary);
+      color: var(--color-text);
+    }
+    .section--dark .section-label {
+      color: var(--color-accent-3);
+    }
+    .section--dark .section-label::before {
+      background: var(--color-accent-3);
+    }
+    .section--dark .section-title {
+      color: var(--color-white);
+    }
+    .section--dark .section-subtitle {
+      color: var(--color-text-light);
+    }
+
+    /* Join CTA */
+    .join-cta {
+      text-align: center;
+      padding: clamp(60px, 8vw, 100px) 0;
+    }
+    .join-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .join-cta p {
+      font-size: clamp(16px, 1.5vw, 20px);
+      color: var(--color-accent-2);
+      max-width: 550px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .join-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--color-primary); color: var(--color-white);
+      padding: 16px 36px; border-radius: 100px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .join-cta-btn:hover {
+      background: var(--color-accent-2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,60,56,0.2);
+    }
+
+    /* Bio link indicator */
+    a.team-card .team-card-name::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent-3);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .team-card-photo {
+        border-radius: 12px;
+      }
+      .team-card-name {
+        font-size: 16px;
+      }
+      .team-card-title {
+        font-size: 13px;
+      }
+      .team-card-initials {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html#solutions" class="nav-link">Solutions</a>
+        <a href="index.html#secteurs" class="nav-link">Secteurs</a>
+        <a href="saules.html" class="nav-link">Les saules</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="carrieres.html" class="nav-link">Carrières</a>
+        <a href="index.html#contact" class="nav-link nav-link--cta">Nous joindre</a>
+        <div class="nav-lang">
+          <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+          <span class="nav-lang-sep">|</span>
+          <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav">
+      <a href="index.html#solutions" class="mobile-nav-link">Solutions</a>
+      <a href="index.html#secteurs" class="mobile-nav-link">Secteurs</a>
+      <a href="saules.html" class="mobile-nav-link">Les saules</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="carrieres.html" class="mobile-nav-link">Carrières</a>
+      <a href="index.html#contact" class="mobile-nav-link">Nous joindre</a>
+      <div class="mobile-nav-lang">
+        <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+        <span class="nav-lang-sep">|</span>
+        <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+  <!-- Hero -->
+  <section class="team-hero">
+    <div class="team-hero-bg"></div>
+    <div class="team-hero-content">
+      <span class="team-hero-label scroll-reveal">Notre équipe</span>
+      <h1 class="team-hero-title blur-in">Les visages derrière<br>la <em>mission</em>.</h1>
+      <p class="team-hero-desc scroll-reveal">75 passionnés d'environnement qui travaillent chaque jour à protéger et restaurer la nature.</p>
+    </div>
+  </section>
+
+  <!-- Management Team -->
+  <section class="section section--light" id="gestion">
+    <div class="container">
+      <span class="section-label scroll-reveal">Direction</span>
+      <h2 class="section-title scroll-reveal">Équipe de gestion</h2>
+
+      <div class="team-grid">
+
+        <a href="equipe/francis-allard.html" class="team-card scroll-reveal">
+          <div class="team-card-photo">
+            <span class="team-card-initials">FA</span>
+          </div>
+          <div class="team-card-name">Francis Allard</div>
+          <div class="team-card-title">CEO</div>
+        </a>
+
+        <a href="equipe/benjamin-walczak.html" class="team-card scroll-reveal" style="transition-delay: 0.05s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">BW</span>
+          </div>
+          <div class="team-card-name">Benjamin Walczak</div>
+          <div class="team-card-title">Associé & Directeur Général</div>
+        </a>
+
+        <a href="equipe/olivier-payette.html" class="team-card scroll-reveal" style="transition-delay: 0.1s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">OP</span>
+          </div>
+          <div class="team-card-name">Olivier Payette</div>
+          <div class="team-card-title">Associé & VP pépinière et agroforesterie</div>
+        </a>
+
+        <a href="equipe/xavier-lachapelle.html" class="team-card scroll-reveal" style="transition-delay: 0.15s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">XL</span>
+          </div>
+          <div class="team-card-name">Xavier Lachapelle-T.</div>
+          <div class="team-card-title">Associé & Directeur phytotechnologies & restauration</div>
+        </a>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.2s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">JS</span>
+          </div>
+          <div class="team-card-name">Jean Shoiry</div>
+          <div class="team-card-title">Associé & Consultant</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.25s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">MT</span>
+          </div>
+          <div class="team-card-name">Mathieu Turcot</div>
+          <div class="team-card-title">Directeur finance et administration</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.3s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">JL</span>
+          </div>
+          <div class="team-card-name">John Lavery</div>
+          <div class="team-card-title">Chief Executive Officer — Western Division</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.35s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">OL</span>
+          </div>
+          <div class="team-card-name">Olivier Lalonde, agr., M.Sc.</div>
+          <div class="team-card-title">Directeur plantations et MRF</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.4s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">JV</span>
+          </div>
+          <div class="team-card-name">Jérôme Verry</div>
+          <div class="team-card-title">Directeur communication et marketing</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Team Members -->
+  <section class="section section--dark" id="equipe">
+    <div class="container">
+      <span class="section-label scroll-reveal">Experts</span>
+      <h2 class="section-title scroll-reveal">L'équipe</h2>
+
+      <div class="team-grid">
+
+        <div class="team-card scroll-reveal">
+          <div class="team-card-photo">
+            <span class="team-card-initials">LB</span>
+          </div>
+          <div class="team-card-name">Louis-Clément Barbeau, ing., agr.</div>
+          <div class="team-card-title">Directeur Evaplant & Génie Végétal</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.05s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">KD</span>
+          </div>
+          <div class="team-card-name">Kathleen Dubé, ing.</div>
+          <div class="team-card-title">Gestionnaire de projets séniore</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.1s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">KB</span>
+          </div>
+          <div class="team-card-name">Karl Boucher</div>
+          <div class="team-card-title">Chef d'équipe ingénierie</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.15s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">CG</span>
+          </div>
+          <div class="team-card-name">Camille Girard, ing. M.Sc.A</div>
+          <div class="team-card-title">Directrice Restauration et végétalisation de Sites</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.2s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">SP</span>
+          </div>
+          <div class="team-card-name">Simon Piette</div>
+          <div class="team-card-title">Responsable du développement des affaires et des ventes</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.25s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">GV</span>
+          </div>
+          <div class="team-card-name">Gabrielle Veillet, agr., M.Sc.</div>
+          <div class="team-card-title">Agronome</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.3s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">MP</span>
+          </div>
+          <div class="team-card-name">Marie Poulin Ouellette, agr., M.Sc.</div>
+          <div class="team-card-title">Responsable de la pépinière</div>
+        </div>
+
+        <div class="team-card scroll-reveal" style="transition-delay: 0.35s;">
+          <div class="team-card-photo">
+            <span class="team-card-initials">SD</span>
+          </div>
+          <div class="team-card-name">Stéphanie Duval</div>
+          <div class="team-card-title">Gérante de ferme</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="join-cta scroll-reveal">
+        <h2>Vous voulez faire partie de l'équipe ?</h2>
+        <p>Nous sommes toujours à la recherche de talents passionnés par l'environnement et les solutions basées sur la nature.</p>
+        <a href="carrieres.html" class="join-cta-btn">
+          Voir les postes ouverts
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="cta-section section">
+    <div class="cta-bg">
+      <div class="cta-bg-overlay"></div>
+    </div>
+    <div class="cta-content container">
+      <h2 class="cta-title scroll-reveal">Vous avez un projet environnemental ?</h2>
+      <p class="cta-desc scroll-reveal">Discutons ensemble de la meilleure solution basée sur la nature pour répondre à vos défis.</p>
+      <a href="index.html#contact" class="cta-button scroll-reveal">
+        <span>Nous joindre</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="index.html" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="footer-logo" style="height: 32px; width: auto; margin-bottom: 16px;"></a>
+        <p class="footer-address">517, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+        <p class="footer-contact">
+          <a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp;
+          <a href="tel:+18445880013">1 844 588-0013</a>
+        </p>
+        <p class="footer-contact"><a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ramo — Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions municipales — Ramo | Verdissement et gestion environnementale pour villes</title>
+  <meta name="description" content="Solutions basées sur la nature pour les municipalités : écrans verts, restauration des berges, paillis BRF, fourniture de saules et verdissement urbain.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/secteurs/municipal/">
+  <meta name="geo.region" content="CA-QC">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solutions municipales — Ramo">
+  <meta property="og:description" content="Rendre votre ville plus verte avec les solutions naturelles de Ramo.">
+  <meta property="og:image" content="https://ramo.eco/wp-content/uploads/2023/11/Capture-decran-le-2023-11-28-a-10.35.33-1.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Solutions municipales",
+    "description": "Solutions basées sur la nature pour le verdissement et la gestion environnementale des municipalités.",
+    "provider": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .secteur-hero { position: relative; min-height: 50vh; display: flex; align-items: flex-end; overflow: hidden; padding-bottom: clamp(50px, 6vw, 80px); background: linear-gradient(135deg, var(--color-bg) 0%, #003c38 100%); }
+    .secteur-hero-content { position: relative; z-index: 2; max-width: var(--container-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 60px); }
+    .secteur-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-light); margin-bottom: 20px; }
+    .secteur-breadcrumb a { color: var(--color-accent); transition: color 0.3s; }
+    .secteur-breadcrumb a:hover { color: var(--color-white); }
+    .secteur-breadcrumb span { opacity: 0.5; }
+    .secteur-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent-3); margin-bottom: 12px; }
+    .secteur-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: var(--color-white); line-height: 1.1; margin-bottom: 16px; }
+    .secteur-subtitle { font-size: clamp(16px, 2vw, 20px); color: var(--color-text-light); font-weight: 300; max-width: 700px; }
+    .secteur-icon-large { width: 80px; height: 80px; color: var(--color-accent-3); margin-bottom: 24px; }
+    .secteur-intro { max-width: 800px; margin: 0 auto; }
+    .secteur-intro-text { font-size: 17px; line-height: 1.8; color: var(--color-text-light); margin-bottom: 20px; }
+    .secteur-intro-text strong { color: var(--color-white); font-weight: 500; }
+    .secteur-solutions-title { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 38px); font-weight: 600; color: var(--color-white); margin-bottom: 40px; text-align: center; }
+    .secteur-solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
+    .sol-card { background: var(--color-bg-card); border-radius: 16px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; border: 1px solid rgba(124,198,141,0.08); }
+    .sol-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    .sol-card-img { height: 200px; overflow: hidden; }
+    .sol-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .sol-card:hover .sol-card-img img { transform: scale(1.05); }
+    .sol-card-body { padding: 28px; }
+    .sol-card-number { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; color: var(--color-accent-3); margin-bottom: 8px; }
+    .sol-card-name { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--color-white); margin-bottom: 8px; }
+    .sol-card-desc { font-size: 15px; line-height: 1.6; color: var(--color-text-light); margin-bottom: 16px; }
+    .sol-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .sol-card-tags .tag { font-size: 11px; padding: 4px 10px; background: rgba(124,198,141,0.1); color: var(--color-accent); border-radius: 20px; }
+    .sol-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-accent); transition: gap 0.3s, color 0.3s; }
+    .sol-card-link:hover { gap: 10px; color: var(--color-white); }
+    .secteur-cta { text-align: center; max-width: 600px; margin: 0 auto; }
+    .secteur-cta-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); font-weight: 600; color: var(--color-white); margin-bottom: 16px; }
+    .secteur-cta-text { font-size: 16px; color: var(--color-text-light); margin-bottom: 28px; line-height: 1.6; }
+    .secteur-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--color-accent); color: var(--color-bg); padding: 14px 32px; border-radius: 50px; font-weight: 600; font-size: 15px; transition: all 0.3s ease; }
+    .secteur-cta-btn:hover { background: var(--color-white); gap: 14px; }
+    @media (max-width: 768px) { .secteur-solutions-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Ramo - Accueil"><img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="../index.html#solutions" class="nav-link">Solutions</a>
+        <a href="../index.html#secteurs" class="nav-link">Secteurs</a>
+        <a href="../saules.html" class="nav-link">Les saules</a>
+        <a href="../apropos.html" class="nav-link">À propos</a>
+        <a href="../carrieres.html" class="nav-link">Carrières</a>
+        <a href="../index.html#contact" class="nav-link nav-link--cta">Nous joindre</a>
+        <div class="nav-lang">
+          <a href="../index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+          <span class="nav-lang-sep">|</span>
+          <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav">
+      <a href="../index.html#solutions" class="mobile-nav-link">Solutions</a>
+      <a href="../index.html#secteurs" class="mobile-nav-link">Secteurs</a>
+      <a href="../saules.html" class="mobile-nav-link">Les saules</a>
+      <a href="../apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="../carrieres.html" class="mobile-nav-link">Carrières</a>
+      <a href="../index.html#contact" class="mobile-nav-link">Nous joindre</a>
+      <div class="mobile-nav-lang">
+        <a href="../index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+        <span class="nav-lang-sep">|</span>
+        <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+  <section class="secteur-hero">
+    <div class="secteur-hero-content">
+      <nav class="secteur-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../index.html">Accueil</a><span>/</span><a href="../index.html#secteurs">Secteurs</a><span>/</span><span>Municipal</span>
+      </nav>
+      <svg class="secteur-icon-large" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="8" y="15" width="24" height="20" rx="2"/><path d="M15 15V10C15 8 17 6 20 6C23 6 25 8 25 10V15"/><path d="M12 22H28M12 28H28"/>
+      </svg>
+      <span class="secteur-tag">Secteur d'activité</span>
+      <h1 class="secteur-title">Municipal</h1>
+      <p class="secteur-subtitle">Solutions écologiques pour rendre votre ville plus verte et répondre aux défis environnementaux urbains</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="secteur-intro scroll-reveal">
+        <p class="secteur-intro-text">Les municipalités sont en première ligne face aux enjeux environnementaux : <strong>gestion des eaux pluviales</strong>, protection des berges, lutte contre les îlots de chaleur, contrôle du bruit routier et embellissement des espaces publics.</p>
+        <p class="secteur-intro-text">Ramo accompagne les villes avec des solutions végétales qui répondent à ces défis tout en créant des <strong>milieux de vie plus agréables</strong> pour les citoyens et en favorisant la biodiversité urbaine.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="secteur-solutions-title scroll-reveal">Solutions adaptées à votre secteur</h2>
+      <div class="secteur-solutions-grid">
+
+        <article class="sol-card scroll-reveal">
+          <div class="sol-card-img">
+            <img src="https://ramo.eco/wp-content/uploads/2023/11/Capture-decran-le-2023-11-28-a-10.35.33-1.jpg" alt="Écrans verts municipaux" loading="lazy">
+          </div>
+          <div class="sol-card-body">
+            <div class="sol-card-number">03</div>
+            <h3 class="sol-card-name">Écrans verts</h3>
+            <p class="sol-card-desc">Murs antibruit végétaux, clôtures naturelles et haies brise-vent pour les espaces municipaux, parcs et zones résidentielles.</p>
+            <div class="sol-card-tags">
+              <span class="tag">Antibruit</span>
+              <span class="tag">Clôtures</span>
+              <span class="tag">Brise-vent</span>
+            </div>
+            <a href="../solutions/ecrans-verts.html" class="sol-card-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="sol-card scroll-reveal" data-delay="150">
+          <div class="sol-card-img">
+            <img src="https://ramo.eco/wp-content/uploads/2023/02/Saules_4-scaled.jpg" alt="Restauration des berges municipales" loading="lazy">
+          </div>
+          <div class="sol-card-body">
+            <div class="sol-card-number">04</div>
+            <h3 class="sol-card-name">Restauration et végétalisation</h3>
+            <p class="sol-card-desc">Stabilisation des berges, implantation de bandes riveraines, revégétalisation de parcs et espaces verts dégradés.</p>
+            <div class="sol-card-tags">
+              <span class="tag">Berges</span>
+              <span class="tag">Bandes riveraines</span>
+              <span class="tag">Parcs</span>
+            </div>
+            <a href="../solutions/restauration.html" class="sol-card-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="sol-card scroll-reveal" data-delay="300">
+          <div class="sol-card-img">
+            <img src="https://ramo.eco/wp-content/uploads/2023/02/Saules_4-scaled.jpg" alt="Paillis BRF pour espaces verts municipaux" loading="lazy">
+          </div>
+          <div class="sol-card-body">
+            <div class="sol-card-number">05</div>
+            <h3 class="sol-card-name">Paillis BRF</h3>
+            <p class="sol-card-desc">Paillis naturel de bois raméal fragmenté pour l'aménagement paysager, les plate-bandes et la gestion des résidus verts.</p>
+            <div class="sol-card-tags">
+              <span class="tag">Aménagement</span>
+              <span class="tag">Résidus verts</span>
+            </div>
+            <a href="../solutions/paillis.html" class="sol-card-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="sol-card scroll-reveal" data-delay="450">
+          <div class="sol-card-img">
+            <img src="https://ramo.eco/wp-content/uploads/2021/09/st-sophie-scaled.jpg" alt="Fourniture de saules pour projets municipaux" loading="lazy">
+          </div>
+          <div class="sol-card-body">
+            <div class="sol-card-number">06</div>
+            <h3 class="sol-card-name">Fourniture de saules</h3>
+            <p class="sol-card-desc">Plants et boutures de saules pour les projets de plantation municipaux, verdissement et aménagement des espaces publics.</p>
+            <div class="sol-card-tags">
+              <span class="tag">Plants</span>
+              <span class="tag">Boutures</span>
+              <span class="tag">Verdissement</span>
+            </div>
+            <a href="../solutions/fourniture.html" class="sol-card-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="secteur-cta scroll-reveal">
+        <h2 class="secteur-cta-title">Vous représentez une municipalité ?</h2>
+        <p class="secteur-cta-text">Contactez-nous pour découvrir comment nos solutions peuvent embellir et protéger votre territoire tout en respectant vos budgets.</p>
+        <a href="../index.html#contact" class="secteur-cta-btn">Nous joindre <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" aria-label="Ramo - Accueil"><img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo" class="footer-logo" style="height: 32px; width: auto; margin-bottom: 16px;"></a>
+        <p class="footer-address">517, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+        <p class="footer-contact">
+          <a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp;
+          <a href="tel:+18445880013">1 844 588-0013</a>
+        </p>
+        <p class="footer-contact"><a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ramo — Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
