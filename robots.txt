@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /APP SIGNATURE/
+
+Sitemap: https://jverryramo.github.io/ramo-site/sitemap.xml

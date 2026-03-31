@@ -454,4 +454,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --- Page Transition --- */
+  (function() {
+    const trans = document.createElement('div');
+    trans.className = 'page-transition';
+    document.body.appendChild(trans);
+    document.body.classList.add('page-enter');
+
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') ||
+          link.target === '_blank' || href.startsWith('http') || e.ctrlKey || e.metaKey) return;
+      e.preventDefault();
+      trans.classList.add('active');
+      setTimeout(function() { window.location.href = href; }, 500);
+    });
+  })();
+
+  /* --- Custom Cursor --- */
+  (function() {
+    if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 1024) return;
+
+    const dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+    const ring = document.createElement('div');
+    ring.className = 'cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mx = 0, my = 0, rx = 0, ry = 0, visible = false;
+
+    document.addEventListener('mousemove', function(e) {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top = my + 'px';
+      if (!visible) {
+        visible = true;
+        dot.classList.add('visible');
+        ring.classList.add('visible');
+        rx = mx; ry = my;
+      }
+    });
+
+    // Hide on mouse leave, show on mouse enter
+    document.addEventListener('mouseleave', function() {
+      visible = false;
+      dot.classList.remove('visible');
+      ring.classList.remove('visible');
+    });
+    document.addEventListener('mouseenter', function() {
+      visible = true;
+      dot.classList.add('visible');
+      ring.classList.add('visible');
+    });
+
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    const hoverTargets = 'a, button, .btn, .nav-link, .mega-menu-link, .team-card, .case-card, .secteur-card-v2, details, .faq-question';
+    document.addEventListener('mouseover', function(e) {
+      if (e.target.closest(hoverTargets)) document.body.classList.add('cursor-hover');
+    });
+    document.addEventListener('mouseout', function(e) {
+      if (e.target.closest(hoverTargets)) document.body.classList.remove('cursor-hover');
+    });
+
+    // Hide default cursor everywhere
+    const s = document.createElement('style');
+    s.textContent = '*{cursor:none!important}';
+    document.head.appendChild(s);
+  })();
+
+  /* --- Scroll Progress Bar --- */
+  (function() {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+
+    function updateProgress() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  })();
+
 });
