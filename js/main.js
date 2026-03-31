@@ -218,6 +218,71 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(updateParallax);
   }, { passive: true });
 
+  // --- Scroll-driven text breathing (blur-to-clear + fade) ---
+  const breathElements = document.querySelectorAll('.scroll-breathe');
+
+  function updateBreathe() {
+    const viewH = window.innerHeight;
+    breathElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // Start animating when element enters bottom 85% of viewport
+      const start = viewH * 0.85;
+      const end = viewH * 0.35;
+
+      if (rect.top < start && rect.top > end) {
+        const progress = 1 - (rect.top - end) / (start - end);
+        const eased = progress * progress * (3 - 2 * progress); // smoothstep
+        const blur = (1 - eased) * 8;
+        const opacity = 0.15 + eased * 0.85;
+        const translateY = (1 - eased) * 30;
+        el.style.filter = `blur(${blur}px)`;
+        el.style.opacity = opacity;
+        el.style.transform = `translateY(${translateY}px)`;
+      } else if (rect.top <= end) {
+        el.style.filter = 'blur(0px)';
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      } else {
+        el.style.filter = 'blur(8px)';
+        el.style.opacity = 0.15;
+        el.style.transform = 'translateY(30px)';
+      }
+    });
+  }
+
+  if (breathElements.length > 0) {
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateBreathe);
+    }, { passive: true });
+    updateBreathe();
+  }
+
+  // --- Horizontal Slider ---
+  document.querySelectorAll('.h-slider').forEach(slider => {
+    const track = slider.querySelector('.h-slider-track');
+    const prevBtn = slider.querySelector('.h-slider-prev');
+    const nextBtn = slider.querySelector('.h-slider-next');
+    if (!track) return;
+
+    const scrollAmount = 360;
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    // Update arrow visibility
+    function updateArrows() {
+      if (prevBtn) prevBtn.style.opacity = track.scrollLeft > 20 ? '1' : '0.3';
+      if (nextBtn) nextBtn.style.opacity =
+        track.scrollLeft < track.scrollWidth - track.clientWidth - 20 ? '1' : '0.3';
+    }
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    updateArrows();
+  });
+
   // --- Magnetic hover effect on chars ---
   document.querySelectorAll('.hero-title .char').forEach(char => {
     char.addEventListener('mouseenter', () => {
