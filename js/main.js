@@ -454,84 +454,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- Page Transition --- */
-  (function() {
-    const trans = document.createElement('div');
-    trans.className = 'page-transition';
-    document.body.appendChild(trans);
-    document.body.classList.add('page-enter');
+  /* Page transition removed — caused navigation blocking */
 
-    document.addEventListener('click', function(e) {
-      const link = e.target.closest('a[href]');
-      if (!link) return;
-      const href = link.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') ||
-          link.target === '_blank' || href.startsWith('http') || e.ctrlKey || e.metaKey) return;
-      e.preventDefault();
-      trans.classList.add('active');
-      setTimeout(function() { window.location.href = href; }, 500);
-    });
-  })();
-
-  /* --- Custom Cursor --- */
-  (function() {
-    if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 1024) return;
-
-    const dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    const ring = document.createElement('div');
-    ring.className = 'cursor-ring';
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-
-    let mx = 0, my = 0, rx = 0, ry = 0, visible = false;
-
-    document.addEventListener('mousemove', function(e) {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px';
-      dot.style.top = my + 'px';
-      if (!visible) {
-        visible = true;
-        dot.classList.add('visible');
-        ring.classList.add('visible');
-        rx = mx; ry = my;
-      }
-    });
-
-    // Hide on mouse leave, show on mouse enter
-    document.addEventListener('mouseleave', function() {
-      visible = false;
-      dot.classList.remove('visible');
-      ring.classList.remove('visible');
-    });
-    document.addEventListener('mouseenter', function() {
-      visible = true;
-      dot.classList.add('visible');
-      ring.classList.add('visible');
-    });
-
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    const hoverTargets = 'a, button, .btn, .nav-link, .mega-menu-link, .team-card, .case-card, .secteur-card-v2, details, .faq-question';
-    document.addEventListener('mouseover', function(e) {
-      if (e.target.closest(hoverTargets)) document.body.classList.add('cursor-hover');
-    });
-    document.addEventListener('mouseout', function(e) {
-      if (e.target.closest(hoverTargets)) document.body.classList.remove('cursor-hover');
-    });
-
-    // Hide default cursor everywhere
-    const s = document.createElement('style');
-    s.textContent = '*{cursor:none!important}';
-    document.head.appendChild(s);
-  })();
+  /* Custom cursor removed — caused cross-browser issues */
 
   /* --- Scroll Progress Bar --- */
   (function() {
@@ -546,6 +471,124 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
+  })();
+
+  /* --- FAQ Accordion (one open at a time) --- */
+  document.addEventListener('click', function(e) {
+    const summary = e.target.closest('.faq-question');
+    if (!summary) return;
+    const current = summary.parentElement;
+    current.closest('.faq-list').querySelectorAll('details[open]').forEach(function(d) {
+      if (d !== current) d.removeAttribute('open');
+    });
+  });
+
+  /* --- Animated Counters --- */
+  (function() {
+    function parseNumber(text) {
+      // Handle formats: "18M", "20+", "111 880", "10 000", "5", "30", etc.
+      text = text.trim();
+      let suffix = '';
+      let num = 0;
+
+      if (text.endsWith('M')) {
+        suffix = 'M';
+        num = parseFloat(text.replace(/\s/g, '').replace('M', ''));
+      } else if (text.endsWith('+')) {
+        suffix = '+';
+        num = parseFloat(text.replace(/\s/g, '').replace('+', ''));
+      } else {
+        num = parseFloat(text.replace(/\s/g, ''));
+      }
+
+      return { num: num, suffix: suffix, original: text };
+    }
+
+    function formatNumber(value, parsed) {
+      if (parsed.suffix === 'M') {
+        return Math.round(value) + 'M';
+      }
+      // Format with spaces as thousands separator (French style)
+      let formatted = Math.round(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      return formatted + parsed.suffix;
+    }
+
+    function animateCounter(el, parsed, duration) {
+      const start = 0;
+      const end = parsed.num;
+      const startTime = performance.now();
+
+      el.classList.add('counting');
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = start + (end - start) * eased;
+
+        el.textContent = formatNumber(current, parsed);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.classList.remove('counting');
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    // Observe ticker numbers and stat numbers
+    const counterEls = document.querySelectorAll('.ticker-number, .stat-number');
+    if (counterEls.length > 0) {
+      const counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !entry.target.dataset.counted) {
+            entry.target.dataset.counted = 'true';
+            const parsed = parseNumber(entry.target.textContent);
+            if (!isNaN(parsed.num) && parsed.num > 0) {
+              animateCounter(entry.target, parsed, 2000);
+            }
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      counterEls.forEach(function(el) {
+        counterObserver.observe(el);
+      });
+    }
+  })();
+
+  /* --- Floating CTA Mobile --- */
+  (function() {
+    // Don't show on contact page itself
+    if (window.location.pathname.includes('contact')) return;
+
+    const cta = document.createElement('div');
+    cta.className = 'floating-cta';
+    cta.setAttribute('aria-hidden', 'true');
+
+    // Determine correct path
+    const isSubfolder = window.location.pathname.split('/').filter(Boolean).length > 2;
+    const prefix = isSubfolder ? '../' : '';
+
+    cta.innerHTML = '<div class="floating-cta-inner"><a href="' + prefix + 'contact.html" class="btn btn--primary" style="display:inline-flex;align-items:center;gap:8px;justify-content:center;width:100%;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Nous joindre</a></div>';
+    document.body.appendChild(cta);
+
+    // Show after scrolling past hero
+    let shown = false;
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      if (scrollY > 400 && !shown) {
+        shown = true;
+        cta.classList.add('visible');
+      } else if (scrollY <= 400 && shown) {
+        shown = false;
+        cta.classList.remove('visible');
+      }
+    }, { passive: true });
   })();
 
 });
