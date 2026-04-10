@@ -148,6 +148,16 @@ button.btn,
   letter-spacing: 0.09em !important;
   font-size: 12px !important;
   font-weight: 500 !important;
+  color: var(--ev-green) !important;
+}
+.ev-nav .nav-link:hover {
+  color: var(--ev-accent) !important;
+}
+.ev-nav .nav-link--cta {
+  color: #fff !important;
+}
+.ev-nav .nav-link--cta:hover {
+  color: #fff !important;
 }
 
 /* --- Topbar éditoriale (signature parent) --- */
@@ -216,50 +226,10 @@ button.btn,
   .header { top: 32px !important; }
 }
 
-/* Wordmark "/ Écrans verts" à côté du logo */
-.header .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  position: relative;
-}
-.header .logo::after {
-  content: '/ Écrans verts';
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--ev-accent);
-  letter-spacing: -0.005em;
-  padding-left: 14px;
-  border-left: 1px solid rgba(0, 60, 56, 0.18);
-  white-space: nowrap;
-}
-@media (max-width: 900px) {
-  .header .logo::after { display: none; }
-}
-
-/* Séparateur vertical avant le retour Ramo.eco */
-.ev-nav .nav-lang {
-  position: relative;
-  padding-left: 22px;
-  margin-left: 8px;
-}
-.ev-nav .nav-lang::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 18px;
-  background: rgba(0, 60, 56, 0.2);
-}
-.ev-nav .nav-lang-link {
-  font-size: 11.5px !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ev-accent) !important;
+/* Header logo dimensionné pour le wordmark Ramo Écrans verts */
+.header .logo-img {
+  height: 40px !important;
+  width: auto;
 }
 
 /* --- Cartes : radius doux et bordures accent --- */
