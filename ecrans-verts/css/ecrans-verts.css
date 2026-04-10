@@ -1,0 +1,498 @@
+/* ============================================================
+   Ramo Écrans verts — Identité visuelle distincte
+   Charge APRÈS ../css/style.css et ../css/solutions.css
+   Garde le vert Ramo #003c38 + ajoute accent argile chaleureux,
+   tirage serif Fraunces, boutons carrés, labels éditoriaux
+   ============================================================ */
+
+:root {
+  --ev-green: #003c38;
+  --ev-green-deep: #002824;
+  --ev-accent: #c2613a;          /* Argile / terre cuite */
+  --ev-accent-deep: #a04e2d;
+  --ev-accent-soft: #f3e6dc;
+  --ev-sand: #f7f3ec;            /* Papier chaud */
+  --ev-sand-deep: #eee7d8;
+  --ev-ink: #1a2220;
+}
+
+/* --- Base paper background --- */
+body {
+  background: var(--ev-sand);
+  color: var(--ev-ink);
+}
+
+/* Sections light — teinte papier chaude */
+.section--light,
+section.section--light {
+  background: var(--ev-sand-deep) !important;
+}
+
+/* --- Typographie éditoriale Fraunces --- */
+.ev-hero-title,
+.ev-product-title,
+.section-title,
+.cases-title,
+.ev-step-title,
+.ev-audience-title,
+h1.page-hero-title,
+h1, h2 {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.018em;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 30, "WONK" 0;
+}
+
+.ev-hero-title { font-weight: 300 !important; }
+
+/* Italique accentué pour emphases dans les titres */
+.ev-hero-title em,
+.ev-hero-title i,
+.section-title em,
+h1 em, h2 em {
+  color: var(--ev-accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* --- Boutons carrés, typographie soulignée --- */
+.btn,
+a.btn,
+button.btn,
+.nav-link--cta {
+  border-radius: 2px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  padding: 16px 26px !important;
+}
+
+.btn--primary {
+  background: var(--ev-accent) !important;
+  border-color: var(--ev-accent) !important;
+  color: #fff !important;
+}
+.btn--primary:hover {
+  background: var(--ev-accent-deep) !important;
+  border-color: var(--ev-accent-deep) !important;
+}
+
+.btn--outline {
+  border-width: 1.5px !important;
+}
+
+.nav-link--cta {
+  background: var(--ev-accent) !important;
+  border-color: var(--ev-accent) !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+}
+.nav-link--cta:hover {
+  background: var(--ev-accent-deep) !important;
+  border-color: var(--ev-accent-deep) !important;
+}
+
+/* --- Section labels : petit tiret éditorial --- */
+.section-label {
+  position: relative;
+  padding-left: 24px !important;
+  display: inline-block;
+  color: var(--ev-accent) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: 11.5px !important;
+}
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 1px;
+  background: var(--ev-accent);
+}
+
+/* Eyebrow du hero — visible sur fond foncé */
+.ev-hero-eyebrow {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  padding: 8px 0 8px 24px !important;
+  color: var(--ev-accent) !important;
+  font-weight: 600 !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.16em !important;
+  position: relative;
+}
+.ev-hero-eyebrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 1px;
+  background: var(--ev-accent);
+}
+
+/* --- Navigation : plus éditoriale --- */
+.ev-nav .nav-link {
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.header {
+  background: rgba(247, 243, 236, 0.92) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 60, 56, 0.08);
+}
+.header.scrolled,
+.header--scrolled {
+  background: rgba(247, 243, 236, 0.97) !important;
+}
+
+/* --- Cartes : radius doux et bordures accent --- */
+.ev-audience,
+.ev-step,
+.sol-stat,
+.case-card {
+  border-radius: 2px !important;
+}
+
+.ev-audience:hover,
+.case-card:hover {
+  border-color: var(--ev-accent) !important;
+}
+
+.ev-step {
+  border-left: 3px solid var(--ev-accent) !important;
+}
+
+.ev-step-num {
+  color: var(--ev-accent) !important;
+}
+
+/* --- Footer strip Ramo --- */
+.ev-back-ramo {
+  background: var(--ev-green-deep);
+}
+.ev-back-ramo a { color: var(--ev-accent-soft); }
+
+/* --- Groupe Ramo parent signature --- */
+.ev-parent-signature {
+  background: var(--ev-sand);
+  padding: 70px 0;
+  border-top: 1px solid rgba(0, 60, 56, 0.08);
+  text-align: center;
+}
+.ev-parent-signature-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.ev-parent-signature-label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ev-accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.ev-parent-signature-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.45;
+  color: var(--ev-green);
+  font-weight: 400;
+  margin: 0 0 26px;
+}
+.ev-parent-signature-text strong {
+  font-weight: 500;
+}
+.ev-parent-signature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ev-green);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1.5px solid var(--ev-green);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.ev-parent-signature-link:hover {
+  background: var(--ev-green);
+  color: #fff;
+}
+.ev-parent-signature-link svg { transition: transform 0.3s ease; }
+.ev-parent-signature-link:hover svg { transform: translateX(4px); }
+
+/* --- Galerie photos simple --- */
+.ev-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 40px auto 0;
+  max-width: 1200px;
+}
+.ev-gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--ev-sand-deep);
+}
+.ev-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+.ev-gallery-item:hover img { transform: scale(1.04); }
+.ev-gallery--wide {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+.ev-gallery--wide .ev-gallery-item:first-child {
+  grid-row: span 2;
+}
+@media (max-width: 760px) {
+  .ev-gallery,
+  .ev-gallery--wide { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ev-gallery--wide .ev-gallery-item:first-child { grid-row: auto; }
+}
+
+/* --- Split landing cards (murs antibruit → HF1 / Pilebyg) --- */
+.ev-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 60px;
+}
+.ev-split-card {
+  position: relative;
+  padding: 64px 48px;
+  background: #fff;
+  border: 1px solid rgba(0, 60, 56, 0.1);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--ev-ink);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+}
+.ev-split-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.ev-split-card:hover {
+  border-color: var(--ev-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0, 60, 56, 0.12);
+}
+.ev-split-card-img {
+  position: relative;
+  margin: -64px -48px 32px;
+  height: 260px;
+  overflow: hidden;
+  background: var(--ev-sand-deep);
+}
+.ev-split-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.ev-split-card:hover .ev-split-card-img img { transform: scale(1.05); }
+.ev-split-card-flag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(247, 243, 236, 0.95);
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ev-green);
+  border-radius: 2px;
+}
+.ev-split-card-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ev-accent);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.ev-split-card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--ev-green);
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.ev-split-card-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a6664;
+  margin: 0 0 24px;
+  flex: 1;
+}
+.ev-split-card-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  gap: 8px;
+}
+.ev-split-card-specs li {
+  font-size: 13px;
+  color: var(--ev-green);
+  padding-left: 18px;
+  position: relative;
+}
+.ev-split-card-specs li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 1px;
+  background: var(--ev-accent);
+}
+.ev-split-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ev-accent);
+  margin-top: auto;
+}
+.ev-split-card:hover .ev-split-card-cta svg { transform: translateX(6px); }
+.ev-split-card-cta svg { transition: transform 0.3s ease; }
+@media (max-width: 860px) {
+  .ev-split { grid-template-columns: 1fr; }
+  .ev-split-card { padding: 48px 32px; min-height: auto; }
+  .ev-split-card-img { margin: -48px -32px 24px; height: 220px; }
+}
+
+/* --- Page hero (sous-pages HF1, Pilebyg, etc.) --- */
+.ev-page-hero {
+  background: linear-gradient(135deg, var(--ev-green) 0%, var(--ev-green-deep) 100%);
+  color: #fff;
+  padding: 160px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+.ev-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+.ev-page-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.ev-page-hero h1 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 300 !important;
+  line-height: 1;
+  margin: 22px 0 24px;
+  letter-spacing: -0.025em;
+  color: #fff;
+  max-width: 900px;
+}
+.ev-page-hero-sub {
+  font-size: clamp(16px, 1.7vw, 19px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 640px;
+  margin: 0 0 36px;
+}
+.ev-page-hero--hf1::before {
+  background-image: url('https://ramo.eco/wp-content/uploads/2023/02/Saules_4-scaled.jpg');
+}
+.ev-page-hero--pilebyg::before {
+  background-image: url('https://ramo.eco/wp-content/uploads/2023/11/Capture-decran-le-2023-11-28-a-10.35.33-1.jpg');
+}
+.ev-page-hero--clotures::before {
+  background-image: url('https://ramo.eco/wp-content/uploads/2025/10/Cloture-Saules-scaled.jpg');
+}
+.ev-page-hero--murs::before {
+  background-image: url('https://ramo.eco/wp-content/uploads/2022/01/P1011975.jpg');
+}
+
+/* --- Fiche specs --- */
+.ev-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  max-width: 1000px;
+  margin: 60px auto 0;
+  background: #fff;
+  border: 1px solid rgba(0, 60, 56, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ev-spec {
+  padding: 28px 32px;
+  border-bottom: 1px solid rgba(0, 60, 56, 0.08);
+  border-right: 1px solid rgba(0, 60, 56, 0.08);
+}
+.ev-spec:nth-child(2n) { border-right: none; }
+.ev-spec:nth-last-child(-n+2) { border-bottom: none; }
+.ev-spec-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ev-accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.ev-spec-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 22px;
+  color: var(--ev-green);
+  font-weight: 400;
+  line-height: 1.25;
+}
+@media (max-width: 720px) {
+  .ev-specs { grid-template-columns: 1fr; }
+  .ev-spec { border-right: none; }
+  .ev-spec:nth-last-child(-n+2) { border-bottom: 1px solid rgba(0, 60, 56, 0.08); }
+  .ev-spec:last-child { border-bottom: none; }
+}
