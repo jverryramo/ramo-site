@@ -1,19 +1,21 @@
 /* ============================================================
    Ramo Écrans verts — Identité visuelle distincte
    Charge APRÈS ../css/style.css et ../css/solutions.css
-   Garde le vert Ramo #003c38 + ajoute accent argile chaleureux,
-   tirage serif Fraunces, boutons carrés, labels éditoriaux
+   Palette 100% Ramo : vert #003c38 + mint #b8e5d8 + blanc
+   Différenciation = typographie Fraunces, boutons carrés, labels éditoriaux
    ============================================================ */
 
 :root {
-  --ev-green: #003c38;
+  --ev-green: #003c38;            /* Vert primaire Ramo */
   --ev-green-deep: #002824;
-  --ev-accent: #c2613a;          /* Argile / terre cuite */
-  --ev-accent-deep: #a04e2d;
-  --ev-accent-soft: #f3e6dc;
-  --ev-sand: #f7f3ec;            /* Papier chaud */
-  --ev-sand-deep: #eee7d8;
-  --ev-ink: #1a2220;
+  --ev-lime: #dcf21e;             /* Lime Ramo — accent signature sur fonds foncés / boutons */
+  --ev-lime-deep: #c7dd15;
+  --ev-accent: #003c38;           /* Accent sur fonds clairs = vert Ramo */
+  --ev-accent-deep: #002824;
+  --ev-accent-soft: #dcf21e;      /* Accent sur fonds foncés = lime */
+  --ev-sand: #f5f1ec;             /* Beige warm Ramo (--color-bg-light) */
+  --ev-sand-deep: #ede8db;
+  --ev-ink: #1a1a1a;
 }
 
 /* --- Base paper background --- */
@@ -49,9 +51,15 @@ h1, h2 {
 /* Italique accentué pour emphases dans les titres */
 .ev-hero-title em,
 .ev-hero-title i,
+.ev-page-hero h1 em,
+.ev-page-hero h1 i {
+  color: var(--ev-accent-soft); /* mint sur fond hero foncé */
+  font-style: italic;
+  font-weight: 400;
+}
 .section-title em,
-h1 em, h2 em {
-  color: var(--ev-accent);
+h2 em {
+  color: var(--ev-green);
   font-style: italic;
   font-weight: 400;
 }
@@ -70,13 +78,14 @@ button.btn,
 }
 
 .btn--primary {
-  background: var(--ev-accent) !important;
-  border-color: var(--ev-accent) !important;
-  color: #fff !important;
+  background: var(--ev-lime) !important;
+  border-color: var(--ev-lime) !important;
+  color: var(--ev-green) !important;
 }
 .btn--primary:hover {
-  background: var(--ev-accent-deep) !important;
-  border-color: var(--ev-accent-deep) !important;
+  background: var(--ev-lime-deep) !important;
+  border-color: var(--ev-lime-deep) !important;
+  color: var(--ev-green) !important;
 }
 
 .btn--outline {
@@ -84,14 +93,15 @@ button.btn,
 }
 
 .nav-link--cta {
-  background: var(--ev-accent) !important;
-  border-color: var(--ev-accent) !important;
-  color: #fff !important;
+  background: var(--ev-lime) !important;
+  border-color: var(--ev-lime) !important;
+  color: var(--ev-green) !important;
   padding: 10px 20px !important;
 }
 .nav-link--cta:hover {
-  background: var(--ev-accent-deep) !important;
-  border-color: var(--ev-accent-deep) !important;
+  background: var(--ev-lime-deep) !important;
+  border-color: var(--ev-lime-deep) !important;
+  color: var(--ev-green) !important;
 }
 
 /* --- Section labels : petit tiret éditorial --- */
@@ -99,7 +109,7 @@ button.btn,
   position: relative;
   padding-left: 24px !important;
   display: inline-block;
-  color: var(--ev-accent) !important;
+  color: var(--ev-green) !important;
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
@@ -116,7 +126,7 @@ button.btn,
   transform: translateY(-50%);
   width: 16px;
   height: 1px;
-  background: var(--ev-accent);
+  background: var(--ev-green);
 }
 
 /* Eyebrow du hero — visible sur fond foncé */
@@ -125,7 +135,7 @@ button.btn,
   border: none !important;
   backdrop-filter: none !important;
   padding: 8px 0 8px 24px !important;
-  color: var(--ev-accent) !important;
+  color: var(--ev-accent-soft) !important;
   font-weight: 600 !important;
   font-size: 11.5px !important;
   letter-spacing: 0.16em !important;
@@ -139,7 +149,7 @@ button.btn,
   transform: translateY(-50%);
   width: 16px;
   height: 1px;
-  background: var(--ev-accent);
+  background: var(--ev-accent-soft);
 }
 
 /* --- Navigation : plus éditoriale --- */
@@ -151,13 +161,15 @@ button.btn,
   color: var(--ev-green) !important;
 }
 .ev-nav .nav-link:hover {
-  color: var(--ev-accent) !important;
+  color: var(--ev-green-deep) !important;
+  opacity: 0.7;
 }
 .ev-nav .nav-link--cta {
-  color: #fff !important;
+  color: var(--ev-green) !important;
 }
 .ev-nav .nav-link--cta:hover {
-  color: #fff !important;
+  color: var(--ev-green) !important;
+  opacity: 1;
 }
 
 /* --- Topbar éditoriale (signature parent) --- */
@@ -189,7 +201,7 @@ button.btn,
   content: '';
   width: 22px;
   height: 1px;
-  background: var(--ev-accent);
+  background: var(--ev-accent-soft);
 }
 .ev-topbar-left strong {
   color: #fff;
@@ -203,7 +215,7 @@ button.btn,
   gap: 6px;
   transition: color 0.2s ease;
 }
-.ev-topbar a:hover { color: var(--ev-accent); }
+.ev-topbar a:hover { color: #fff; }
 @media (max-width: 760px) {
   .ev-topbar { padding: 8px 18px; font-size: 9.5px; gap: 12px; }
   .ev-topbar-left::before { width: 14px; }
@@ -213,14 +225,13 @@ button.btn,
 /* --- Header : décalé sous topbar, traité plus distinctement --- */
 .header {
   top: 36px !important;
-  background: rgba(247, 243, 236, 0.94) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 60, 56, 0.1);
-  box-shadow: 0 1px 0 rgba(194, 97, 58, 0.18);
 }
 .header.scrolled,
 .header--scrolled {
-  background: rgba(247, 243, 236, 0.98) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
 }
 @media (max-width: 760px) {
   .header { top: 32px !important; }
