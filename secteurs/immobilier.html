@@ -7,7 +7,12 @@
   <meta name="description" content="Solutions basées sur la nature pour les développeurs immobiliers : écrans verts, restauration, verdissement et conformité environnementale des projets de développement.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ramo.eco/secteurs/immobilier/">
+    <link rel="alternate" hreflang="fr-ca" href="https://ramo.eco/secteurs/immobilier/">
+    <link rel="alternate" hreflang="x-default" href="https://ramo.eco/secteurs/immobilier/">
   <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Saint-Roch-de-l'Achigan, Québec">
+  <meta name="geo.position" content="45.8481;-73.6695">
+  <meta name="ICBM" content="45.8481, -73.6695">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Solutions pour développeurs immobiliers — Ramo">
@@ -34,44 +39,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .secteur-hero { position: relative; min-height: 50vh; display: flex; align-items: flex-end; overflow: hidden; padding-bottom: clamp(50px, 6vw, 80px); background: linear-gradient(135deg, var(--color-bg) 0%, #003c38 100%); }
-    .secteur-hero-content { position: relative; z-index: 2; max-width: var(--container-width); margin: 0 auto; padding: 0 clamp(20px, 4vw, 60px); }
-    .secteur-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-light); margin-bottom: 20px; }
-    .secteur-breadcrumb a { color: var(--color-accent); transition: color 0.3s; }
-    .secteur-breadcrumb a:hover { color: var(--color-white); }
-    .secteur-breadcrumb span { opacity: 0.5; }
-    .secteur-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent-3); margin-bottom: 12px; }
-    .secteur-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: var(--color-white); line-height: 1.1; margin-bottom: 16px; }
-    .secteur-subtitle { font-size: clamp(16px, 2vw, 20px); color: var(--color-text-light); font-weight: 300; max-width: 700px; }
-    .secteur-icon-large { width: 80px; height: 80px; color: var(--color-accent-3); margin-bottom: 24px; }
-    .secteur-intro { max-width: 800px; margin: 0 auto; }
-    .secteur-intro-text { font-size: 17px; line-height: 1.8; color: var(--color-text-light); margin-bottom: 20px; }
-    .secteur-intro-text strong { color: var(--color-white); font-weight: 500; }
-    .secteur-solutions-title { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 38px); font-weight: 600; color: var(--color-white); margin-bottom: 40px; text-align: center; }
-    .secteur-solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
-    .sol-card { background: var(--color-bg-card); border-radius: 16px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; border: 1px solid rgba(124,198,141,0.08); }
-    .sol-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-    .sol-card-img { height: 200px; overflow: hidden; }
-    .sol-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-    .sol-card:hover .sol-card-img img { transform: scale(1.05); }
-    .sol-card-body { padding: 28px; }
-    .sol-card-number { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; color: var(--color-accent-3); margin-bottom: 8px; }
-    .sol-card-name { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--color-white); margin-bottom: 8px; }
-    .sol-card-desc { font-size: 15px; line-height: 1.6; color: var(--color-text-light); margin-bottom: 16px; }
-    .sol-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-    .sol-card-tags .tag { font-size: 11px; padding: 4px 10px; background: rgba(124,198,141,0.1); color: var(--color-accent); border-radius: 20px; }
-    .sol-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-accent); transition: gap 0.3s, color 0.3s; }
-    .sol-card-link:hover { gap: 10px; color: var(--color-white); }
-    .secteur-cta { text-align: center; max-width: 600px; margin: 0 auto; }
-    .secteur-cta-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); font-weight: 600; color: var(--color-white); margin-bottom: 16px; }
-    .secteur-cta-text { font-size: 16px; color: var(--color-text-light); margin-bottom: 28px; line-height: 1.6; }
-    .secteur-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--color-accent); color: var(--color-bg); padding: 14px 32px; border-radius: 50px; font-weight: 600; font-size: 15px; transition: all 0.3s ease; }
-    .secteur-cta-btn:hover { background: var(--color-white); gap: 14px; }
-    @media (max-width: 768px) { .secteur-solutions-grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="../css/secteurs.css">
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://jverryramo.github.io/ramo-site/index.html"}, {"@type": "ListItem", "position": 2, "name": "Secteurs", "item": "https://jverryramo.github.io/ramo-site/index.html#secteurs"}, {"@type": "ListItem", "position": 3, "name": "Immobilier", "item": "https://jverryramo.github.io/ramo-site/secteurs/immobilier/"}]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Aménagement durable pour projets immobiliers",
+    "description": "Murs antibruit, clôtures naturelles, végétalisation et paillis pour promoteurs et développeurs immobiliers au Québec.",
+    "provider": {"@type": "Organization", "name": "Ramo", "url": "https://ramo.eco"},
+    "areaServed": {"@type": "AdministrativeArea", "name": "Québec, Canada"},
+    "serviceType": "Aménagement durable"
+  }
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://ramo.eco/index.html"}, {"@type": "ListItem", "position": 2, "name": "Secteurs", "item": "https://ramo.eco/index.html#secteurs"}, {"@type": "ListItem", "position": 3, "name": "Immobilier", "item": "https://ramo.eco/secteurs/immobilier/"}]}</script>
 </head>
 <body>
 
@@ -82,9 +63,9 @@
     <div class="header-inner">
       <a href="../index.html" class="logo" aria-label="Ramo - Accueil"><img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
       <nav class="nav" id="nav" aria-label="Navigation principale">
-        <div class="nav-item"><a href="../index.html#solutions" class="nav-link">Solutions</a><div class="mega-menu"><a href="../solutions/evaplant.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evaplant</div><div class="mega-menu-desc">Réduction active des eaux impactées</div></div></a><a href="../solutions/evacap.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evacap</div><div class="mega-menu-desc">Réduction des eaux d'infiltration</div></div></a><a href="../solutions/restauration.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8M8 12c-2 0-4-2-4-4 2 0 4 2 4 4zM16 12c2 0 4-2 4-4-2 0-4 2-4 4zM12 8c-2-2-2-4 0-6 2 2 2 4 0 6z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation</div><div class="mega-menu-desc">Sites dégradés et marginaux</div></div></a><a href="../ecrans-verts/index.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M4 20V8l4-4h8l4 4v12"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Écrans verts</div><div class="mega-menu-desc">Murs antibruit et clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Paillis BRF</div><div class="mega-menu-desc">Amendement horticole</div></div></a><a href="../solutions/fourniture.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l4 4-4 4M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div><div class="mega-menu-desc">Boutures, plants, fagots</div></div></a><a href="../solutions/haie-saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="4" height="16"/><rect x="10" y="4" width="4" height="16"/><rect x="17" y="4" width="4" height="16"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Haie de saules</div><div class="mega-menu-desc">Brise-vent, visuelle, anti-poussière</div></div></a></div></div>
-        <div class="nav-item"><a href="../index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><a href="../secteurs/enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div><div class="mega-menu-desc">Sites d'enfouissement technique</div></div></a><a href="../secteurs/municipal.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div><div class="mega-menu-desc">Solutions pour les municipalités</div></div></a><a href="../secteurs/minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20l10-10M12 10l4 4"/><circle cx="18" cy="6" r="4"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div><div class="mega-menu-desc">Restauration de sites miniers</div></div></a><a href="../secteurs/boues.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Boues</div><div class="mega-menu-desc">Gestion et valorisation des boues</div></div></a><a href="../secteurs/immobilier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div><div class="mega-menu-desc">Aménagement durable</div></div></a></div></div>
-        <div class="nav-item"><a href="../apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:380px; grid-template-columns:1fr;"><a href="../apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre histoire</div><div class="mega-menu-desc">D'une idée à 1 000 hectares</div></div></a><a href="../saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de toutes nos solutions</div></div></a><a href="../equipe.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre équipe</div><div class="mega-menu-desc">75 passionnés d'environnement</div></div></a><a href="../carrieres.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a></div></div>
+        <div class="nav-item"><a href="../index.html#solutions" class="nav-link">Solutions</a><div class="mega-menu"><a href="../solutions/evaplant.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evaplant</div><div class="mega-menu-desc">Réduction active des eaux impactées</div></div></a><a href="../solutions/evacap.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evacap</div><div class="mega-menu-desc">Réduction des eaux d'infiltration</div></div></a><a href="../solutions/mrf.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v9l4 2"/><circle cx="12" cy="12" r="9"/><path d="M16 16l2 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion des MRF</div><div class="mega-menu-desc">Valorisation des matières résiduelles fertilisantes</div></div></a><a href="../solutions/restauration.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8M8 12c-2 0-4-2-4-4 2 0 4 2 4 4zM16 12c2 0 4-2 4-4-2 0-4 2-4 4zM12 8c-2-2-2-4 0-6 2 2 2 4 0 6z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation</div><div class="mega-menu-desc">Sites dégradés et marginaux</div></div></a><a href="../ecrans-verts/index.html" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M4 20V8l4-4h8l4 4v12"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Écrans verts <span class="mega-menu-badge">Site dédié</span></div><div class="mega-menu-desc">Murs antibruit et clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Paillis BRF <span class="mega-menu-badge">Site dédié</span></div><div class="mega-menu-desc">Amendement horticole</div></div></a><a href="../solutions/fourniture.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l4 4-4 4M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div><div class="mega-menu-desc">Boutures, plants, fagots</div></div></a><a href="../solutions/haie-saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="4" height="16"/><rect x="10" y="4" width="4" height="16"/><rect x="17" y="4" width="4" height="16"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Haie de saules</div><div class="mega-menu-desc">Brise-vent, visuelle, anti-poussière</div></div></a></div></div>
+        <div class="nav-item"><a href="../index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><div class="mega-menu-header">Nos solutions selon votre secteur</div><a href="../secteurs/enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="14" height="8" rx="1"/><path d="M15 13V9a2 2 0 012-2h2l3 4v6a1 1 0 01-1 1h-1"/><circle cx="5.5" cy="21" r="2"/><circle cx="18.5" cy="21" r="2"/><path d="M8 21h7"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div></div></a><a href="../secteurs/municipal.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div></div></a><a href="../secteurs/minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M10 9L6 3M14 9l4-6M12 22l-2-13M12 22l2-13"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div></div></a><a href="../secteurs/boues.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Générateurs de boues</div></div></a><a href="../secteurs/immobilier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V18h6v4"/><path d="M8 6h2M8 10h2M8 14h2M14 6h2M14 10h2M14 14h2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div></div></a><a href="../secteurs/industriel.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V10l6 4V10l6 4V4l8 16z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Industriel</div></div></a></div></div>
+        <div class="nav-item"><a href="../apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:380px; grid-template-columns:1fr;"><a href="../apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre histoire</div><div class="mega-menu-desc">D'une idée à 1 000 hectares</div></div></a><a href="../saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de toutes nos solutions</div></div></a><a href="../equipe.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre équipe</div><div class="mega-menu-desc">75 passionnés d'environnement</div></div></a><a href="../carrieres.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a><a href="../nouvelles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Actualités</div><div class="mega-menu-desc">Nouvelles et communiqués</div></div></a></div></div>
         <a href="../contact.html" class="nav-link nav-link--cta">Nous joindre</a>
         <div class="nav-lang">
           <a href="../index.html" class="nav-lang-link nav-lang-link--active">FR</a>
@@ -120,7 +101,7 @@
         <a href="../index.html">Accueil</a><span>/</span><a href="../index.html#secteurs">Secteurs</a><span>/</span><span>Développeurs immobiliers</span>
       </nav>
       <svg class="secteur-icon-large" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="6" y="20" width="12" height="15" rx="1"/><rect x="22" y="12" width="12" height="23" rx="1"/><path d="M9 20V16L12 14L15 16V20"/><path d="M25 12V8L28 6L31 8V12"/>
+        <rect x="8" y="4" width="24" height="32"/><path d="M15 36V30h10v6"/><path d="M13 10h4M13 16h4M13 22h4M23 10h4M23 16h4M23 22h4"/>
       </svg>
       <span class="secteur-tag">Secteur d'activité</span>
       <h1 class="secteur-title">Développeurs immobiliers</h1>
@@ -132,7 +113,7 @@
     <div class="container">
       <div class="secteur-intro scroll-reveal">
         <p class="secteur-intro-text">Les projets de développement immobilier sont soumis à des <strong>exigences environnementales croissantes</strong> : compensation écologique, gestion des eaux pluviales, protection des milieux humides et intégration paysagère.</p>
-        <p class="secteur-intro-text">Les solutions de Ramo permettent aux développeurs de répondre à ces obligations tout en <strong>ajoutant de la valeur</strong> à leurs projets grâce à des aménagements verts durables et esthétiques qui séduisent les acheteurs et les locataires.</p>
+        <p class="secteur-intro-text">De Magog à Lachute en passant par Joliette, les solutions de Ramo permettent aux développeurs québécois de répondre à ces obligations tout en <strong>ajoutant de la valeur</strong> à leurs projets grâce à des aménagements verts durables et esthétiques qui séduisent les acheteurs et les locataires.</p>
       </div>
     </div>
   </section>
@@ -148,6 +129,7 @@
           </div>
           <div class="sol-card-body">
             <div class="sol-card-number">03</div>
+            <span class="sol-standalone-badge">Site dédié</span>
             <h3 class="sol-card-name">Écrans verts</h3>
             <p class="sol-card-desc">Haies naturelles, clôtures vivantes et écrans antibruit pour délimiter et embellir les projets résidentiels et commerciaux.</p>
             <div class="sol-card-tags">
@@ -155,7 +137,7 @@
               <span class="tag">Intimité</span>
               <span class="tag">Antibruit</span>
             </div>
-            <a href="../ecrans-verts/index.html" class="sol-card-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="../ecrans-verts/index.html" target="_blank" rel="noopener noreferrer" class="sol-card-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
@@ -198,6 +180,7 @@
           </div>
           <div class="sol-card-body">
             <div class="sol-card-number">05</div>
+            <span class="sol-standalone-badge">Site dédié</span>
             <h3 class="sol-card-name">Paillis BRF</h3>
             <p class="sol-card-desc">Paillis naturel pour l'aménagement des espaces verts, plate-bandes et zones paysagères de vos projets.</p>
             <div class="sol-card-tags">
@@ -208,6 +191,27 @@
           </div>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets dans ce secteur -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h3 class="secteur-solutions-title scroll-reveal" style="font-size: clamp(20px, 2.5vw, 28px);">Projets dans ce secteur</h3>
+      <div class="secteur-solutions-grid" style="max-width: 800px;">
+        <a href="../etudes-de-cas/magog.html" class="sol-card-link" style="font-size: 16px;">
+          Magog — Lieu d'enfouissement de Magog
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="../etudes-de-cas/joliette.html" class="sol-card-link" style="font-size: 16px;">
+          Joliette — Parc municipal de Joliette
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="../etudes-de-cas/lachute.html" class="sol-card-link" style="font-size: 16px;">
+          Lachute — Site industriel de Lachute
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>

@@ -7,7 +7,12 @@
   <meta name="description" content="Ramo est une entreprise québécoise spécialisée dans les solutions basées sur la nature. 60 experts, 1 000+ hectares de plantations, lauréate du Clean50 Canada 2026.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ramo.eco/a-propos/">
+    <link rel="alternate" hreflang="fr-ca" href="https://ramo.eco/a-propos/">
+    <link rel="alternate" hreflang="x-default" href="https://ramo.eco/a-propos/">
   <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Saint-Roch-de-l'Achigan, Québec">
+  <meta name="geo.position" content="45.8481;-73.6695">
+  <meta name="ICBM" content="45.8481, -73.6695">
   <meta property="og:type" content="website">
   <meta property="og:title" content="À propos — Ramo">
   <meta property="og:description" content="Découvrez Ramo, pionniers des solutions basées sur la nature au Canada.">
@@ -31,150 +36,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* --- À propos page specific --- */
-    .about-hero {
-      position: relative; min-height: 70vh;
-      display: flex; align-items: flex-end; overflow: hidden;
-      padding-bottom: clamp(60px, 8vw, 100px);
-    }
-    .about-hero-bg {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
-    }
-    .about-hero-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 60% 40%, rgba(124, 198, 141, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 30% 80%, rgba(220, 242, 30, 0.04) 0%, transparent 50%);
-    }
-    .about-hero-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; opacity: 0.2;
-    }
-    .about-hero-content {
-      position: relative; z-index: 2;
-      max-width: var(--container-width); margin: 0 auto;
-      padding: 0 clamp(20px, 4vw, 60px);
-    }
-    .about-hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(42px, 7vw, 80px); font-weight: 700;
-      color: var(--color-white); line-height: 1.05; margin-bottom: 20px;
-    }
-    .about-hero-desc {
-      font-size: clamp(17px, 2vw, 22px); color: var(--color-text-light);
-      font-weight: 300; max-width: 700px; line-height: 1.7;
-    }
+  <link rel="stylesheet" href="css/apropos.css">
 
-    /* --- Mission Statement --- */
-    .mission-block {
-      max-width: 900px; margin: 0 auto;
-    }
-    .mission-text {
-      font-size: clamp(20px, 2.8vw, 30px); line-height: 1.6;
-      color: var(--color-warm); font-weight: 300;
-    }
-    .mission-text strong { color: var(--color-white); font-weight: 500; }
-    .mission-text em { font-style: normal; color: var(--color-accent); }
-
-    /* --- About Stats --- */
-    .about-stats {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
-      padding: 56px 0; border-top: 1px solid rgba(124, 198, 141, 0.1);
-      border-bottom: 1px solid rgba(124, 198, 141, 0.1);
-      margin: 60px 0;
-    }
-    .about-stat { text-align: center; }
-    .about-stat-value {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 52px); font-weight: 700;
-      color: var(--color-accent-3); line-height: 1;
-    }
-    .about-stat-label { font-size: 13px; color: var(--color-text-light); margin-top: 8px; }
-
-    /* --- Timeline --- */
-    .timeline { max-width: 800px; margin: 0 auto; position: relative; }
-    .timeline::before {
-      content: ''; position: absolute; left: 24px; top: 0; bottom: 0;
-      width: 2px; background: linear-gradient(180deg, var(--color-primary), rgba(0, 60, 56, 0.15));
-    }
-    .timeline-item {
-      position: relative; padding-left: 72px; margin-bottom: 48px;
-    }
-    .timeline-dot {
-      position: absolute; left: 14px; top: 4px;
-      width: 22px; height: 22px; border-radius: 50%;
-      background: var(--color-bg-light); border: 2px solid var(--color-primary);
-      z-index: 1;
-    }
-    .timeline-year {
-      font-family: var(--font-display);
-      font-size: 14px; font-weight: 700; color: var(--color-accent-2);
-      letter-spacing: 0.1em; margin-bottom: 8px;
-    }
-    .timeline-title {
-      font-family: var(--font-display);
-      font-size: 22px; font-weight: 600; color: var(--color-primary);
-      margin-bottom: 8px;
-    }
-    .timeline-desc {
-      font-size: 15px; color: #555; line-height: 1.6;
-    }
-
-    /* --- Team grid --- */
-    .team-highlight {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-      align-items: center; margin-top: 48px;
-    }
-    .team-image { border-radius: 20px; overflow: hidden; }
-    .team-image img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
-    .team-image:hover img { transform: scale(1.02); }
-    .team-text { }
-    .team-text h3 {
-      font-family: var(--font-display);
-      font-size: clamp(24px, 3vw, 36px); font-weight: 600;
-      color: var(--color-white); margin-bottom: 16px; line-height: 1.2;
-    }
-    .team-text p {
-      font-size: 16px; color: var(--color-text-light); line-height: 1.7; margin-bottom: 16px;
-    }
-    .team-text p strong { color: var(--color-white); }
-
-    /* --- Awards --- */
-    .awards-row {
-      display: flex; gap: 24px; flex-wrap: wrap; margin-top: 40px;
-    }
-    .award-badge {
-      background: var(--color-bg-card);
-      border: 1px solid rgba(124, 198, 141, 0.1);
-      border-radius: 16px; padding: 24px 32px;
-      display: flex; align-items: center; gap: 16px;
-      flex: 1; min-width: 280px;
-    }
-    .award-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      background: rgba(220, 242, 30, 0.08); color: var(--color-accent-3);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .award-badge h4 {
-      font-size: 16px; font-weight: 600; color: var(--color-white); margin-bottom: 4px;
-    }
-    .award-badge p {
-      font-size: 13px; color: var(--color-text-light);
-    }
-
-    @media (max-width: 1024px) {
-      .about-stats { grid-template-columns: repeat(2, 1fr); }
-      .team-highlight { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .about-stats { grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://jverryramo.github.io/ramo-site/index.html"}, {"@type": "ListItem", "position": 2, "name": "À propos", "item": "https://jverryramo.github.io/ramo-site/apropos/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://ramo.eco/"},{"@type":"ListItem","position":2,"name":"Notre histoire","item":"https://ramo.eco/apropos/"}]}</script>
 </head>
 <body>
 
@@ -185,9 +49,9 @@
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
       <nav class="nav" id="nav" aria-label="Navigation principale">
-        <div class="nav-item"><a href="index.html#solutions" class="nav-link">Solutions</a><div class="mega-menu"><a href="solutions/evaplant.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evaplant</div><div class="mega-menu-desc">Réduction active des eaux impactées</div></div></a><a href="solutions/evacap.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evacap</div><div class="mega-menu-desc">Réduction des eaux d'infiltration</div></div></a><a href="solutions/restauration.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8M8 12c-2 0-4-2-4-4 2 0 4 2 4 4zM16 12c2 0 4-2 4-4-2 0-4 2-4 4zM12 8c-2-2-2-4 0-6 2 2 2 4 0 6z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation</div><div class="mega-menu-desc">Sites dégradés et marginaux</div></div></a><a href="ecrans-verts/index.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M4 20V8l4-4h8l4 4v12"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Écrans verts</div><div class="mega-menu-desc">Murs antibruit et clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Paillis BRF</div><div class="mega-menu-desc">Amendement horticole</div></div></a><a href="solutions/fourniture.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l4 4-4 4M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div><div class="mega-menu-desc">Boutures, plants, fagots</div></div></a><a href="solutions/haie-saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="4" height="16"/><rect x="10" y="4" width="4" height="16"/><rect x="17" y="4" width="4" height="16"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Haie de saules</div><div class="mega-menu-desc">Brise-vent, visuelle, anti-poussière</div></div></a></div></div>
-        <div class="nav-item"><a href="index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><a href="secteurs/enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div><div class="mega-menu-desc">Sites d'enfouissement technique</div></div></a><a href="secteurs/municipal.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div><div class="mega-menu-desc">Solutions pour les municipalités</div></div></a><a href="secteurs/minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20l10-10M12 10l4 4"/><circle cx="18" cy="6" r="4"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div><div class="mega-menu-desc">Restauration de sites miniers</div></div></a><a href="secteurs/boues.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Boues</div><div class="mega-menu-desc">Gestion et valorisation des boues</div></div></a><a href="secteurs/immobilier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div><div class="mega-menu-desc">Aménagement durable</div></div></a></div></div>
-        <div class="nav-item"><a href="apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:380px; grid-template-columns:1fr;"><a href="apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre histoire</div><div class="mega-menu-desc">D'une idée à 1 000 hectares</div></div></a><a href="saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de toutes nos solutions</div></div></a><a href="equipe.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre équipe</div><div class="mega-menu-desc">75 passionnés d'environnement</div></div></a><a href="carrieres.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a></div></div>
+        <div class="nav-item"><a href="index.html#solutions" class="nav-link">Solutions</a><div class="mega-menu"><a href="solutions/evaplant.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evaplant</div><div class="mega-menu-desc">Réduction active des eaux impactées</div></div></a><a href="solutions/evacap.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Evacap</div><div class="mega-menu-desc">Réduction des eaux d'infiltration</div></div></a><a href="solutions/mrf.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v9l4 2"/><circle cx="12" cy="12" r="9"/><path d="M16 16l2 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion des MRF</div><div class="mega-menu-desc">Valorisation des matières résiduelles fertilisantes</div></div></a><a href="solutions/restauration.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8M8 12c-2 0-4-2-4-4 2 0 4 2 4 4zM16 12c2 0 4-2 4-4-2 0-4 2-4 4zM12 8c-2-2-2-4 0-6 2 2 2 4 0 6z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation</div><div class="mega-menu-desc">Sites dégradés et marginaux</div></div></a><a href="ecrans-verts/index.html" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M4 20V8l4-4h8l4 4v12"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Écrans verts <span class="mega-menu-badge">Site dédié</span></div><div class="mega-menu-desc">Murs antibruit et clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Paillis BRF <span class="mega-menu-badge">Site dédié</span></div><div class="mega-menu-desc">Amendement horticole</div></div></a><a href="solutions/fourniture.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l4 4-4 4M3 12h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div><div class="mega-menu-desc">Boutures, plants, fagots</div></div></a><a href="solutions/haie-saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="4" height="16"/><rect x="10" y="4" width="4" height="16"/><rect x="17" y="4" width="4" height="16"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Haie de saules</div><div class="mega-menu-desc">Brise-vent, visuelle, anti-poussière</div></div></a></div></div>
+        <div class="nav-item"><a href="index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><div class="mega-menu-header">Nos solutions selon votre secteur</div><a href="secteurs/enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="14" height="8" rx="1"/><path d="M15 13V9a2 2 0 012-2h2l3 4v6a1 1 0 01-1 1h-1"/><circle cx="5.5" cy="21" r="2"/><circle cx="18.5" cy="21" r="2"/><path d="M8 21h7"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div></div></a><a href="secteurs/municipal.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div></div></a><a href="secteurs/minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M10 9L6 3M14 9l4-6M12 22l-2-13M12 22l2-13"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div></div></a><a href="secteurs/boues.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Générateurs de boues</div></div></a><a href="secteurs/immobilier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V18h6v4"/><path d="M8 6h2M8 10h2M8 14h2M14 6h2M14 10h2M14 14h2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div></div></a><a href="secteurs/industriel.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V10l6 4V10l6 4V4l8 16z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Industriel</div></div></a></div></div>
+        <div class="nav-item"><a href="apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:380px; grid-template-columns:1fr;"><a href="apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre histoire</div><div class="mega-menu-desc">D'une idée à 1 000 hectares</div></div></a><a href="saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de toutes nos solutions</div></div></a><a href="equipe.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Notre équipe</div><div class="mega-menu-desc">75 passionnés d'environnement</div></div></a><a href="carrieres.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a><a href="nouvelles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Actualités</div><div class="mega-menu-desc">Nouvelles et communiqués</div></div></a></div></div>
         <a href="contact.html" class="nav-link nav-link--cta">Nous joindre</a>
         <div class="nav-lang">
           <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
