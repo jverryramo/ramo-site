@@ -54,12 +54,7 @@
         radial-gradient(ellipse at 30% 80%, rgba(220, 242, 30, 0.04) 0%, transparent 50%);
     }
     .ap-hero-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.18;
+      display: none;
     }
     .ap-hero-content {
       position: relative;
@@ -76,9 +71,14 @@
       line-height: 1.05;
       margin-bottom: 20px;
     }
-    .ap-hero-desc {
+    .ap-hero-title em {
+      color: var(--ev-accent-soft);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .ap-hero .ap-hero-desc {
       font-size: clamp(17px, 2vw, 22px);
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.92) !important;
       font-weight: 300;
       max-width: 700px;
       line-height: 1.7;
@@ -314,11 +314,11 @@
   <!-- HERO -->
   <section class="ap-hero">
     <div class="ap-hero-bg"></div>
-    <img class="ap-hero-img" src="https://ramo.eco/wp-content/uploads/2022/10/mozaique_3.png" alt="L'équipe Ramo" loading="eager">
+    <img class="ap-hero-img" src="assets/Tiges.JPG" alt="Tiges de saule — Ramo Écrans verts" loading="eager">
     <div class="ap-hero-content">
       <span class="section-label scroll-reveal" style="color: rgba(255,255,255,0.5);">À propos</span>
-      <h1 class="ap-hero-title scroll-reveal">Une division de Ramo dédiée à l'acoustique et aux clôtures.</h1>
-      <p class="ap-hero-desc scroll-reveal">Ramo Écrans verts est la branche spécialisée du Groupe Ramo pour la conception, la fabrication et l'installation de murs antibruit et de clôtures naturelles en Amérique du Nord.</p>
+      <h1 class="ap-hero-title scroll-reveal">Une division de Ramo dédiée aux <em>écrans antibruit et visuels</em>.</h1>
+      <p class="ap-hero-desc scroll-reveal">Ramo Écrans verts est la branche spécialisée du Groupe Ramo pour la conception et la fabrication de murs antibruit et de clôtures naturelles.</p>
     </div>
   </section>
 
@@ -326,7 +326,7 @@
   <section class="section" style="padding: 90px 0 50px;">
     <div class="container">
       <div class="ap-mission-block">
-        <p class="ap-mission-text scroll-reveal"><strong>Ramo</strong> est une entreprise québécoise qui développe des <em>solutions environnementales basées sur la nature</em> depuis 2006 — gestion des eaux, végétalisation, fourniture végétale. <strong>Ramo Écrans verts</strong> est sa division spécialisée dans l'acoustique et les clôtures, née du constat que le saule offre une réponse naturelle et durable aux enjeux de bruit et d'intimité.</p>
+        <p class="ap-mission-text scroll-reveal"><strong>Ramo</strong> est une entreprise québécoise qui développe des <em>solutions environnementales basées sur la nature</em> depuis 2006 — gestion des eaux, végétalisation, fourniture végétale.</p>
       </div>
 
       <div class="ap-stats scroll-reveal">
@@ -341,10 +341,6 @@
         <div class="ap-stat">
           <div class="ap-stat-value">75</div>
           <div class="ap-stat-label">Experts en environnement</div>
-        </div>
-        <div class="ap-stat">
-          <div class="ap-stat-value">2</div>
-          <div class="ap-stat-label">Technologies antibruit</div>
         </div>
       </div>
     </div>
@@ -362,8 +358,8 @@
         </div>
         <div class="ap-team-text">
           <h3 class="scroll-reveal">Plus de 18 millions de saules plantés au Canada</h3>
-          <p class="scroll-reveal">Fondé en 2006 à Saint-Roch-de-l'Achigan, <strong>Ramo</strong> est le leader canadien des solutions environnementales basées sur les saules. L'entreprise intervient dans la gestion des eaux impactées (Evaplant, Evacap), la végétalisation de sites dégradés, la fourniture végétale et — via sa division Écrans verts — les murs antibruit et les clôtures.</p>
-          <p class="scroll-reveal">Ramo Écrans verts bénéficie de toute l'expertise du groupe : <strong>75 professionnels</strong> en ingénierie, agronomie, gestion de projet et installation. Nos chargés de projet accompagnent chaque mandat du premier devis à la livraison, en s'appuyant sur la plus grande pépinière de saules au pays.</p>
+          <p class="scroll-reveal">Fondé en 2006 à Saint-Roch-de-l'Achigan, <strong>Ramo</strong> est le leader canadien des solutions environnementales basées sur les saules. L'entreprise intervient dans la gestion des eaux impactées (Evaplant®, Evacap™), la végétalisation de sites dégradés, la fourniture végétale et — via sa division Écrans verts — les murs antibruit et les clôtures.</p>
+          <p class="scroll-reveal">Ramo Écrans verts bénéficie de toute l'expertise du groupe en ingénierie, agronomie et gestion de projet.</p>
           <div class="scroll-reveal" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
             <a href="../index.html" class="btn btn--primary">Découvrir Ramo</a>
             <a href="../equipe.html" class="btn btn--outline">Notre équipe</a>

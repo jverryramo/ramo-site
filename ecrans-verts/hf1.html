@@ -227,7 +227,7 @@
         <img src="assets/logo-ramo-ecrans-verts-vert.png" alt="Ramo Écrans verts" class="logo-img" style="height: 40px; width: auto;">
       </a>
       <nav class="nav ev-nav" id="nav" aria-label="Navigation">
-        <a href="murs-antibruit.html" class="nav-link">Murs antibruit</a>
+        <a href="murs-antibruit.html" class="nav-link nav-link--active">Murs antibruit</a>
         <a href="clotures.html" class="nav-link">Clôtures</a>
         <a href="etudes-de-cas.html" class="nav-link">Études de cas</a>
         <a href="apropos.html" class="nav-link">À propos</a>
@@ -263,8 +263,7 @@
         <span>›</span>
         <span>HF1</span>
       </div>
-      <span class="ev-flag-badge" style="margin-top:24px;">🇩🇪 Conception allemande · 🇨🇦 Fabriqué au Canada · Distribué en Amérique du Nord</span>
-      <h1>HF1 — Mélèze européen.</h1>
+      <h1>HF1</h1>
       <p class="ev-page-hero-sub">Mur antibruit en bois dont la conception allemande unique permet d'atteindre les plus hauts standards acoustiques et une durabilité hors du commun. Absorbant d'un côté, réfléchissant de l'autre.</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap;">
         <a href="contact.html" class="btn btn--primary">Parlez-nous de votre projet</a>
@@ -278,7 +277,7 @@
     <div class="container">
       <div class="ev-content-block">
         <span class="section-label scroll-reveal">À propos du HF1</span>
-        <h2 class="section-title scroll-reveal" style="margin-top:16px;">Le mur antibruit <em>allemand</em>.</h2>
+        <h2 class="section-title scroll-reveal" style="margin-top:16px;">Le mur antibruit <em>de conception allemande</em>.</h2>
         <p class="scroll-reveal" style="margin-top:30px;">
           Le <strong>HF1</strong> est un mur antibruit en bois dont la <strong>conception allemande</strong> unique permet d'atteindre les plus hauts standards acoustiques et une durabilité hors du commun à un prix compétitif. Optimisant les principes acoustiques et utilisant une technologie brevetée de minimisation des zones de contact, le mur est composé de <strong>mélèze</strong> et de <strong>laine de roche</strong>.
         </p>
@@ -286,7 +285,7 @@
           Le produit s'installe facilement et rapidement en le glissant entre deux <strong>poteaux en H</strong>. Afin de prolonger sa durée de vie, il est surmonté d'un <strong>chapeau métallique</strong> et installé sur un <strong>panneau de béton</strong>. Le HF1 est absorbant d'un côté et réfléchissant de l'autre.
         </p>
         <p class="scroll-reveal">
-          Désormais <strong>fabriqué au Canada</strong> dans nos installations et distribué partout en Amérique du Nord, le HF1 est <strong>conforme aux exigences du MTMD</strong> et a été déployé à grande échelle en Europe depuis plus de 30&nbsp;ans.
+          Désormais <strong>fabriqué au Canada</strong> dans nos installations, il est distribué partout en <strong>Amérique du Nord</strong>.
         </p>
       </div>
     </div>
@@ -296,13 +295,55 @@
   <section style="background: linear-gradient(135deg, #002824 0%, #003c38 50%, #002824 100%); padding: 80px 0;">
     <div class="container">
       <div style="text-align:center; max-width:680px; margin: 0 auto;">
-        <span class="section-label scroll-reveal" style="color: rgba(255,255,255,0.5);">Modèle 3D interactif</span>
-        <h2 class="section-title scroll-reveal" style="margin-top:16px; color:#fff;">Explorez le HF1.</h2>
+        <span class="section-label scroll-reveal" style="color: #fff !important; opacity: 1;">Modèle 3D interactif</span>
+        <h2 class="section-title scroll-reveal" style="margin-top:16px; color:#fff !important;">Explorez le HF1.</h2>
         <p style="color: rgba(255,255,255,0.55); font-size: 14px; margin-top: 10px;">Cliquez et faites glisser pour pivoter le modèle</p>
       </div>
-      <div class="scroll-reveal" style="max-width:1100px; margin:40px auto 0; aspect-ratio:16/9;">
-        <iframe title="Ramo - Mur antibruit HF1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share style="width:100%; height:100%; border:0;" src="https://sketchfab.com/models/688b7fba9c7c4a49baadbbbc79679c28/embed?transparent=1&ui_theme=dark&ui_infos=0&ui_help=0&ui_inspector=0&ui_watermark_link=0&ui_stop=0"></iframe>
+      <div class="scroll-reveal" style="max-width:1100px; margin:40px auto 0; aspect-ratio:16/9; border: 1px solid rgba(220, 242, 30, 0.35); border-radius: 4px; padding: 6px; box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 20px 60px rgba(0,0,0,0.35); position: relative;">
+        <div id="sketchfabPlaceholder" style="position:absolute; inset:6px; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.25); border-radius:2px; color: rgba(255,255,255,0.4); font-size: 13px; letter-spacing: 0.05em;">
+          <span>Chargement du modèle 3D…</span>
+        </div>
+        <iframe id="sketchfabFrame" title="Ramo - Mur antibruit HF1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share style="width:100%; height:100%; border:0; border-radius: 2px; position: relative; z-index: 1;" data-src="https://sketchfab.com/models/688b7fba9c7c4a49baadbbbc79679c28/embed?autostart=1&amp;preload=1&amp;transparent=1&amp;ui_theme=dark&amp;ui_infos=0&amp;ui_help=0&amp;ui_inspector=0&amp;ui_watermark_link=0&amp;ui_stop=0"></iframe>
       </div>
+      <script>
+      (function() {
+        // Charge le modèle 3D en arrière-plan, une fois que la page principale est peinte.
+        // Priorité : 1) window.load + 400 ms, 2) requestIdleCallback si dispo, 3) scroll de l'utilisateur.
+        var frame = document.getElementById('sketchfabFrame');
+        var placeholder = document.getElementById('sketchfabPlaceholder');
+        if (!frame || frame.src) return;
+        var loaded = false;
+        function loadModel() {
+          if (loaded) return;
+          loaded = true;
+          frame.src = frame.dataset.src;
+          frame.addEventListener('load', function() {
+            if (placeholder) placeholder.style.display = 'none';
+          });
+        }
+        if (document.readyState === 'complete') {
+          setTimeout(loadModel, 400);
+        } else {
+          window.addEventListener('load', function() {
+            if (window.requestIdleCallback) {
+              window.requestIdleCallback(loadModel, { timeout: 1200 });
+            } else {
+              setTimeout(loadModel, 400);
+            }
+          });
+        }
+        // Filet de sécurité : si l'utilisateur scrolle vite vers la section, on charge tout de suite.
+        var section = frame.closest('section');
+        if (section && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+              if (e.isIntersecting) { loadModel(); io.disconnect(); }
+            });
+          }, { rootMargin: '600px 0px' });
+          io.observe(section);
+        }
+      })();
+      </script>
     </div>
   </section>
 
@@ -378,39 +419,6 @@
         <div class="ev-spec">
           <div class="ev-spec-label">Fabrication</div>
           <div class="ev-spec-value">Canada</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- USAGES -->
-  <section class="section" style="padding: 90px 0;">
-    <div class="container">
-      <div style="text-align:center; max-width:720px; margin:0 auto;">
-        <span class="section-label scroll-reveal">Applications</span>
-        <h2 class="section-title scroll-reveal" style="margin-top:16px;">Où installe-t-on le HF1&nbsp;?</h2>
-      </div>
-      <div class="ev-usages">
-        <div class="ev-usage scroll-reveal">
-          <div class="ev-usage-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-          </div>
-          <h3 class="ev-usage-title">Autoroutes et axes routiers</h3>
-          <p class="ev-usage-desc">Protection sonore des riverains le long des corridors à fort trafic.</p>
-        </div>
-        <div class="ev-usage scroll-reveal">
-          <div class="ev-usage-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <h3 class="ev-usage-title">Zones industrielles</h3>
-          <p class="ev-usage-desc">Atténuation du bruit machinerie pour quartiers résidentiels adjacents.</p>
-        </div>
-        <div class="ev-usage scroll-reveal">
-          <div class="ev-usage-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11l8-8 8 8M6 11v9h12v-9"/></svg>
-          </div>
-          <h3 class="ev-usage-title">Corridors ferroviaires</h3>
-          <p class="ev-usage-desc">Réduction du bruit de roulement et de freinage en zones urbaines.</p>
         </div>
       </div>
     </div>

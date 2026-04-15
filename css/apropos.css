@@ -2,10 +2,12 @@
     .about-hero {
       position: relative; min-height: 70vh;
       display: flex; align-items: flex-end; overflow: hidden;
+      padding-top: var(--header-height);
       padding-bottom: clamp(60px, 8vw, 100px);
+      background: #003c38;
     }
     .about-hero-bg {
-      position: absolute; inset: 0;
+      position: absolute; left: 0; right: 0; bottom: 0; top: var(--header-height);
       background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
     }
     .about-hero-bg::after {
@@ -15,7 +17,8 @@
         radial-gradient(ellipse at 30% 80%, rgba(220, 242, 30, 0.04) 0%, transparent 50%);
     }
     .about-hero-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
+      position: absolute; left: 0; right: 0; bottom: 0; top: var(--header-height);
+      width: 100%; height: calc(100% - var(--header-height));
       object-fit: cover; opacity: 0.2;
     }
     .about-hero-content {

@@ -78,18 +78,36 @@
       object-position: center 70%;
       display: block;
     }
-    /* Voile dégradé pour lisibilité du texte */
+    /* Voile dégradé pour lisibilité du texte :
+       - gradient latéral gauche (panneau sombre côté texte)
+       - léger voile vertical pour le bas/CTA */
     .ev-hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,
-        rgba(0, 30, 28, 0.50) 0%,
-        rgba(0, 30, 28, 0.25) 35%,
-        rgba(0, 30, 28, 0.45) 65%,
-        rgba(0, 30, 28, 0.78) 100%);
+      background:
+        linear-gradient(90deg,
+          rgba(0, 20, 18, 0.88) 0%,
+          rgba(0, 20, 18, 0.72) 22%,
+          rgba(0, 20, 18, 0.45) 45%,
+          rgba(0, 20, 18, 0.12) 68%,
+          rgba(0, 20, 18, 0) 100%),
+        linear-gradient(180deg,
+          rgba(0, 30, 28, 0.30) 0%,
+          rgba(0, 30, 28, 0.10) 45%,
+          rgba(0, 30, 28, 0.55) 100%);
       pointer-events: none;
       z-index: 1;
+    }
+    @media (max-width: 760px) {
+      /* Sur mobile, le texte occupe toute la largeur — voile uniforme plus sombre */
+      .ev-hero::after {
+        background:
+          linear-gradient(180deg,
+            rgba(0, 20, 18, 0.55) 0%,
+            rgba(0, 20, 18, 0.45) 40%,
+            rgba(0, 20, 18, 0.80) 100%);
+      }
     }
     .ev-hero-inner {
       position: relative;

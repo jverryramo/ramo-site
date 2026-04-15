@@ -397,14 +397,21 @@ body:not(.ev-header-hidden) .header.header--hidden {
   display: none !important;
 }
 
-/* Lien actif : vert foncé + trait sous le texte */
+/* Trait de soulignement du menu : vert foncé (lisible sur beige) */
+.ev-nav .nav-link:not(.nav-link--cta)::after {
+  background: var(--ev-green-deep, #002824) !important;
+  height: 2px !important;
+  bottom: 2px !important;
+}
+
+/* Lien actif : vert foncé + trait permanent sous le texte */
 .ev-nav .nav-link--active {
   color: var(--ev-green-deep) !important;
   font-weight: 600 !important;
 }
 .ev-nav .nav-link--active::after {
   opacity: 1 !important;
-  width: calc(100% - 4px) !important;
+  width: calc(100% - 32px) !important;
   background: var(--ev-green-deep) !important;
 }
 
@@ -430,9 +437,17 @@ body:not(.ev-header-hidden) .header.header--hidden {
 }
 .ev-nav .nav-link--cta::before { display: none !important; }
 .ev-nav .nav-link--cta::after {
-  content: '→';
-  font-size: 14px;
-  line-height: 1;
+  content: '→' !important;
+  position: static !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   margin: 0 !important;
   max-width: none !important;
@@ -863,11 +878,9 @@ body:not(.ev-header-hidden) .header.header--hidden {
 .ev-page-hero--pilebyg::before {
   background-image: url('https://ramo.eco/wp-content/uploads/2023/11/Capture-decran-le-2023-11-28-a-10.35.33-1.jpg');
 }
-.ev-page-hero--clotures::before {
-  background-image: url('https://ramo.eco/wp-content/uploads/2025/10/Cloture-Saules-scaled.jpg');
-}
+.ev-page-hero--clotures::before,
 .ev-page-hero--murs::before {
-  background-image: url('https://ramo.eco/wp-content/uploads/2022/01/P1011975.jpg');
+  background-image: none;
 }
 
 /* --- Fiche specs --- */
@@ -1496,6 +1509,14 @@ body.ev-page-leaving .ev-topbar {
   color: var(--ev-green) !important;
   opacity: 0.72;
 }
+/* Labels eyebrow sur fond vert foncé — heros + sections sombres */
+.ev-hero .section-label,
+.ev-page-hero .section-label,
+.ap-hero .section-label,
+.section--dark .section-label {
+  color: rgba(255, 255, 255, 0.75) !important;
+  opacity: 1;
+}
 /* Listes / bullet points sur fond clair */
 section:not(.section--dark) li,
 section:not(.section--dark) p {
@@ -1552,7 +1573,7 @@ section:not(.section--dark) p {
    pour garantir la lisibilité du titre et du sous-titre
    ============================================================ */
 .ev-page-hero::before {
-  background: linear-gradient(135deg, rgba(0, 30, 28, 0.55) 0%, rgba(0, 20, 18, 0.75) 100%);
+  background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
   background-size: cover;
   background-position: center;
   opacity: 1;
@@ -1570,15 +1591,11 @@ section:not(.section--dark) p {
   opacity: 1;
 }
 .ev-page-hero--clotures::before {
-  background:
-    linear-gradient(135deg, rgba(0, 30, 28, 0.65) 0%, rgba(0, 20, 18, 0.85) 100%),
-    url('https://ramo.eco/wp-content/uploads/2025/10/Cloture-Saules-scaled.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
   opacity: 1;
 }
 .ev-page-hero--murs::before {
-  background:
-    linear-gradient(135deg, rgba(0, 30, 28, 0.65) 0%, rgba(0, 20, 18, 0.85) 100%),
-    url('https://ramo.eco/wp-content/uploads/2022/01/P1011975.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
   opacity: 1;
 }
 /* Sous-titre du hero : opacité plus forte pour une meilleure lisibilité */

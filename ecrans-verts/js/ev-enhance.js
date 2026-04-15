@@ -85,5 +85,18 @@
     setProgress();
     window.addEventListener('scroll', setProgress, { passive: true });
     window.addEventListener('resize', setProgress);
+
+    /* -------- 4. FAQ accordion (one open at a time per group) -------- */
+    document.querySelectorAll('.ev-faq').forEach((group) => {
+      const items = group.querySelectorAll('details.ev-faq-item');
+      items.forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) return;
+          items.forEach((other) => {
+            if (other !== item && other.open) other.open = false;
+          });
+        });
+      });
+    });
   });
 })();
