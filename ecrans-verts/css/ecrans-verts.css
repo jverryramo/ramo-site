@@ -201,7 +201,7 @@ button.btn,
 .ev-nav .nav-link--cta { /* règles historiques sans effet */ }
 
 /* ============================================================
-   TOPBAR éditoriale — petit bandeau "Une division du Groupe Ramo"
+   TOPBAR éditoriale — petit bandeau "Une division du Ramo"
    au-dessus du header, avec bouton vers ramo.eco
    ============================================================ */
 .ev-topbar {
@@ -500,7 +500,7 @@ body:not(.ev-header-hidden) .header.header--hidden {
 }
 .ev-back-ramo a { color: var(--ev-accent-soft); }
 
-/* --- Groupe Ramo parent signature --- */
+/* --- Ramo parent signature --- */
 .ev-parent-signature {
   background: var(--ev-sand);
   padding: 70px 0;
