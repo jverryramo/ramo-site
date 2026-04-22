@@ -153,18 +153,7 @@
       margin: 0 auto 32px;
       line-height: 1.6;
     }
-    .join-cta-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--color-primary); color: var(--color-white);
-      padding: 16px 36px; border-radius: 100px;
-      font-size: 15px; font-weight: 700; text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .join-cta-btn:hover {
-      background: var(--color-accent-2);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,60,56,0.2);
-    }
+    /* .join-cta-btn : styles unifiés via .btn .btn--primary (css/style.css) */
 
     /* Bio link indicator */
     a.team-card .team-card-name::after {
