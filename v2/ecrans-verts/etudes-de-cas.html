@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Études de cas — Ramo Écrans verts | Murs antibruit et clôtures livrés</title>
+  <meta name="description" content="Projets d'infrastructure verte livrés par Ramo Écrans verts : murs antibruit HF1 et Pilebyg, clôtures en saule. Études de cas sur le terrain au Québec.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/ecrans-verts/etudes-de-cas.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Études de cas — Ramo Écrans verts">
+  <meta property="og:description" content="Projets livrés : murs antibruit, clôtures et aménagements paysagers au Québec.">
+  <meta property="og:image" content="../assets/img/P1011975.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ramo", "item": "https://ramo.eco/"},
+      {"@type": "ListItem", "position": 2, "name": "Écrans verts", "item": "https://ramo.eco/ecrans-verts/"},
+      {"@type": "ListItem", "position": 3, "name": "Études de cas", "item": "https://ramo.eco/ecrans-verts/etudes-de-cas.html"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/solutions.css">
+  <link rel="stylesheet" href="css/ecrans-verts.css">
+  <style>
+    .ev-page-hero {
+      position: relative;
+      padding: 140px 0 70px;
+      background: linear-gradient(135deg, #003c38 0%, #002824 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+    .ev-page-hero > .container { position: relative; z-index: 2; }
+    .ev-breadcrumb {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 28px;
+    }
+    .ev-breadcrumb a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .ev-breadcrumb a:hover { color: #dcf21e; }
+    .ev-breadcrumb span { margin: 0 8px; opacity: 0.4; }
+    .ev-page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 6.5vw, 88px);
+      font-weight: 500;
+      line-height: 1;
+      margin: 0 0 20px;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .ev-page-hero-sub {
+      font-size: clamp(17px, 1.9vw, 20px);
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 720px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Case grid */
+    .ev-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .ev-case-card {
+      display: block;
+      background: #fff;
+      border: 1px solid #e5e7e6;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.4s var(--ease-out);
+    }
+    .ev-case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0, 60, 56, 0.1);
+      border-color: #003c38;
+    }
+    .ev-case-img {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #eef2f1;
+    }
+    .ev-case-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .ev-case-card:hover .ev-case-img img { transform: scale(1.05); }
+    .ev-case-category {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0, 60, 56, 0.92);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+    .ev-case-body {
+      padding: 28px 26px 30px;
+    }
+    .ev-case-location {
+      font-size: 12px;
+      color: #6b7976;
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .ev-case-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #003c38;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+    .ev-case-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+    }
+    .ev-case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #003c38;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .ev-case-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+    @media (max-width: 640px) {
+      .ev-case-grid { grid-template-columns: 1fr; }
+    }
+
+    .ev-nav .nav-link { font-size: 14px; }
+    .ev-back-ramo {
+      background: #001a18;
+      padding: 22px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .ev-back-ramo a {
+      color: #dcf21e;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Topbar éditoriale Ramo Écrans verts -->
+  <div class="ev-topbar" role="complementary" aria-label="Bandeau parent">
+    <span class="ev-topbar-left"><strong>Ramo Écrans verts</strong> — Une division de Ramo</span>
+    <a href="../index.html">Visiter ramo.eco
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Ramo Écrans verts - Accueil">
+        <img src="assets/logo-ramo-ecrans-verts-vert.png" alt="Ramo Écrans verts" class="logo-img" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav ev-nav" id="nav" aria-label="Navigation Ramo Écrans verts">
+        <a href="murs-antibruit.html" class="nav-link">Murs antibruit</a>
+        <a href="clotures.html" class="nav-link">Clôtures</a>
+        <a href="etudes-de-cas.html" class="nav-link nav-link--active">Études de cas</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Parlez-nous de votre projet</a>
+        <div class="nav-lang">
+          <a href="../index.html" class="nav-lang-link" title="Retour au site Ramo">← Ramo.eco</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="murs-antibruit.html" class="mobile-nav-link">Murs antibruit</a>
+      <a href="clotures.html" class="mobile-nav-link">Clôtures</a>
+      <a href="etudes-de-cas.html" class="mobile-nav-link">Études de cas</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="contact.html" class="mobile-nav-link">Parlez-nous de votre projet</a>
+      <a href="../index.html" class="mobile-nav-link" style="opacity:0.6;">← Retour à Ramo.eco</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+  <!-- Hero -->
+  <section class="ev-page-hero">
+    <div class="container">
+      <h1>Études <em>de cas</em>.</h1>
+      <p class="ev-page-hero-sub">Projets livrés sur le terrain — murs antibruit HF1 et Pilebyg, clôtures en saule. De la conception à l'installation, notre équipe vous accompagne dans votre projet partout en Amérique du Nord.</p>
+    </div>
+  </section>
+
+  <!-- Filters + grid -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="ev-filters" role="tablist" aria-label="Filtrer les études de cas">
+        <button class="ev-filter-btn active" data-filter="all">Tous les projets</button>
+        <button class="ev-filter-btn" data-filter="routier">Routier</button>
+        <button class="ev-filter-btn" data-filter="ferroviaire">Ferroviaire</button>
+        <button class="ev-filter-btn" data-filter="sportif">Sportif</button>
+        <button class="ev-filter-btn" data-filter="generatrice">Génératrices</button>
+        <button class="ev-filter-btn" data-filter="industriel">Industriel</button>
+        <button class="ev-filter-btn" data-filter="clotures">Clôtures</button>
+      </div>
+
+      <div class="ev-case-grid">
+
+        <!-- Murs antibruit — par catégorie de bruit -->
+        <a href="../etudes-de-cas/boucherville.html" class="ev-case-card" data-category="routier">
+          <div class="ev-case-img">
+            <img src="../assets/mur-antibruit-pilebyg-boucherville-boulevard-industriel-aerien.jpg" alt="Mur antibruit Pilebyg à Boucherville — vue aérienne du boulevard Industriel, Québec" loading="lazy">
+            <span class="ev-case-category">Bruit routier</span>
+          </div>
+          <div class="ev-case-body">
+            <p class="ev-case-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Boucherville, QC
+            </p>
+            <h3 class="ev-case-title">Boulevard Industriel — secteur résidentiel</h3>
+            <p class="ev-case-desc">Mur Pilebyg de 750 m × 3 m — réduction sonore mesurée de 11 dBA (69 → 58 dBA).</p>
+            <span class="ev-case-link">Lire le cas →</span>
+          </div>
+        </a>
+
+        <!-- Sportif -->
+        <a href="../etudes-de-cas/lavaltrie.html" class="ev-case-card" data-category="sportif">
+          <div class="ev-case-img">
+            <img src="../assets/mur-antibruit-pilebyg-lavaltrie-parc-riverains-basketball-quebec.jpg" alt="Mur antibruit Pilebyg au Parc des Riverains de Lavaltrie — terrain de basketball" loading="lazy">
+            <span class="ev-case-category">Bruit sportif</span>
+          </div>
+          <div class="ev-case-body">
+            <p class="ev-case-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lavaltrie, QC
+            </p>
+            <h3 class="ev-case-title">Parc des Riverains — terrains de basketball</h3>
+            <p class="ev-case-desc">Mur antibruit végétal de 35 m × ≥ 3 m — réduction simulée de 5 à 15 dBA (étude Vinacoustik).</p>
+            <span class="ev-case-link">Lire le cas →</span>
+          </div>
+        </a>
+
+        <!-- Clôtures -->
+        <a href="../etudes-de-cas/saint-constant.html" class="ev-case-card" data-category="clotures">
+          <div class="ev-case-img">
+            <img src="../assets/cloture-saule-tresse-saint-constant-piste-cyclable-quebec.jpg" alt="Clôture en saule tressé le long d'une piste cyclable à Saint-Constant, Québec" loading="lazy">
+            <span class="ev-case-category">Clôtures</span>
+          </div>
+          <div class="ev-case-body">
+            <p class="ev-case-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Saint-Constant, QC
+            </p>
+            <h3 class="ev-case-title">Secteur résidentiel — piste cyclable</h3>
+            <p class="ev-case-desc">~800 m de clôtures en saule tressé entre résidences et piste cyclable.</p>
+            <span class="ev-case-link">Lire le cas →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section section--light" style="background: var(--color-bg-light); text-align: center;">
+    <div class="container">
+      <span class="section-label scroll-reveal">Votre projet</span>
+      <h2 class="section-title scroll-reveal" style="max-width: 640px; margin: 0 auto 20px;">Prêt à transformer votre site ?</h2>
+      <p class="section-subtitle scroll-reveal" style="max-width: 560px; margin: 0 auto 32px;">Soumettez-nous votre projet et notre équipe évaluera la solution la plus adaptée — murs antibruit, clôtures.</p>
+      <div class="scroll-reveal" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 8px;">
+          Parlez-nous de votre projet
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+14505880013" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          1 450 588-0013
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" aria-label="Ramo Écrans verts - Accueil">
+            <img src="assets/logo-ramo-ecrans-verts-blanc.png" alt="Ramo Écrans verts" class="footer-logo">
+          </a>
+          <p class="footer-tagline">Une division de <strong>Ramo</strong>, qui développe et déploie des solutions environnementales basées sur la nature depuis 2006.</p>
+          <a href="../index.html" class="footer-parent-link">
+            Découvrir Ramo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Produits</h4>
+          <a href="murs-antibruit.html" class="footer-col-link">Murs antibruit</a>
+          <a href="clotures.html" class="footer-col-link">Clôtures</a>
+          <a href="etudes-de-cas.html" class="footer-col-link">Études de cas</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Entreprise</h4>
+          <a href="apropos.html" class="footer-col-link">À propos</a>
+          <a href="../equipe.html" class="footer-col-link">Équipe</a>
+          <a href="contact.html" class="footer-col-link">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Coordonnées</h4>
+          <p class="footer-col-text">517, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+          <a href="tel:+14505880013" class="footer-col-link">1 450 588-0013</a>
+          <a href="tel:+18445880013" class="footer-col-link">1 844 588-0013</a>
+          <a href="mailto:info@ramo.eco" class="footer-col-link">info@ramo.eco</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ramo Écrans verts — Une division de <a href="../index.html">Ramo</a>. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <script src="../js/main.js"></script>
+  <script src="js/ev-enhance.js" defer></script>
+  <script>
+    // Case studies filter
+    (function() {
+      const buttons = document.querySelectorAll('.ev-filter-btn');
+      const cards = document.querySelectorAll('.ev-case-card');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

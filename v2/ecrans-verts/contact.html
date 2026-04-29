@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parlez-nous de votre projet — Ramo Écrans verts | Murs antibruit et clôtures</title>
+  <meta name="description" content="Parlez-nous de votre projet pour murs antibruit HF1 et Pilebyg, clôtures en saule. Notre équipe technique fournit plans, spécifications et attestations de conformité.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/ecrans-verts/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Parlez-nous de votre projet — Ramo Écrans verts">
+  <meta property="og:description" content="Contactez notre équipe technique pour un devis murs antibruit ou clôtures.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ramo", "item": "https://ramo.eco/"},
+      {"@type": "ListItem", "position": 2, "name": "Écrans verts", "item": "https://ramo.eco/ecrans-verts/"},
+      {"@type": "ListItem", "position": 3, "name": "Contact", "item": "https://ramo.eco/ecrans-verts/contact.html"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/solutions.css">
+  <link rel="stylesheet" href="css/ecrans-verts.css">
+  <style>
+    .ev-page-hero {
+      position: relative;
+      padding: 140px 0 70px;
+      background: linear-gradient(135deg, #003c38 0%, #002824 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+    .ev-page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(220, 242, 30, 0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 70%, rgba(220, 242, 30, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .ev-page-hero > .container { position: relative; z-index: 2; }
+    .ev-breadcrumb {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 28px;
+    }
+    .ev-breadcrumb a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .ev-breadcrumb a:hover { color: #dcf21e; }
+    .ev-breadcrumb span { margin: 0 8px; opacity: 0.4; }
+    .ev-page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 6.5vw, 88px);
+      font-weight: 500;
+      line-height: 1;
+      margin: 0 0 20px;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .ev-page-hero-sub {
+      font-size: clamp(17px, 1.9vw, 20px);
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 720px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .ev-contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .ev-contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .ev-form {
+      background: #fff;
+      padding: 44px 44px 48px;
+      border-radius: 10px;
+      border: 1px solid #e5e7e6;
+      box-shadow: 0 6px 28px rgba(0, 60, 56, 0.06);
+    }
+    .ev-form h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #003c38;
+      margin: 0 0 8px;
+    }
+    .ev-form-intro {
+      font-size: 14.5px;
+      color: #666;
+      margin: 0 0 28px;
+      line-height: 1.6;
+    }
+    .ev-form-row {
+      margin-bottom: 20px;
+    }
+    .ev-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #003c38;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .ev-form input,
+    .ev-form select,
+    .ev-form textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid #d4dedc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: #fafcfb;
+      transition: border-color 0.2s;
+    }
+    .ev-form input:focus,
+    .ev-form select:focus,
+    .ev-form textarea:focus {
+      outline: none;
+      border-color: #003c38;
+      background: #fff;
+    }
+    .ev-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .ev-form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .ev-form { padding: 32px 26px; }
+      .ev-form-row-2 { grid-template-columns: 1fr; }
+    }
+
+    .ev-infos h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #003c38;
+      margin: 0 0 24px;
+    }
+    .ev-info-block {
+      margin-bottom: 28px;
+    }
+    .ev-info-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7976;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .ev-info-value {
+      font-size: 16px;
+      color: #003c38;
+      line-height: 1.55;
+    }
+    .ev-info-value a {
+      color: #003c38;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .ev-info-value a:hover { text-decoration: underline; }
+
+    .ev-nav .nav-link { font-size: 14px; }
+    .ev-back-ramo {
+      background: #001a18;
+      padding: 22px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .ev-back-ramo a {
+      color: #dcf21e;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Topbar éditoriale Ramo Écrans verts -->
+  <div class="ev-topbar" role="complementary" aria-label="Bandeau parent">
+    <span class="ev-topbar-left"><strong>Ramo Écrans verts</strong> — Une division de Ramo</span>
+    <a href="../index.html">Visiter ramo.eco
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Ramo Écrans verts - Accueil">
+        <img src="assets/logo-ramo-ecrans-verts-vert.png" alt="Ramo Écrans verts" class="logo-img" style="height: 40px; width: auto;">
+      </a>
+      <nav class="nav ev-nav" id="nav" aria-label="Navigation Ramo Écrans verts">
+        <a href="murs-antibruit.html" class="nav-link">Murs antibruit</a>
+        <a href="clotures.html" class="nav-link">Clôtures</a>
+        <a href="etudes-de-cas.html" class="nav-link">Études de cas</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Parlez-nous de votre projet</a>
+        <div class="nav-lang">
+          <a href="../index.html" class="nav-lang-link" title="Retour au site Ramo">← Ramo.eco</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="murs-antibruit.html" class="mobile-nav-link">Murs antibruit</a>
+      <a href="clotures.html" class="mobile-nav-link">Clôtures</a>
+      <a href="etudes-de-cas.html" class="mobile-nav-link">Études de cas</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="contact.html" class="mobile-nav-link">Parlez-nous de votre projet</a>
+      <a href="../index.html" class="mobile-nav-link" style="opacity:0.6;">← Retour à Ramo.eco</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+  <!-- Hero -->
+  <section class="ev-page-hero">
+    <div class="container">
+      <h1>Parlez-nous de votre projet.</h1>
+      <p class="ev-page-hero-sub">Notre équipe technique évalue votre projet et fournit plans d'implantation, fiches techniques et attestations de conformité pour intégration à vos dossiers.</p>
+    </div>
+  </section>
+
+  <!-- Contact content -->
+  <section class="section" style="padding: 80px 0;">
+    <div class="container">
+      <div class="ev-contact-grid">
+
+        <!-- Form -->
+        <form class="ev-form" action="mailto:info@ramo.eco" method="post" enctype="text/plain">
+          <h2>Décrivez votre projet</h2>
+          <p class="ev-form-intro">Plus vous nous en dites, plus vite nous revenons vers vous avec une proposition précise.</p>
+
+          <div class="ev-form-row-2">
+            <div class="ev-form-row">
+              <label for="nom">Nom complet *</label>
+              <input type="text" id="nom" name="Nom" required>
+            </div>
+            <div class="ev-form-row">
+              <label for="organisation">Organisation *</label>
+              <input type="text" id="organisation" name="Organisation" required>
+            </div>
+          </div>
+
+          <div class="ev-form-row-2">
+            <div class="ev-form-row">
+              <label for="email">Courriel *</label>
+              <input type="email" id="email" name="Courriel" required>
+            </div>
+            <div class="ev-form-row">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" name="Téléphone">
+            </div>
+          </div>
+
+          <div class="ev-form-row">
+            <label for="role">Votre rôle</label>
+            <select id="role" name="Rôle">
+              <option value="">— Sélectionner —</option>
+              <option>Ville / municipalité</option>
+              <option>Promoteur immobilier</option>
+              <option>Firme d'ingénierie</option>
+              <option>Architecte paysagiste</option>
+              <option>Acousticien</option>
+              <option>Architecte</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="ev-form-row">
+            <label for="type">Type de projet *</label>
+            <select id="type" name="Type de projet" required>
+              <option value="">— Sélectionner —</option>
+              <option>Mur antibruit HF1</option>
+              <option>Mur antibruit Pilebyg</option>
+              <option>Mur antibruit — indifférent</option>
+              <option>Clôture en saule</option>
+              <option>Combinaison mur + clôture</option>
+              <option>À déterminer</option>
+            </select>
+          </div>
+
+          <div class="ev-form-row-2">
+            <div class="ev-form-row">
+              <label for="longueur">Longueur estimée (m)</label>
+              <input type="text" id="longueur" name="Longueur" placeholder="ex. 250 m">
+            </div>
+            <div class="ev-form-row">
+              <label for="localisation">Localisation</label>
+              <input type="text" id="localisation" name="Localisation" placeholder="Ville, QC">
+            </div>
+          </div>
+
+          <div class="ev-form-row">
+            <label for="message">Détails du projet *</label>
+            <textarea id="message" name="Message" required placeholder="Contexte, contraintes acoustiques ou visuelles, échéancier, source de bruit, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width: 100%; padding: 16px; font-size: 15px;">
+            Envoyer la demande
+          </button>
+          <p style="font-size: 12px; color: #888; margin-top: 14px; text-align: center;">Vos informations ne sont utilisées que pour le traitement de votre demande.</p>
+        </form>
+
+        <!-- Infos -->
+        <div class="ev-infos">
+          <h2>Nous joindre directement</h2>
+
+          <div class="ev-info-block">
+            <div class="ev-info-label">Téléphone</div>
+            <div class="ev-info-value">
+              <a href="tel:+14505880013">1 450 588-0013</a><br>
+              <a href="tel:+18445880013">1 844 588-0013</a> (sans frais)
+            </div>
+          </div>
+
+          <div class="ev-info-block">
+            <div class="ev-info-label">Courriel</div>
+            <div class="ev-info-value">
+              <a href="mailto:info@ramo.eco">info@ramo.eco</a>
+            </div>
+          </div>
+
+          <div class="ev-info-block">
+            <div class="ev-info-label">Adresse</div>
+            <div class="ev-info-value">
+              517, Rang du Ruisseau des Anges Sud<br>
+              Saint-Roch-de-l'Achigan, QC<br>
+              J0K 3H0
+            </div>
+          </div>
+
+          <div class="ev-info-block">
+            <div class="ev-info-label">Équipe</div>
+            <div class="ev-info-value">
+              <a href="../equipe.html">Rencontrer l'équipe Ramo →</a>
+            </div>
+          </div>
+
+          <div class="ev-info-block">
+            <div class="ev-info-label">Heures d'ouverture</div>
+            <div class="ev-info-value">
+              Lundi au vendredi<br>
+              8 h 00 – 17 h 00
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" aria-label="Ramo Écrans verts - Accueil">
+            <img src="assets/logo-ramo-ecrans-verts-blanc.png" alt="Ramo Écrans verts" class="footer-logo">
+          </a>
+          <p class="footer-tagline">Une division de <strong>Ramo</strong>, qui développe et déploie des solutions environnementales basées sur la nature depuis 2006.</p>
+          <a href="../index.html" class="footer-parent-link">
+            Découvrir Ramo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Produits</h4>
+          <a href="murs-antibruit.html" class="footer-col-link">Murs antibruit</a>
+          <a href="clotures.html" class="footer-col-link">Clôtures</a>
+          <a href="etudes-de-cas.html" class="footer-col-link">Études de cas</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Entreprise</h4>
+          <a href="apropos.html" class="footer-col-link">À propos</a>
+          <a href="../equipe.html" class="footer-col-link">Équipe</a>
+          <a href="contact.html" class="footer-col-link">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Coordonnées</h4>
+          <p class="footer-col-text">517, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+          <a href="tel:+14505880013" class="footer-col-link">1 450 588-0013</a>
+          <a href="tel:+18445880013" class="footer-col-link">1 844 588-0013</a>
+          <a href="mailto:info@ramo.eco" class="footer-col-link">info@ramo.eco</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ramo Écrans verts — Une division de <a href="../index.html">Ramo</a>. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <script src="../js/main.js"></script>
+  <script src="js/ev-enhance.js" defer></script>
+</body>
+</html>

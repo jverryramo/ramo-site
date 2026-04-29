@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les saules — Ramo | L'arbre aux capacités uniques pour l'environnement</title>
+  <meta name="description" content="Découvrez les propriétés scientifiques des saules à croissance rapide : évapotranspiration, séquestration de carbone, biodiversité et biomasse. Plus de 400 espèces au service de l'environnement.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/saules/">
+    <link rel="alternate" hreflang="fr-ca" href="https://ramo.eco/saules/">
+    <link rel="alternate" hreflang="x-default" href="https://ramo.eco/saules/">
+  <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Saint-Roch-de-l'Achigan, Québec">
+  <meta name="geo.position" content="45.8481;-73.6695">
+  <meta name="ICBM" content="45.8481, -73.6695">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Les saules — L'arbre aux capacités uniques | Ramo">
+  <meta property="og:description" content="Les propriétés scientifiques des saules à croissance rapide au service de l'environnement.">
+  <meta property="og:image" content="assets/img/Saules_4-scaled.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Les saules — Ramo">
+  <meta name="twitter:description" content="Le saule, au cœur de toutes les solutions Ramo.">
+  <meta name="twitter:image" content="assets/img/Saules_4-scaled.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Les saules — L'arbre aux capacités uniques pour l'environnement",
+    "description": "Propriétés scientifiques des saules à croissance rapide : évapotranspiration, séquestration de carbone, biodiversité et production de biomasse.",
+    "image": "assets/img/Saules_4-scaled.jpg",
+    "author": { "@type": "Organization", "name": "Ramo" },
+    "publisher": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" },
+    "datePublished": "2025-06-15",
+    "dateModified": "2026-03-27"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quelle est la capacité d'évapotranspiration d'un saule ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Selon la revue de littérature de Fredette et al. (2019) compilant 57 études dans 16 pays, le taux moyen d'évapotranspiration du genre Salix est de 4,6 mm/jour, avec des pics pouvant atteindre 22,7 mm/jour. À l'échelle d'un hectare, cela représente environ 46 m³ d'eau par jour, avec des pics potentiels dépassant 200 m³/ha/jour."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien d'espèces de saules existe-t-il ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le genre Salix compte entre 300 et 520 espèces selon les classifications, avec environ 400 à 450 espèces généralement reconnues. La Chine possède la plus grande diversité avec près de 200 espèces natives, tandis que l'Amérique du Nord en compte entre 97 et 113."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la vitesse de croissance d'un saule ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les saules hybrides à croissance rapide peuvent atteindre jusqu'à 3 à 3,5 mètres par an dans des conditions optimales, ce qui en fait l'un des genres d'arbres à la croissance la plus rapide. Un saule peut atteindre 9 à 15 mètres en 10 à 15 ans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de CO₂ un saule peut-il séquestrer ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Selon des études en Italie méridionale, les plantations de saules en courte rotation peuvent fixer environ 24 900 kg de CO₂ par hectare par an. Les sols sous les plantations accumulent également entre 150 et 450 kg de carbone supplémentaire par hectare par an."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/solutions.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://ramo.eco/"},{"@type":"ListItem","position":2,"name":"Les saules","item":"https://ramo.eco/saules/"}]}</script>
+</head>
+<body>
+
+  <!-- Skip to content (a11y) -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <div class="nav-item"><a href="index.html#solutions" class="nav-link">Solutions</a><div class="mega-menu mega-menu--solutions"><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg><span>Gestion des eaux</span></div><a href="solutions/evaplant.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Eaux impactées</div></div></a><a href="solutions/evacap.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Eaux d'infiltration</div></div></a></div><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M12 10c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 14c3 0 5-2 5-5-3 0-5 2-5 5z"/></svg><span>Végétalisation</span></div><a href="solutions/restauration.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation</div></div></a><a href="solutions/haie-saules.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Barrière végétale</div></div></a><a href="solutions/fourniture.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div></div></a></div><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span>Restauration des sols</span></div><a href="solutions/substrat-vegetalisation.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Substrat de végétalisation</div></div></a><a href="solutions/mrf.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Gestion des MRF</div></div></a></div><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg><span>Éco-produits</span></div><a href="ecrans-verts/index.html" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Murs antibruit &amp; clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Paillis BRF</div></div></a></div></div></div>
+        <div class="nav-item"><a href="index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><div class="mega-menu-header">Nos solutions selon votre secteur</div><a href="secteurs/enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="14" height="8" rx="1"/><path d="M15 13V9a2 2 0 012-2h2l3 4v6a1 1 0 01-1 1h-1"/><circle cx="5.5" cy="21" r="2"/><circle cx="18.5" cy="21" r="2"/><path d="M8 21h7"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div></div></a><a href="secteurs/municipal.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div></div></a><a href="secteurs/minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M10 9L6 3M14 9l4-6M12 22l-2-13M12 22l2-13"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div></div></a><a href="secteurs/boues.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Générateurs de boues</div></div></a><a href="secteurs/immobilier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V18h6v4"/><path d="M8 6h2M8 10h2M8 14h2M14 6h2M14 10h2M14 14h2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div></div></a><a href="secteurs/industriel.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V10l6 4V10l6 4V4l8 16z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Industriel</div></div></a></div></div>
+        <div class="nav-item"><a href="apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:480px; grid-template-columns:1fr 1fr; gap:4px 6px;"><a href="apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Qui sommes-nous</div><div class="mega-menu-desc">Histoire, mission, équipe</div></div></a><a href="saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de nos solutions</div></div></a><a href="carrieres.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a><a href="nouvelles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Actualités</div><div class="mega-menu-desc">Nouvelles et communiqués</div></div></a></div></div>
+        <a href="contact.html" class="nav-link nav-link--cta">Nous joindre</a>
+        <div class="nav-lang">
+          <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+          <span class="nav-lang-sep">|</span>
+          <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="index.html#solutions" class="mobile-nav-link">Solutions</a>
+      <a href="index.html#secteurs" class="mobile-nav-link">Secteurs</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="saules.html" class="mobile-nav-link">Les saules</a>
+            <a href="carrieres.html" class="mobile-nav-link">Carrières</a>
+      <a href="contact.html" class="mobile-nav-link">Nous joindre</a>
+      <div class="mobile-nav-lang">
+        <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+        <span class="nav-lang-sep">|</span>
+        <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main">
+
+  <!-- Hero -->
+  <section class="sol-hero">
+
+    <div class="sol-hero-content">
+<h1 class="sol-title">Le saule — l'arbre aux capacités uniques</h1>
+      <p class="sol-subtitle">Au cœur de toutes nos solutions. De la pépinière au chantier, Ramo exploite ce que le saule fait de mieux : pousser vite, boire beaucoup, s'adapter partout.</p>
+      <div class="sol-tags">
+        <span class="tag">Courte rotation</span>
+        <span class="tag">Évapotranspiration</span>
+        <span class="tag">Séquestration carbone</span>
+        <span class="tag">Biodiversité</span>
+        <span class="tag">Saule sur mesure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-body">
+
+        <div class="sol-stats scroll-reveal">
+          <div class="sol-stat">
+            <div class="sol-stat-value">60+</div>
+            <div class="sol-stat-label">Variétés cultivées chez Ramo</div>
+          </div>
+          <div class="sol-stat">
+            <div class="sol-stat-value">8 m</div>
+            <div class="sol-stat-label">en 3 ans de croissance</div>
+          </div>
+          <div class="sol-stat">
+            <div class="sol-stat-value">4,6 mm/j</div>
+            <div class="sol-stat-label">Taux moyen d'évapotranspiration</div>
+          </div>
+        </div>
+
+        <!-- Intro -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Un arbre hors du commun</h2>
+          <p class="sol-text scroll-reveal">Le saule est l'allié parfait des solutions basées sur la nature. Croissance fulgurante, soif d'eau hors du commun, racines colonisatrices, biomasse valorisable, pollinisateur précoce : aucune autre essence ne combine autant d'atouts environnementaux dans un seul arbre. C'est pour ça qu'il est au cœur de <strong>toutes les solutions que nous développons chez Ramo</strong> — des plantations d'évapotranspiration Evaplant® aux écrans verts, en passant par le paillis BRF et les haies brise-vent.</p>
+          <p class="sol-text scroll-reveal">Depuis 2006, nous avons fait du saule un véritable outil industriel. Notre pépinière de Saint-Roch-de-l'Achigan — la plus grande en Amérique du Nord — produit plus de <strong>60 variétés</strong> sélectionnées pour leurs performances en traitement des eaux, en revégétalisation, en production de biomasse ou en captation du bruit. Chaque projet reçoit le bon saule, pour le bon contexte.</p>
+        </div>
+
+        <!-- Ce que Ramo met de l'avant -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Ce que Ramo met de l'avant</h2>
+          <p class="sol-text scroll-reveal">Six propriétés qui expliquent pourquoi le saule est devenu, chez Ramo, bien plus qu'un arbre : un outil de génie végétal déployé partout en Amérique du Nord.</p>
+
+          <div class="ramo-highlights scroll-reveal" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;">
+
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(124, 198, 141, 0.15); border-radius: 16px; padding: 28px;">
+              <div style="color: var(--color-accent-3); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">01 — Culture en courte rotation</div>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-white); margin-bottom: 10px;">Tous les 3 ans, sans replanter</h3>
+              <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.6; margin: 0;">Nos plantations sont établies en implantation dense et récoltées en rotation sur un cycle de trois ans. Le saule repousse de lui-même à partir de la souche — une plantation peut produire pendant <strong>20 à 30 ans</strong> sans nécessiter un nouveau plant.</p>
+            </div>
+
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(124, 198, 141, 0.15); border-radius: 16px; padding: 28px;">
+              <div style="color: var(--color-accent-3); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">02 — Croissance & captation rapides</div>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-white); margin-bottom: 10px;">Jusqu'à 8 m en 3 ans — captation dès le jour 1</h3>
+              <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.6; margin: 0;">Là où la plupart des espèces mettent des années à commencer à fixer du carbone de manière significative, <strong>le saule capture du CO₂ dès sa première journée de croissance</strong>. Résultat : un impact environnemental mesurable dès la saison qui suit l'implantation.</p>
+            </div>
+
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(124, 198, 141, 0.15); border-radius: 16px; padding: 28px;">
+              <div style="color: var(--color-accent-3); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">03 — Transpiration exceptionnelle</div>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-white); margin-bottom: 10px;">Un « défaut » qu'on a transformé en atout</h3>
+              <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.6; margin: 0;">Le saule gère mal ses pertes en eau — une mauvaise nouvelle en horticulture, une excellente pour nous. Sa capacité d'évapotranspiration lui permet de <strong>réduire des volumes d'eaux considérables</strong>, ce qui en fait le moteur biologique de nos systèmes Evaplant® et Evacap™.</p>
+            </div>
+
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(124, 198, 141, 0.15); border-radius: 16px; padding: 28px;">
+              <div style="color: var(--color-accent-3); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">04 — Saule sur mesure</div>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-white); margin-bottom: 10px;">60+ variétés pour autant de contextes</h3>
+              <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.6; margin: 0;">Ramo est le <strong>principal producteur de saules en Amérique du Nord</strong>. Cette diversité génétique nous permet d'adapter la variété au climat, au type de sol et à l'objectif — traitement des eaux, captation du bruit, stabilisation de berge, ou biomasse à haut rendement.</p>
+            </div>
+
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(124, 198, 141, 0.15); border-radius: 16px; padding: 28px;">
+              <div style="color: var(--color-accent-3); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">05 — Savoir-faire</div>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-white); margin-bottom: 10px;">20 ans de terrain, 2 000+ hectares gérés</h3>
+              <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.6; margin: 0;">De la planteuse mécanique à la récolteuse en courte rotation, nous avons bâti une <strong>flotte de machineries spécialisées</strong> et une équipe qualifiée qui couvre tout le cycle de vie d'une plantation. Pas de sous-traitance — tout est fait par Ramo.</p>
+            </div>
+
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(124, 198, 141, 0.15); border-radius: 16px; padding: 28px;">
+              <div style="color: var(--color-accent-3); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">06 — Biodiversité</div>
+              <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-white); margin-bottom: 10px;">Premiers pollinisateurs du printemps</h3>
+              <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.6; margin: 0;">Nos plantations servent d'habitat à une faune diversifiée et, parce que le saule fleurit très tôt, il fournit <strong>pollen et nectar aux abeilles quand aucune autre ressource n'est disponible</strong>. Selon le projet, nous intégrons d'autres essences pour bâtir un écosystème complet.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <div class="sol-image-break scroll-reveal">
+    <img src="assets/saules-ramo-plantation-courte-rotation-drone-aerien-quebec.jpg" alt="Plantation de saules Ramo en courte rotation — vue drone aérienne au Québec" loading="lazy">
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="sol-body">
+
+        <!-- Évapotranspiration -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Évapotranspiration : une pompe biologique naturelle</h2>
+          <p class="sol-text scroll-reveal">La capacité d'évapotranspiration des saules est au cœur de leur utilité environnementale. Une revue de littérature majeure publiée dans le <em>Journal of Environmental Management</em> (Fredette et al., 2019), compilant 57 études menées dans 16 pays et portant sur 19 espèces de saules, a établi un taux moyen d'évapotranspiration de <strong>4,6 ± 4,2 mm/jour</strong>, avec des valeurs maximales atteignant <strong>22,7 mm/jour</strong> pour le cultivar <em>Salix miyabeana</em> SX67 en marais filtrant.</p>
+          <p class="sol-text scroll-reveal">À l'échelle d'un hectare de plantation, cette évapotranspiration équivaut à environ <strong>46 m³ d'eau par jour</strong>. En conditions optimales, cette capacité peut dépasser <strong>200 m³/ha/jour</strong>. Les facteurs déterminants sont l'approvisionnement en eau, la fertilisation et les conditions de croissance — davantage que l'espèce elle-même. C'est exactement ce principe que nous exploitons dans <a href="solutions/evaplant.html" class="solution-link">Evaplant®</a> et <a href="solutions/evacap.html" class="solution-link">Evacap™</a>, nos technologies de traitement des eaux usées et d'infiltration par phytotechnologie.</p>
+        </div>
+
+        <div class="sol-feature scroll-reveal">
+          <div class="sol-feature-number" style="font-size: clamp(56px, 8vw, 96px);">4,6</div>
+          <div class="sol-feature-content">
+            <h3>mm/jour en moyenne</h3>
+            <p>Taux d'évapotranspiration moyen du genre Salix, selon la méta-analyse de Fredette et al. (2019) portant sur 57 études et 19 espèces. Cela équivaut à environ 46 m³ par hectare par jour.</p>
+          </div>
+        </div>
+
+        <!-- Croissance -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Une croissance parmi les plus rapides du règne végétal</h2>
+          <p class="sol-text scroll-reveal">Les saules hybrides à croissance rapide figurent parmi les arbres les plus vigoureux au monde, avec des taux de croissance pouvant atteindre <strong>3 à 3,5 mètres par an</strong> en conditions optimales. Un saule sain peut atteindre 9 à 15 mètres (30 à 50 pieds) en seulement 10 à 15 ans. Cette croissance ralentit après la première décennie, lorsque l'énergie se redistribue de l'expansion verticale vers l'expansion latérale.</p>
+          <p class="sol-text scroll-reveal">La disponibilité en eau est le facteur le plus déterminant : les saules en sol humide surpassent ceux en sol sec d'un facteur 2 à 3. C'est précisément cette « soif » qui fait des saules des alliés naturels pour la gestion des eaux usées et excédentaires.</p>
+        </div>
+
+        <!-- Carbone -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Séquestration du carbone</h2>
+          <p class="sol-text scroll-reveal">Les plantations de saules en courte rotation constituent de véritables puits de carbone. Des essais en Italie méridionale ont démontré une fixation d'environ <strong>24 900 kg de CO₂ par hectare par an</strong> dans la biomasse. Une plantation de 12 ans en Pologne méridionale a mesuré une séquestration totale de <strong>13,5 tonnes de carbone par hectare par an</strong>, incluant biomasse aérienne, racines grossières et racines fines.</p>
+          <p class="sol-text scroll-reveal">Le carbone souterrain est une composante critique et souvent sous-estimée. Les sols sous plantations de saules accumulent entre <strong>150 et 450 kg de carbone supplémentaire par hectare par an</strong>. En Suède, des plantations commerciales sur terres arables ont montré une séquestration moyenne de 3,5 tonnes de carbone par hectare par an dans la biomasse ligneuse, en plus de 0,4 tonne dans les sols.</p>
+        </div>
+
+        <div class="sol-feature scroll-reveal">
+          <div class="sol-feature-number" style="font-size: clamp(56px, 8vw, 96px);">24 900</div>
+          <div class="sol-feature-content">
+            <h3>kg CO₂/ha/an</h3>
+            <p>Fixation de carbone mesurée dans la biomasse des plantations de saules en courte rotation, selon les essais de terrain en conditions méditerranéennes (MDPI Applied Sciences, 2020).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <div class="sol-image-break scroll-reveal">
+    <img src="assets/saules-ramo-plantation-2-ans-croissance-canopee-quebec.jpg" alt="Plantation de saules Ramo après 2 ans de croissance — canopée et densité des tiges, Québec" loading="lazy">
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="sol-body">
+
+        <!-- Système racinaire -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Un système racinaire puissant</h2>
+          <p class="sol-text scroll-reveal">Les racines des saules forment des réseaux denses et superficiels, typiquement à <strong>0,5 à 0,9 mètre</strong> de profondeur, pouvant descendre jusqu'à 3 à 4,5 mètres dans certaines conditions. L'extension horizontale peut atteindre <strong>30 mètres</strong> depuis le tronc — soit 3 à 4 fois la hauteur de l'arbre. Des études en Nouvelle-Zélande ont montré qu'après seulement 9 mois de croissance, les racines de certains cultivars atteignaient déjà 11 mètres d'extension.</p>
+          <p class="sol-text scroll-reveal">Cette architecture racinaire fait des saules des champions de la stabilisation des sols et des berges. Les racines fines et denses forment un maillage juste sous la surface, retenant efficacement les particules de sol et limitant l'érosion — une propriété que Ramo met à profit dans les projets de <a href="solutions/restauration.html" class="solution-link">végétalisation de sites dégradés</a>, en milieu minier comme sur d'anciens sites d'enfouissement.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <div class="sol-image-break scroll-reveal">
+    <img src="assets/saules-ramo-bouture-systeme-racinaire-pepiniere-quebec.jpg" alt="Bouture de saule Ramo avec système racinaire — pépinière de Saint-Roch-de-l'Achigan, Québec" loading="lazy">
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="sol-body">
+
+        <!-- Biodiversité -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Biodiversité : un écosystème à lui seul</h2>
+          <p class="sol-text scroll-reveal">Les saules comptent parmi les plantes les plus importantes pour la biodiversité en milieu tempéré. Les recherches de l'entomologiste Douglas Tallamy classent les saules indigènes au <strong>deuxième rang après les chênes</strong> comme plantes hôtes pour les papillons et les mites. Plus de <strong>450 espèces d'insectes phytophages</strong> sont associées aux saules indigènes (Southwood).</p>
+          <p class="sol-text scroll-reveal">Parmi les premiers arbres à fleurir au printemps (dès le début avril), les saules fournissent une source critique de pollen et de nectar pour les abeilles, bourdons et autres pollinisateurs à un moment où peu d'autres ressources sont disponibles. La Xerces Society les classe comme essentiels pour les jardins de pollinisateurs. Leur structure touffue offre un habitat de nidification idéal : chardonnerets, parulines jaunes, colibris et de nombreuses autres espèces utilisent les saules pour nicher ou comme matériau de construction.</p>
+          <p class="sol-text scroll-reveal">Quand le projet le permet, Ramo intègre d'autres essences indigènes autour des plantations de saules pour enrichir l'écosystème et accélérer la succession végétale naturelle.</p>
+        </div>
+
+        <!-- Biomasse -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Production de biomasse</h2>
+          <p class="sol-text scroll-reveal">En culture de courte rotation, les rendements typiques se situent entre <strong>7 et 12 tonnes de matière sèche par hectare par an</strong> sur des sites de qualité raisonnable, avec des cultivars à haut rendement atteignant jusqu'à <strong>21,5 tonnes</strong>. Les cycles de récolte de trois ans produisent les meilleurs rendements. Une plantation de saules en courte rotation a une durée de vie de <strong>20 à 30 ans</strong> avant de nécessiter un replantage.</p>
+          <p class="sol-text scroll-reveal">Chez Ramo, cette biomasse est valorisée en bois raméal fragmenté (BRF) — un paillis naturel 100 % saule qui enrichit et protège les sols, complétant le cycle d'économie circulaire au cœur de notre approche.</p>
+        </div>
+
+        <!-- Amélioration des sols -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Amélioration des sols</h2>
+          <p class="sol-text scroll-reveal">Les plantations de saules améliorent activement la qualité des sols. La litière de feuilles et le renouvellement continu des racines fines ajoutent de la matière organique. L'incorporation de copeaux de saule à des doses de 40 à 60 tonnes par hectare augmente significativement la teneur en carbone total du sol. Les plantations de saules restructurent également les communautés microbiennes du sol, favorisant une biologie bénéfique dans la rhizosphère.</p>
+        </div>
+
+        <!-- Sources -->
+        <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">Sources scientifiques</h2>
+          <ul class="sol-text scroll-reveal" style="margin-left: 20px; line-height: 2.2; font-size: 14px; opacity: 0.8;">
+            <li>Fredette, C. et al. (2019). « Willows for environmental projects: A literature review of results on evapotranspiration rate and its driving factors across the genus Salix. » <em>Journal of Environmental Management</em>, 246, 730-741. <a href="https://pubmed.ncbi.nlm.nih.gov/31202017/" target="_blank" rel="noopener" style="color: var(--color-accent);">PubMed</a></li>
+            <li>Capuana, M. et al. (2020). « Modeling the Ecosystem Services Related to Phytoextraction: Carbon Sequestration Potential Using Willow and Poplar. » <em>Applied Sciences</em>, 10(22), 8011. <a href="https://www.mdpi.com/2076-3417/10/22/8011" target="_blank" rel="noopener" style="color: var(--color-accent);">MDPI</a></li>
+            <li>Rytter, R.-M. (2012). « The potential of willow and poplar plantations as carbon sinks in Sweden. » <em>Biomass and Bioenergy</em>, 36, 86-95. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0961953415301215" target="_blank" rel="noopener" style="color: var(--color-accent);">ScienceDirect</a></li>
+            <li>Phillips, C.J. et al. (2014). « Root growth of young poplar and willow planting types. » <em>New Zealand Journal of Forestry Science</em>, 44, 15. <a href="https://nzjforestryscience.springeropen.com/articles/10.1186/s40490-014-0015-6" target="_blank" rel="noopener" style="color: var(--color-accent);">Springer</a></li>
+            <li>Tallamy, D.W. (2007). <em>Bringing Nature Home.</em> Timber Press.</li>
+            <li>Southwood, T.R.E. (1961). « The number of species of insect associated with various trees. » <em>Journal of Animal Ecology</em>, 30(1), 1-8.</li>
+          </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="sol-callout scroll-reveal">
+          <p>Vous souhaitez intégrer les saules à croissance rapide dans votre projet environnemental ? Notre équipe de 75 experts vous accompagne de la conception à la mise en opération.</p>
+          <a href="index.html#contact" class="solution-link" style="margin-top: 16px; display: inline-flex;">
+            Discuter de votre projet
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Back -->
+        <a href="index.html#saules" class="cs-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Retour à l'accueil
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="index.html" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="footer-logo" style="height: 32px; width: auto; margin-bottom: 16px;"></a>
+        <p class="footer-address">517, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+        <p class="footer-contact">
+          <a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp;
+          <a href="tel:+18445880013">1 844 588-0013</a>
+        </p>
+        <p class="footer-contact"><a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ramo — Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

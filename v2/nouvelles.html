@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouvelles et communiqués — Ramo | Actualités environnementales</title>
+  <meta name="description" content="Toutes les nouvelles, communiqués et actualités de Ramo : innovations en phytotechnologie, projets environnementaux et reconnaissance de l'industrie.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/nouvelles/">
+    <link rel="alternate" hreflang="fr-ca" href="https://ramo.eco/nouvelles/">
+    <link rel="alternate" hreflang="x-default" href="https://ramo.eco/nouvelles/">
+  <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Saint-Roch-de-l'Achigan, Québec">
+  <meta name="geo.position" content="45.8481;-73.6695">
+  <meta name="ICBM" content="45.8481, -73.6695">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nouvelles et communiqués — Ramo">
+  <meta property="og:description" content="Toutes les nouvelles et communiqués de Ramo.">
+  <meta property="og:image" content="assets/img/Saules_4-scaled.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nouvelles — Ramo">
+  <meta name="twitter:description" content="Actualités et nouvelles de Ramo, pionniers des phytotechnologies.">
+  <meta name="twitter:image" content="assets/img/Saules_4-scaled.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Nouvelles et communiqués — Ramo",
+    "description": "Toutes les nouvelles, communiqués et actualités de Ramo.",
+    "publisher": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nouvelles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://ramo.eco/"},{"@type":"ListItem","position":2,"name":"Actualités","item":"https://ramo.eco/nouvelles/"}]}</script>
+</head>
+<body>
+
+  <!-- Skip to content (a11y) -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <div class="nav-item"><a href="index.html#solutions" class="nav-link">Solutions</a><div class="mega-menu mega-menu--solutions"><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg><span>Gestion des eaux</span></div><a href="solutions/evaplant.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Eaux impactées</div></div></a><a href="solutions/evacap.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Eaux d'infiltration</div></div></a></div><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M12 10c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 14c3 0 5-2 5-5-3 0-5 2-5 5z"/></svg><span>Végétalisation</span></div><a href="solutions/restauration.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation</div></div></a><a href="solutions/haie-saules.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Barrière végétale</div></div></a><a href="solutions/fourniture.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div></div></a></div><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span>Restauration des sols</span></div><a href="solutions/substrat-vegetalisation.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Substrat de végétalisation</div></div></a><a href="solutions/mrf.html" class="mega-menu-link"><div class="mega-menu-text"><div class="mega-menu-title">Gestion des MRF</div></div></a></div><div class="mega-menu-col"><div class="mega-menu-col-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg><span>Éco-produits</span></div><a href="ecrans-verts/index.html" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Murs antibruit &amp; clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Paillis BRF</div></div></a></div></div></div>
+        <div class="nav-item"><a href="index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><div class="mega-menu-header">Nos solutions selon votre secteur</div><a href="secteurs/enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="14" height="8" rx="1"/><path d="M15 13V9a2 2 0 012-2h2l3 4v6a1 1 0 01-1 1h-1"/><circle cx="5.5" cy="21" r="2"/><circle cx="18.5" cy="21" r="2"/><path d="M8 21h7"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div></div></a><a href="secteurs/municipal.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div></div></a><a href="secteurs/minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M10 9L6 3M14 9l4-6M12 22l-2-13M12 22l2-13"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div></div></a><a href="secteurs/boues.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Générateurs de boues</div></div></a><a href="secteurs/immobilier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V18h6v4"/><path d="M8 6h2M8 10h2M8 14h2M14 6h2M14 10h2M14 14h2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div></div></a><a href="secteurs/industriel.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V10l6 4V10l6 4V4l8 16z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Industriel</div></div></a></div></div>
+        <div class="nav-item"><a href="apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:480px; grid-template-columns:1fr 1fr; gap:4px 6px;"><a href="apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Qui sommes-nous</div><div class="mega-menu-desc">Histoire, mission, équipe</div></div></a><a href="saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de nos solutions</div></div></a><a href="carrieres.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a><a href="nouvelles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Actualités</div><div class="mega-menu-desc">Nouvelles et communiqués</div></div></a></div></div>
+        <a href="contact.html" class="nav-link nav-link--cta">Nous joindre</a>
+        <div class="nav-lang">
+          <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+          <span class="nav-lang-sep">|</span>
+          <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="index.html#solutions" class="mobile-nav-link">Solutions</a>
+      <a href="index.html#secteurs" class="mobile-nav-link">Secteurs</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="saules.html" class="mobile-nav-link">Les saules</a>
+            <a href="carrieres.html" class="mobile-nav-link">Carrières</a>
+      <a href="contact.html" class="mobile-nav-link">Nous joindre</a>
+      <div class="mobile-nav-lang">
+        <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+        <span class="nav-lang-sep">|</span>
+        <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main">
+
+  <!-- Hero -->
+  <section class="news-hero">
+    <div class="container">
+      <span class="section-label scroll-reveal">Nouvelles & communiqués</span>
+      <h1 class="section-title scroll-reveal">Toutes nos<br>actualités.</h1>
+      <p class="news-hero-desc scroll-reveal">Innovations, projets terrain, reconnaissances et communiqués de presse de Ramo.</p>
+    </div>
+  </section>
+
+  <!-- News Grid -->
+  <section class="section">
+    <div class="container">
+
+      <div class="news-page-grid">
+
+        <div class="news-year-label scroll-reveal">2025</div>
+
+        <a href="communiques/clean50-2025.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/representant.jpg');">
+            <span class="nouvelle-date">Oct 2025</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Ramo et Francis Allard honorés par le Canada's Clean50 2026</h3>
+            <p>Une reconnaissance nationale pour notre engagement et notre innovation en matière de solutions environnementales basées sur la nature.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/neuville-saules.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal" data-delay="100">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/Saules_4-scaled.jpg');">
+            <span class="nouvelle-date">Sept 2025</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Des milliers de saules prennent racine à Neuville</h3>
+            <p>96 000 saules au Complexe environnemental de Neuville : une innovation qui protège l'eau, la biodiversité et les budgets municipaux.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/nomination-benjamin-walczak.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal" data-delay="200">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/mozaique_3.png');">
+            <span class="nouvelle-date">2025</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Nomination de Benjamin Walczak à la direction générale</h3>
+            <p>Un nouveau chapitre pour Ramo avec une direction renouvelée et une vision ambitieuse pour l'avenir.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/sable-villeneuve-restauration.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/Sable-Villeneuve-equipe.jpg');">
+            <span class="nouvelle-date">Juin 2025</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Sable Villeneuve amorce une réhabilitation écologique ambitieuse à Terrebonne</h3>
+            <p>Un million de saules sur 50 hectares : un modèle d'économie circulaire et de décarbonation pour l'industrie.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/wm-sainte-sophie-evaplant.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal" data-delay="100">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/st-sophie-scaled.jpg');">
+            <span class="nouvelle-date">2025</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>WM et Ramo déploient Evaplant® à Sainte-Sophie</h3>
+            <p>Le plus grand site de phytotechnologie au Québec pour le traitement des eaux de lixiviation d'un lieu d'enfouissement.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/boucherville-mur-antibruit.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal" data-delay="200">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/plantation-evaplant.jpg');">
+            <span class="nouvelle-date">2025</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Un mur antibruit écologique à Boucherville</h3>
+            <p>Ramo livre à Boucherville une solution de mur antibruit végétalisée, alliant performance acoustique et intégration paysagère.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <div class="news-year-label scroll-reveal">2024</div>
+
+        <a href="communiques/sayona-partenariat.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/sayona-evaplant.jpg');">
+            <span class="nouvelle-date">Jan 2024</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Sayona et Ramo s'unissent pour la valorisation des eaux minières</h3>
+            <p>20 000 saules plantés à La Corne grâce à la technologie Evaplant® pour traiter les eaux du Complexe LAN.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <div class="news-year-label scroll-reveal">2023</div>
+
+        <a href="communiques/novembre-2023.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/ramo-prix-2023.jpg');">
+            <span class="nouvelle-date">Nov 2023</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Deux prestigieux prix remportés par Ramo</h3>
+            <p>Ramo remporte le prix ADRIQ PhytoValix et le Cœur Vert du CETEQ pour son engagement environnemental et son excellence en innovation.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/bionera-partenariat.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal" data-delay="100">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/ramo-bionera.jpg');">
+            <span class="nouvelle-date">Nov 2023</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Ramo acquiert Bionera Resources et accueille John Lavery</h3>
+            <p>Ramo étend ses activités à l'Ouest canadien et accueille John Lavery comme PDG de la division Ouest.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <a href="communiques/solution-verte.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal" data-delay="200">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/saint-lambert-evaplant.jpg');">
+            <span class="nouvelle-date">Oct 2023</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Une solution verte pour les lieux d'enfouissement</h3>
+            <p>Saint-Lambert-de-Lauzon : 28 800 saules et 3 millions de litres d'eau évaporés en quatre mois grâce à Evaplant®.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+        <div class="news-year-label scroll-reveal">2022</div>
+
+        <a href="communiques/gatineau-mur-antibruit.html" class="nouvelle-card-link">
+        <article class="nouvelle-card scroll-reveal">
+          <div class="nouvelle-card-image" style="background-image: url('assets/img/gatineau-mur-antibruit.jpg');">
+            <span class="nouvelle-date">Août 2022</span>
+          </div>
+          <div class="nouvelle-card-content">
+            <h3>Un nouveau mur antibruit écologique à Gatineau</h3>
+            <p>223 mètres de mur antibruit végétalisé sur le chemin Pink : une solution naturelle qui améliore le quotidien des riverains.</p>
+            <span class="nouvelle-link">Lire la suite &rarr;</span>
+          </div>
+        </article>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="index.html" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="footer-logo" style="height: 32px; width: auto; margin-bottom: 16px;"></a>
+        <p class="footer-address">517, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+        <p class="footer-contact">
+          <a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp;
+          <a href="tel:+18445880013">1 844 588-0013</a>
+        </p>
+        <p class="footer-contact"><a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ramo — Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

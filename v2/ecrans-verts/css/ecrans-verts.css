@@ -1,0 +1,1626 @@
+/* ============================================================
+   Ramo Écrans verts — Identité visuelle distincte
+   Charge APRÈS ../css/style.css et ../css/solutions.css
+   Palette 100% Ramo : vert #003c38 + lime #dcf21e + beige #f5f1ec
+   Différenciation = typographie Fraunces, boutons carrés, labels éditoriaux
+   ============================================================ */
+
+:root {
+  --ev-green: #003c38;            /* Vert primaire Ramo */
+  --ev-green-deep: #002824;
+  --ev-lime: #dcf21e;             /* Lime Ramo — accent signature sur fonds foncés / boutons */
+  --ev-lime-deep: #c7dd15;
+  --ev-accent: #003c38;           /* Accent sur fonds clairs = vert Ramo */
+  --ev-accent-deep: #002824;
+  --ev-accent-soft: #dcf21e;      /* Accent sur fonds foncés = lime */
+  --ev-sand: #f5f1ec;             /* Beige warm Ramo (--color-bg-light) */
+  --ev-sand-deep: #ede8db;
+  --ev-ink: #1a1a1a;
+}
+
+/* --- Base paper background --- */
+body {
+  background: var(--ev-sand);
+  color: var(--ev-ink);
+}
+
+/* Sections light — teinte papier chaude */
+.section--light,
+section.section--light {
+  background: var(--ev-sand-deep) !important;
+}
+
+/* ============================================================
+   READABILITY — overrides du style.css principal (qui est designé
+   pour fond foncé) pour que tout reste lisible sur fond clair.
+   ============================================================ */
+.section-title,
+section .section-title,
+.section--light .section-title {
+  color: var(--ev-green) !important;
+}
+.section-subtitle,
+section .section-subtitle,
+.section--light .section-subtitle {
+  color: #5a6664 !important;
+}
+.sol-stats {
+  border-top: 1px solid rgba(0, 60, 56, 0.12) !important;
+  border-bottom: 1px solid rgba(0, 60, 56, 0.12) !important;
+}
+.sol-stat-value {
+  color: var(--ev-green) !important;
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-weight: 400 !important;
+}
+.sol-stat-label {
+  color: #6a7674 !important;
+}
+/* Trait d'accent sous les stats */
+.sol-stat {
+  position: relative;
+  padding-bottom: 12px;
+}
+.sol-stat::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--ev-lime);
+  margin: 14px auto 0;
+  transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.sol-stat:hover::after {
+  width: 60px;
+}
+
+/* --- Typographie éditoriale Fraunces --- */
+.ev-hero-title,
+.ev-product-title,
+.section-title,
+.cases-title,
+.ev-step-title,
+.ev-audience-title,
+h1.page-hero-title,
+h1, h2 {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.018em;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 30, "WONK" 0;
+}
+
+.ev-hero-title { font-weight: 300 !important; }
+
+/* Italique accentué pour emphases dans les titres */
+.ev-hero-title em,
+.ev-hero-title i,
+.ev-page-hero h1 em,
+.ev-page-hero h1 i {
+  color: var(--ev-accent-soft); /* mint sur fond hero foncé */
+  font-style: italic;
+  font-weight: 400;
+}
+.section-title em,
+h2 em {
+  color: var(--ev-green);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* --- Boutons carrés, typographie soulignée --- */
+.btn,
+a.btn,
+button.btn,
+.nav-link--cta {
+  border-radius: 2px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  padding: 16px 26px !important;
+}
+
+.btn--primary {
+  background: var(--ev-lime) !important;
+  border-color: var(--ev-lime) !important;
+  color: var(--ev-green) !important;
+}
+.btn--primary:hover {
+  background: var(--ev-lime-deep) !important;
+  border-color: var(--ev-lime-deep) !important;
+  color: var(--ev-green) !important;
+}
+
+.btn--outline {
+  border-width: 1.5px !important;
+}
+
+.nav-link--cta {
+  background: var(--ev-lime) !important;
+  border-color: var(--ev-lime) !important;
+  color: var(--ev-green) !important;
+  padding: 10px 20px !important;
+}
+.nav-link--cta:hover {
+  background: var(--ev-lime-deep) !important;
+  border-color: var(--ev-lime-deep) !important;
+  color: var(--ev-green) !important;
+}
+
+/* --- Section labels : petit tiret éditorial --- */
+.section-label {
+  position: relative;
+  padding-left: 24px !important;
+  display: inline-block;
+  color: var(--ev-green) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: 11.5px !important;
+}
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 1px;
+  background: var(--ev-green);
+}
+
+/* Eyebrow du hero — visible sur fond foncé */
+.ev-hero-eyebrow {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  padding: 8px 0 8px 24px !important;
+  color: var(--ev-accent-soft) !important;
+  font-weight: 600 !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.16em !important;
+  position: relative;
+}
+.ev-hero-eyebrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 1px;
+  background: var(--ev-accent-soft);
+}
+
+/* --- Ancien menu .header : neutralisé (on bascule tout dans .ev-topbar) --- */
+.ev-nav .nav-link,
+.ev-nav .nav-link--cta { /* règles historiques sans effet */ }
+
+/* ============================================================
+   TOPBAR éditoriale — petit bandeau "Une division du Ramo"
+   au-dessus du header, avec bouton vers ramo.eco
+   ============================================================ */
+.ev-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  background: var(--ev-green-deep);
+  color: rgba(255, 255, 255, 0.82);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 38px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-topbar-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.82);
+}
+.ev-topbar-left::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ev-lime);
+  box-shadow: 0 0 0 3px rgba(220, 242, 30, 0.18);
+  flex-shrink: 0;
+}
+.ev-topbar-left strong {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 2px;
+}
+.ev-topbar a {
+  color: var(--ev-lime);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: gap 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.25s ease;
+}
+.ev-topbar a:hover {
+  color: #fff;
+  gap: 12px;
+}
+.ev-topbar a svg {
+  width: 11px;
+  height: 11px;
+}
+
+@media (max-width: 760px) {
+  .ev-topbar { padding: 0 18px; font-size: 9.5px; gap: 12px; }
+  .ev-topbar-left strong + * { display: none; }
+}
+
+/* ============================================================
+   HEADER — moderne, minimal, logo à gauche, nav + CTA à droite
+   Positionné juste sous le bandeau topbar (38px)
+   Progress bar lime en bas
+   ============================================================ */
+.header {
+  top: 38px !important;
+  background: rgba(245, 241, 236, 0.97) !important;
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid rgba(0, 60, 56, 0.12) !important;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.4s ease,
+              top 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  box-shadow: 0 1px 0 rgba(0, 60, 56, 0.04), 0 12px 32px -24px rgba(0, 40, 36, 0.25) !important;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: var(--ev-lime);
+  transform: scaleX(var(--ev-scroll, 0));
+  transform-origin: left center;
+  box-shadow: 0 0 14px rgba(220, 242, 30, 0.55);
+  transition: transform 0.12s linear;
+  pointer-events: none;
+  z-index: 3;
+}
+.header.scrolled,
+.header--scrolled {
+  background: rgba(245, 241, 236, 0.96) !important;
+  border-bottom-color: rgba(0, 60, 56, 0.12) !important;
+}
+/* Transition propre du header beige */
+.header {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              top 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.3s ease,
+              border-color 0.3s ease !important;
+}
+
+/* -- Topbar verte : visible au chargement, disparaît au premier scroll -- */
+body.ev-topbar-collapsed .ev-topbar {
+  transform: translateY(-100%);
+}
+body.ev-topbar-collapsed .header {
+  top: 0 !important;
+}
+
+/* -- Header beige : auto-hide au scroll vers le bas, réapparaît au scroll vers le haut -- */
+body.ev-header-hidden .header,
+body.ev-header-hidden .header.header--hidden {
+  transform: translateY(-110%) !important;
+}
+body:not(.ev-header-hidden) .header.header--hidden {
+  transform: none !important;
+}
+
+@media (max-width: 760px) {
+  .header { top: 34px !important; }
+  body.ev-topbar-collapsed .header { top: 0 !important; }
+}
+
+/* -- Header inner : compact, aligné -- */
+.header .header-inner {
+  height: 68px;
+  padding: 0 36px;
+}
+.header .logo-img {
+  height: 52px !important;
+  width: auto;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.header .logo:hover .logo-img {
+  transform: scale(1.04);
+}
+
+/* -- Navigation : sobre, éditoriale, casse normale -- */
+.ev-nav {
+  gap: 2px !important;
+  align-items: center;
+}
+.ev-nav .nav-link {
+  position: relative;
+  text-transform: none !important;
+  letter-spacing: -0.005em !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  color: rgba(0, 40, 36, 0.6) !important;
+  padding: 10px 16px !important;
+  border-radius: 0;
+  background: none !important;
+  transition: color 0.25s ease;
+  opacity: 1 !important;
+}
+.ev-nav .nav-link:not(.nav-link--cta):hover,
+.ev-nav .nav-link:not(.nav-link--cta):focus-visible {
+  color: #002824 !important;
+  background: none !important;
+  outline: none;
+}
+.ev-nav .nav-link.is-active {
+  color: #002824 !important;
+  font-weight: 600 !important;
+  background: none !important;
+}
+.ev-nav .nav-link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 2px;
+  background: var(--ev-green-deep, #002824);
+  border-radius: 2px;
+}
+/* Annule les anciens pseudos */
+.ev-nav .nav-link:not(.nav-link--cta)::before {
+  display: none !important;
+}
+
+/* Trait de soulignement du menu : vert foncé (lisible sur beige) */
+.ev-nav .nav-link:not(.nav-link--cta)::after {
+  background: var(--ev-green-deep, #002824) !important;
+  height: 2px !important;
+  bottom: 2px !important;
+}
+
+/* Lien actif : vert foncé + trait permanent sous le texte */
+.ev-nav .nav-link--active {
+  color: var(--ev-green-deep) !important;
+  font-weight: 600 !important;
+}
+.ev-nav .nav-link--active::after {
+  opacity: 1 !important;
+  width: calc(100% - 32px) !important;
+  background: var(--ev-green-deep) !important;
+}
+
+/* -- CTA pill vert foncé : contraste clair, flèche intégrée -- */
+.ev-nav .nav-link--cta {
+  position: relative;
+  color: #fff !important;
+  background: var(--ev-green-deep, #002824) !important;
+  border: 1px solid var(--ev-green-deep, #002824) !important;
+  padding: 11px 22px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  border-radius: 999px !important;
+  margin-left: 12px;
+  overflow: visible;
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+.ev-nav .nav-link--cta::before { display: none !important; }
+.ev-nav .nav-link--cta::after {
+  content: '→' !important;
+  position: static !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin: 0 !important;
+  max-width: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  display: inline-block !important;
+}
+.ev-nav .nav-link--cta:hover {
+  background: var(--ev-lime) !important;
+  border-color: var(--ev-lime) !important;
+  color: var(--ev-green-deep) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -10px rgba(220, 242, 30, 0.5) !important;
+  letter-spacing: 0 !important;
+}
+.ev-nav .nav-link--cta:hover::after {
+  transform: translateX(4px);
+  max-width: none !important;
+  opacity: 1 !important;
+  margin-left: 0 !important;
+}
+
+/* Cache l'ancien nav-lang qui doublonne avec la topbar */
+.ev-nav .nav-lang { display: none; }
+
+/* --- Cartes : radius doux et bordures accent --- */
+.ev-audience,
+.ev-step,
+.sol-stat,
+.case-card {
+  border-radius: 2px !important;
+}
+
+.ev-audience:hover,
+.case-card:hover {
+  border-color: var(--ev-accent) !important;
+}
+
+.ev-step {
+  border-left: 3px solid var(--ev-accent) !important;
+}
+
+.ev-step-num {
+  color: var(--ev-accent) !important;
+}
+
+/* --- Footer strip Ramo --- */
+.ev-back-ramo {
+  background: var(--ev-green-deep);
+}
+.ev-back-ramo a { color: var(--ev-accent-soft); }
+
+/* --- Ramo parent signature --- */
+.ev-parent-signature {
+  background: var(--ev-sand);
+  padding: 70px 0;
+  border-top: 1px solid rgba(0, 60, 56, 0.08);
+  text-align: center;
+}
+.ev-parent-signature-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.ev-parent-signature-label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ev-accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.ev-parent-signature-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.45;
+  color: var(--ev-green);
+  font-weight: 400;
+  margin: 0 0 26px;
+}
+.ev-parent-signature-text strong {
+  font-weight: 500;
+}
+.ev-parent-signature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ev-green);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1.5px solid var(--ev-green);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.ev-parent-signature-link:hover {
+  background: var(--ev-green);
+  color: #fff;
+}
+.ev-parent-signature-link svg { transition: transform 0.3s ease; }
+.ev-parent-signature-link:hover svg { transform: translateX(4px); }
+
+/* --- Galerie photos — slider horizontal --- */
+.ev-gallery-wrap {
+  position: relative;
+  margin: 40px 0 0;
+  overflow: hidden;
+}
+.ev-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 max(32px, calc((100vw - 1100px) / 2)) 8px;
+}
+.ev-gallery::-webkit-scrollbar { display: none; }
+.ev-gallery-item {
+  position: relative;
+  flex: 0 0 360px;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--ev-sand-deep);
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.ev-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+.ev-gallery-item:hover img { transform: scale(1.05); }
+/* Flèches slider */
+.ev-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  color: var(--ev-green-deep, #002824);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s, opacity 0.3s;
+  opacity: 0;
+}
+.ev-gallery-wrap:hover .ev-gallery-nav { opacity: 1; }
+.ev-gallery-nav:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+.ev-gallery-nav--prev { left: 16px; }
+.ev-gallery-nav--next { right: 16px; }
+.ev-gallery-nav[disabled] { opacity: 0 !important; pointer-events: none; }
+
+/* Lightbox */
+.ev-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 20, 18, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.ev-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ev-lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 24px 80px -20px rgba(0, 0, 0, 0.5);
+  transform: scale(0.92);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-lightbox.is-open img {
+  transform: scale(1);
+}
+.ev-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.ev-lightbox-close:hover { background: rgba(255, 255, 255, 0.22); }
+.ev-lightbox-prev,
+.ev-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.ev-lightbox-prev { left: 24px; }
+.ev-lightbox-next { right: 24px; }
+.ev-lightbox-prev:hover,
+.ev-lightbox-next:hover { background: rgba(255, 255, 255, 0.25); }
+
+@media (max-width: 760px) {
+  .ev-gallery-item { flex: 0 0 280px; }
+  .ev-gallery { gap: 12px; padding: 0 24px 8px; }
+  .ev-gallery-nav { display: none; }
+  .ev-lightbox-prev,
+  .ev-lightbox-next { width: 40px; height: 40px; }
+  .ev-lightbox-prev { left: 12px; }
+  .ev-lightbox-next { right: 12px; }
+}
+
+/* Legacy compat */
+.ev-gallery--wide { display: flex; }
+.ev-gallery--wide .ev-gallery-item:first-child { flex: 0 0 360px; }
+
+/* --- Split landing cards (murs antibruit → HF1 / Pilebyg) --- */
+.ev-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 60px;
+}
+.ev-split-card {
+  position: relative;
+  padding: 64px 48px;
+  background: #fff;
+  border: 1px solid rgba(0, 60, 56, 0.1);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--ev-ink);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+}
+.ev-split-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.ev-split-card:hover {
+  border-color: var(--ev-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0, 60, 56, 0.12);
+}
+.ev-split-card-img {
+  position: relative;
+  margin: -64px -48px 32px;
+  height: 260px;
+  overflow: hidden;
+  background: var(--ev-sand-deep);
+}
+.ev-split-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.ev-split-card:hover .ev-split-card-img img { transform: scale(1.05); }
+.ev-split-card-flag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(247, 243, 236, 0.95);
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ev-green);
+  border-radius: 2px;
+}
+.ev-split-card-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ev-accent);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.ev-split-card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--ev-green);
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.ev-split-card-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a6664;
+  margin: 0 0 24px;
+  flex: 1;
+}
+.ev-split-card-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  gap: 8px;
+}
+.ev-split-card-specs li {
+  font-size: 13px;
+  color: var(--ev-green);
+  padding-left: 18px;
+  position: relative;
+}
+.ev-split-card-specs li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 1px;
+  background: var(--ev-accent);
+}
+.ev-split-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ev-accent);
+  margin-top: auto;
+}
+.ev-split-card:hover .ev-split-card-cta svg { transform: translateX(6px); }
+.ev-split-card-cta svg { transition: transform 0.3s ease; }
+@media (max-width: 860px) {
+  .ev-split { grid-template-columns: 1fr; }
+  .ev-split-card { padding: 48px 32px; min-height: auto; }
+  .ev-split-card-img { margin: -48px -32px 24px; height: 220px; }
+}
+
+/* --- Page hero (sous-pages HF1, Pilebyg, etc.) --- */
+.ev-page-hero {
+  background: linear-gradient(135deg, var(--ev-green) 0%, var(--ev-green-deep) 100%);
+  color: #fff;
+  padding: 160px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+.ev-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+.ev-page-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.ev-page-hero h1 {
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 300 !important;
+  line-height: 1;
+  margin: 22px 0 24px;
+  letter-spacing: -0.025em;
+  color: #fff;
+  max-width: 900px;
+}
+.ev-page-hero-sub {
+  font-size: clamp(16px, 1.7vw, 19px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 640px;
+  margin: 0 0 36px;
+}
+.ev-page-hero--hf1::before {
+  background-image: url('https://ramo.eco/wp-content/uploads/2023/02/Saules_4-scaled.jpg');
+}
+.ev-page-hero--pilebyg::before {
+  background-image: url('https://ramo.eco/wp-content/uploads/2023/11/Capture-decran-le-2023-11-28-a-10.35.33-1.jpg');
+}
+.ev-page-hero--clotures::before,
+.ev-page-hero--murs::before {
+  background-image: none;
+}
+
+/* --- Fiche specs --- */
+.ev-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  max-width: 1000px;
+  margin: 60px auto 0;
+  background: #fff;
+  border: 1px solid rgba(0, 60, 56, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ev-spec {
+  padding: 28px 32px;
+  border-bottom: 1px solid rgba(0, 60, 56, 0.08);
+  border-right: 1px solid rgba(0, 60, 56, 0.08);
+}
+.ev-spec:nth-child(2n) { border-right: none; }
+.ev-spec:nth-last-child(-n+2) { border-bottom: none; }
+.ev-spec-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ev-accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.ev-spec-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 22px;
+  color: var(--ev-green);
+  font-weight: 400;
+  line-height: 1.25;
+}
+@media (max-width: 720px) {
+  .ev-specs { grid-template-columns: 1fr; }
+  .ev-spec { border-right: none; }
+  .ev-spec:nth-last-child(-n+2) { border-bottom: 1px solid rgba(0, 60, 56, 0.08); }
+  .ev-spec:last-child { border-bottom: none; }
+}
+
+/* ============================================================
+   WOW LAYER — Home page + menu : animations, micro-interactions
+   ============================================================ */
+
+/* Header glassmorphism qui s'intensifie au scroll */
+.header.scrolled,
+.header--scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 1px 0 rgba(0, 60, 56, 0.06), 0 12px 40px -16px rgba(0, 60, 56, 0.12);
+}
+
+/* Logo qui "respire" très subtilement au repos */
+@keyframes ev-logo-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+.header .logo-img {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.header .logo:hover .logo-img {
+  transform: scale(1.06) rotate(-0.5deg);
+}
+
+/* Lift léger sur tout le header au survol des liens */
+.ev-nav .nav-link:not(.nav-link--cta):focus-visible {
+  outline: none;
+}
+.ev-nav .nav-link:not(.nav-link--cta):focus-visible::after {
+  width: calc(100% - 4px);
+}
+
+/* Hero animation d'entrée — fade up séquentiel */
+@keyframes ev-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ev-hero-eyebrow {
+  animation: ev-fade-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+}
+.ev-hero-title {
+  animation: ev-fade-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both;
+}
+.ev-hero-sub {
+  animation: ev-fade-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s both;
+}
+.ev-hero-ctas {
+  animation: ev-fade-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.65s both;
+}
+
+/* "verte." avec un léger glow lime sur le em italique */
+.ev-hero-title em {
+  font-style: italic;
+  font-weight: 300;
+  background: linear-gradient(120deg, var(--ev-lime) 0%, #f0ff8a 50%, var(--ev-lime) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: ev-shimmer 6s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes ev-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Indicateur de scroll animé en bas du hero */
+.ev-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, transparent, rgba(220, 242, 30, 0.6), transparent);
+  animation: ev-scroll-hint 2.4s ease-in-out infinite;
+  z-index: 3;
+}
+@keyframes ev-scroll-hint {
+  0%, 100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Pillars : icône qui pulse + ligne accent qui apparaît au survol */
+.ev-pillar {
+  position: relative;
+  transition: background 0.4s ease;
+}
+.ev-pillar::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 8px;
+  height: 1px;
+  background: var(--ev-lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-pillar:hover::after {
+  transform: scaleX(1);
+}
+.ev-pillar:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.ev-pillar-icon {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-pillar:hover .ev-pillar-icon {
+  transform: translateY(-3px) rotate(-4deg);
+}
+
+/* Product tiles : zoom photo + révélation flèche + voile qui s'éclaircit */
+.ev-product {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-product::after {
+  transition: opacity 0.5s ease, background 0.5s ease;
+}
+.ev-product:hover::after {
+  background: linear-gradient(180deg, rgba(0,60,56,0.05) 0%, rgba(0,40,36,0.85) 100%) !important;
+}
+.ev-product-content {
+  transform: translateY(8px);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-product:hover .ev-product-content {
+  transform: translateY(0);
+}
+.ev-product-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+.ev-product-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+  height: 1.5px;
+  background: var(--ev-lime);
+  transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ev-product:hover .ev-product-link::before {
+  width: 100%;
+}
+
+/* Boutons primary plus dynamiques (effet press) */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s ease,
+              background 0.3s ease !important;
+}
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 60, 56, 0.18);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 60, 56, 0.4),
+              0 4px 14px -6px rgba(220, 242, 30, 0.5);
+}
+.btn--primary:hover::before {
+  width: 280px;
+  height: 280px;
+}
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* Section labels : trait qui s'allonge au scroll-into-view */
+.section-label {
+  display: inline-block;
+}
+
+/* Reveal text smooth */
+.scroll-reveal {
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Tag "ramo lime" qui pulse autour des chiffres clés */
+.sol-stat-value {
+  display: inline-block;
+  position: relative;
+}
+.sol-stat:hover .sol-stat-value {
+  animation: ev-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes ev-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================
+   PAGE TRANSITIONS — fondu + léger lift entre les pages du micro-site
+   ============================================================ */
+body {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+body.ev-page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+body.ev-page-leaving {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* Bar + topbar restent fixes (évite que le header scintille) */
+body.ev-page-leaving .ev-topbar {
+  opacity: 1;
+}
+/* Support navigateurs avec View Transitions API (Chrome/Safari récents) */
+@view-transition { navigation: auto; }
+::view-transition-old(root) {
+  animation: ev-vt-out 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+::view-transition-new(root) {
+  animation: ev-vt-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes ev-vt-out {
+  to { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes ev-vt-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   CONTRAST FIXES — derniers endroits potentiellement illisibles
+   ============================================================ */
+/* Cartes audience / steps / cases — texte qui héritait de --color-text cream */
+.ev-audience,
+.ev-audience *,
+.ev-step,
+.ev-step *,
+.case-card,
+.case-card * {
+  color: inherit;
+}
+.ev-audience,
+.ev-step,
+.case-card {
+  color: var(--ev-ink) !important;
+}
+.ev-audience h3,
+.ev-step-title,
+.case-card h3,
+.case-title {
+  color: var(--ev-green) !important;
+}
+.ev-audience p,
+.ev-step-desc,
+.case-card p,
+.case-desc {
+  color: #4a5554 !important;
+}
+/* ============================================================
+   FOOTER — compact, vert foncé, lisible
+   Override du footer parent qui hérite d'un fond cream illisible
+   ============================================================ */
+.footer {
+  background: var(--ev-green-deep) !important;
+  padding: 36px 0 22px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+.footer .container {
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* -- Lien "Découvrir Ramo" intégré dans la colonne marque du footer -- */
+.footer .footer-parent-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ev-lime) !important;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+.footer .footer-parent-link:hover {
+  opacity: 0.8;
+}
+.footer .footer-parent-link svg {
+  transition: transform 0.25s ease;
+}
+.footer .footer-parent-link:hover svg {
+  transform: translateX(3px);
+}
+.footer,
+.footer p,
+.footer a,
+.footer li,
+.footer span {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+.footer strong,
+.footer h4,
+.footer .footer-title {
+  color: #fff !important;
+}
+.footer a:hover { color: var(--ev-lime) !important; }
+
+/* Colonnes footer : grille 4 colonnes */
+.footer .footer-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 48px;
+  padding: 0 !important;
+  margin: 0 0 40px !important;
+}
+.footer .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer .footer-col--brand {
+  gap: 16px;
+  padding-right: 32px;
+}
+.footer .footer-logo {
+  height: 32px !important;
+  width: auto;
+  margin: 0 !important;
+  opacity: 0.95;
+}
+.footer .footer-tagline {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  margin: 0 !important;
+}
+.footer .footer-tagline strong {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 600;
+}
+.footer .footer-col-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-weight: 600;
+  margin: 0 0 8px !important;
+}
+.footer .footer-col-link {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.5;
+}
+.footer .footer-col-link:hover {
+  color: var(--ev-lime) !important;
+}
+.footer .footer-col-text {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  margin: 0 !important;
+}
+.footer .footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+.footer .footer-social a {
+  color: rgba(255, 255, 255, 0.55) !important;
+  display: inline-flex;
+  padding: 6px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.footer .footer-social a:hover {
+  color: var(--ev-lime) !important;
+  transform: translateY(-2px);
+}
+.footer .footer-social svg { width: 17px; height: 17px; }
+
+/* Bottom line */
+.footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 20px 0 0 !important;
+  margin: 0 !important;
+  text-align: left;
+}
+.footer .footer-bottom p {
+  font-size: 12px !important;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.35) !important;
+  margin: 0 !important;
+}
+.footer .footer-bottom a {
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-decoration: none;
+}
+.footer .footer-bottom a:hover {
+  color: var(--ev-lime) !important;
+}
+
+@media (max-width: 860px) {
+  .footer .footer-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 32px;
+  }
+  .footer .footer-col--brand {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+}
+@media (max-width: 520px) {
+  .footer { padding: 28px 0 18px !important; }
+  .footer .footer-cols {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* ============================================================
+   CATÉGORIES D'UTILISATION (murs-antibruit.html)
+   ============================================================ */
+.ev-usages {
+  background: var(--ev-sand-deep, #eae5dc);
+}
+.ev-usages-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ev-usage-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 36px 20px 32px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
+}
+.ev-usage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px -12px rgba(0, 40, 36, 0.15);
+  border-color: rgba(0, 60, 56, 0.15);
+}
+.ev-usage-card.active {
+  border-color: var(--ev-green, #003c38);
+  box-shadow: 0 8px 24px -8px rgba(0, 60, 56, 0.2);
+}
+.ev-usage-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--ev-green-deep, #002824);
+  color: var(--ev-lime, #dcf21e);
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+.ev-usage-card:hover .ev-usage-icon,
+.ev-usage-card.active .ev-usage-icon {
+  background: var(--ev-green, #003c38);
+}
+.ev-usage-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ev-green-deep, #002824);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.ev-usage-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(0, 40, 36, 0.55);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .ev-usages-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .ev-usages-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ev-usage-card { padding: 28px 16px 24px; }
+  .ev-usage-title { font-size: 14px; }
+  .ev-usage-desc { font-size: 12px; }
+}
+
+/* Filtres galerie / études de cas (pills) */
+.ev-gallery-filters,
+.ev-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0 36px;
+}
+.ev-filter-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1.5px solid rgba(0, 60, 56, 0.15);
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(0, 40, 36, 0.6);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+.ev-filter-btn:hover {
+  color: var(--ev-green-deep, #002824);
+  border-color: rgba(0, 60, 56, 0.35);
+  background: rgba(0, 60, 56, 0.04);
+}
+.ev-filter-btn.active {
+  background: var(--ev-green-deep, #002824);
+  color: #fff;
+  border-color: var(--ev-green-deep, #002824);
+  font-weight: 600;
+}
+
+/* Transition galerie items */
+.ev-gallery-item {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.ev-gallery-item.is-hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Parent signature : plus compact aussi + fond sand-deep pour transition douce */
+.ev-parent-signature {
+  padding: 50px 0 !important;
+  background: var(--ev-sand-deep) !important;
+  border-top: 1px solid rgba(0, 60, 56, 0.08);
+}
+.ev-parent-signature-text {
+  font-size: clamp(17px, 1.7vw, 21px) !important;
+  margin: 0 0 22px !important;
+}
+/* Labels eyebrow sur fond clair */
+.section-label {
+  color: var(--ev-green) !important;
+  opacity: 0.72;
+}
+/* Labels eyebrow sur fond vert foncé — heros + sections sombres */
+.ev-hero .section-label,
+.ev-page-hero .section-label,
+.ap-hero .section-label,
+.section--dark .section-label {
+  color: rgba(255, 255, 255, 0.75) !important;
+  opacity: 1;
+}
+/* Listes / bullet points sur fond clair */
+section:not(.section--dark) li,
+section:not(.section--dark) p {
+  color: #3a4443;
+}
+/* Hero cta "ghost" — rendu visible sur fond foncé */
+.ev-hero .btn--ghost,
+.ev-page-hero .btn--ghost {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+.ev-hero .btn--ghost:hover,
+.ev-page-hero .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--ev-lime) !important;
+  color: var(--ev-lime) !important;
+}
+
+/* ============================================================
+   .btn--outline — lisibilité sur fond beige
+   Par défaut : texte vert foncé + bordure verte
+   Contextes foncés (hero, footer) : texte blanc
+   ============================================================ */
+.btn--outline {
+  color: var(--ev-green) !important;
+  border: 1.5px solid rgba(0, 60, 56, 0.4) !important;
+  background: transparent !important;
+}
+.btn--outline:hover {
+  background: var(--ev-green) !important;
+  color: #fff !important;
+  border-color: var(--ev-green) !important;
+}
+.ev-hero .btn--outline,
+.ev-page-hero .btn--outline,
+.footer .btn--outline,
+.ev-back-ramo .btn--outline,
+.ev-pillars .btn--outline {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.ev-hero .btn--outline:hover,
+.ev-page-hero .btn--outline:hover,
+.footer .btn--outline:hover,
+.ev-back-ramo .btn--outline:hover,
+.ev-pillars .btn--outline:hover {
+  background: var(--ev-lime) !important;
+  color: var(--ev-green-deep) !important;
+  border-color: var(--ev-lime) !important;
+}
+
+/* ============================================================
+   Hero scrim renforcé — voile plus marqué sur les photos
+   pour garantir la lisibilité du titre et du sous-titre
+   ============================================================ */
+.ev-page-hero::before {
+  background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+.ev-page-hero--hf1::before {
+  background:
+    linear-gradient(135deg, rgba(0, 30, 28, 0.65) 0%, rgba(0, 20, 18, 0.85) 100%),
+    url('https://ramo.eco/wp-content/uploads/2023/02/Saules_4-scaled.jpg') center/cover no-repeat;
+  opacity: 1;
+}
+.ev-page-hero--pilebyg::before {
+  background:
+    linear-gradient(135deg, rgba(0, 30, 28, 0.65) 0%, rgba(0, 20, 18, 0.85) 100%),
+    url('https://ramo.eco/wp-content/uploads/2023/11/Capture-decran-le-2023-11-28-a-10.35.33-1.jpg') center/cover no-repeat;
+  opacity: 1;
+}
+.ev-page-hero--clotures::before {
+  background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
+  opacity: 1;
+}
+.ev-page-hero--murs::before {
+  background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
+  opacity: 1;
+}
+/* Sous-titre du hero : opacité plus forte pour une meilleure lisibilité */
+.ev-page-hero-sub {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Reduce motion : respect accessibility */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body.ev-page-loaded,
+  body.ev-page-leaving {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ev-hero-eyebrow,
+  .ev-hero-title,
+  .ev-hero-sub,
+  .ev-hero-ctas,
+  .ev-hero-title em,
+  .ev-hero::after {
+    animation: none !important;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
