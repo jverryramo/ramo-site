@@ -1391,7 +1391,7 @@ img { max-width: 100%; display: block; }
 }
 .audience-redirect-links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 .audience-redirect-link {
@@ -1441,13 +1441,15 @@ img { max-width: 100%; display: block; }
 }
 .audience-redirect-link:hover svg { opacity: 1; }
 
+@media (max-width: 1024px) {
+  .audience-redirect-links { grid-template-columns: 1fr; }
+}
 @media (max-width: 900px) {
   .audience-redirect {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 24px;
   }
-  .audience-redirect-links { grid-template-columns: 1fr; }
 }
 
 /* --- Gallery --- */
