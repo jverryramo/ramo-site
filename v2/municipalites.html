@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villes &amp; institutions — Ramo | MTMD, CDPQ, municipalités, ingénieurs, urbanistes</title>
+  <meta name="description" content="Solutions basées sur la nature pour les municipalités : écrans verts, restauration des berges, paillis BRF, fourniture de saules et verdissement urbain.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/municipalites/">
+    <link rel="alternate" hreflang="fr-ca" href="https://ramo.eco/municipalites/">
+    <link rel="alternate" hreflang="x-default" href="https://ramo.eco/municipalites/">
+  <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Saint-Roch-de-l'Achigan, Québec">
+  <meta name="geo.position" content="45.8481;-73.6695">
+  <meta name="ICBM" content="45.8481, -73.6695">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solutions municipales — Ramo">
+  <meta property="og:description" content="Rendre votre ville plus verte avec les solutions naturelles de Ramo.">
+  <meta property="og:image" content="assets/img/plantation-evaplant.jpg">
+
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Municipal — Ramo">
+  <meta name="twitter:description" content="Solutions environnementales pour les municipalités.">
+  <meta name="twitter:image" content="assets/img/st-sophie-scaled.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Solutions municipales",
+    "description": "Solutions basées sur la nature pour le verdissement et la gestion environnementale des municipalités.",
+    "provider": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/secteurs.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Solutions environnementales pour municipalités",
+    "description": "Murs antibruit, clôtures naturelles, végétalisation et gestion des eaux pour les municipalités québécoises.",
+    "provider": {"@type": "Organization", "name": "Ramo", "url": "https://ramo.eco"},
+    "areaServed": {"@type": "AdministrativeArea", "name": "Québec, Canada"},
+    "serviceType": "Solutions environnementales municipales"
+  }
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://ramo.eco/index.html"}, {"@type": "ListItem", "position": 2, "name": "Secteurs", "item": "https://ramo.eco/index.html#secteurs"}, {"@type": "ListItem", "position": 3, "name": "Municipal", "item": "https://ramo.eco/municipalites/"}]}</script>
+</head>
+<body>
+
+  <!-- Skip to content (a11y) -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <div class="nav-item"><a href="index.html#solutions" class="nav-link">Phyto-solutions</a><div class="mega-menu mega-menu--branch"><div class="mega-menu-branch-grid"><a href="evaplant.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M9 14h6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion eaux impactées</div><div class="mega-menu-desc">Technologie Evaplant<sup>®</sup></div></div></a><a href="evacap-ruissellement-eaux-usees.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h18"/><path d="M3 14c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 5 2"/><path d="M3 19c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 5 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion eaux de ruissellement</div><div class="mega-menu-desc">Système Evacap<sup>™</sup></div></div></a><a href="barriere-vegetale.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4v16"/><path d="M3 8h11a2 2 0 1 0-2-2"/><path d="M3 12h13"/><path d="M3 16h10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Barrière végétale</div><div class="mega-menu-desc">Poussière, déchets, vent — Intercept<sup>™</sup></div></div></a><a href="vegetalisation-site-degrades-saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 22V12"/><path d="M12 22V8"/><path d="M18 22V10"/><path d="M6 14c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M6 14c2.5 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/><path d="M12 11c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/><path d="M18 13c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M18 13c2.5 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation de sites dégradés</div><div class="mega-menu-desc">Plantation de saules</div></div></a><a href="sols-miniers-substrat-vegetalisation.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 14h18M3 18h18M3 22h18"/><path d="M12 14V8"/><path d="M10 8c0-1.1 0.9-2 2-2s2 0.9 2 2"/><path d="M9 10c1 0 2-1 3-1s2 1 3 1"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Restauration des sols</div><div class="mega-menu-desc">Substrats de végétalisation</div></div></a><a href="boues-industrielles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 5l-3 3 3 3"/><path d="M4 8h13a3 3 0 0 1 3 3v3"/><path d="M17 19l3-3-3-3"/><path d="M20 16H7a3 3 0 0 1-3-3v-3"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion des MRF</div><div class="mega-menu-desc">Valorisation des boues</div></div></a></div></div></div>
+        <div class="nav-item"><a href="index.html#produits" class="nav-link">Éco-produits</a><div class="mega-menu mega-menu--branch"><div class="mega-menu-branch-grid"><a href="murs-antibruit.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4v16"/><path d="M3 10c2 0 2 4 0 4"/><path d="M6 8c4 1 4 7 0 8"/><path d="M9 6c6 1 6 11 0 12"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Murs antibruit</div><div class="mega-menu-desc">Ramo Pure<sup>™</sup>, Ramo Nature<sup>™</sup></div></div></a><a href="clotures-naturelles-saule-ecorce.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 21V7l-2-3 2 0M9 21V6l-2-3 2 0M13 21V6l-2-3 2 0M17 21V6l-2-3 2 0M21 21V7l-2-3 2 0"/><path d="M3 11h18M3 15h18"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Clôtures</div><div class="mega-menu-desc">Saules tressés</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="7" cy="8" rx="3" ry="1.5"/><ellipse cx="15" cy="10" rx="3" ry="1.5"/><ellipse cx="9" cy="13" rx="3" ry="1.5"/><ellipse cx="17" cy="15" rx="3" ry="1.5"/><ellipse cx="11" cy="18" rx="3" ry="1.5"/></svg></div><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Amendement horticole</div><div class="mega-menu-desc">Paillis BRF Ramo</div></div></a><a href="plantation-et-fourniture.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V10"/><path d="M12 10c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 14c3 0 5-2 5-5-3 0-5 2-5 5z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div><div class="mega-menu-desc">Boutures, fagots, tiges</div></div></a></div></div></div>
+        <div class="nav-item"><a href="index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><a href="secteur-enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="14" height="8" rx="1"/><path d="M15 13V9a2 2 0 012-2h2l3 4v6a1 1 0 01-1 1h-1"/><circle cx="5.5" cy="21" r="2"/><circle cx="18.5" cy="21" r="2"/><path d="M8 21h7"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div></div></a><a href="municipalites.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div></div></a><a href="secteur-minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M10 9L6 3M14 9l4-6M12 22l-2-13M12 22l2-13"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier</div></div></a><a href="secteur-boues-industrielles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Générateurs de boues</div></div></a><a href="developpeurs-immobiliers.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V18h6v4"/><path d="M8 6h2M8 10h2M8 14h2M14 6h2M14 10h2M14 14h2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier</div></div></a><a href="secteur-industriel.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20V10l6 4V10l6 4V4l8 16z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Industriel</div></div></a></div></div>
+        <div class="nav-item"><a href="apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:480px; grid-template-columns:1fr 1fr; gap:4px 6px;"><a href="apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Qui sommes-nous</div><div class="mega-menu-desc">Histoire, mission, équipe</div></div></a><a href="saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de nos solutions</div></div></a><a href="culture-carriere.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a><a href="ramo-nouvelles-articles-communiques-videos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Actualités</div><div class="mega-menu-desc">Nouvelles et communiqués</div></div></a></div></div>
+        <a href="nous-joindre.html" class="nav-link nav-link--cta">Nous joindre</a>
+        <div class="nav-lang">
+          <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+          <span class="nav-lang-sep">|</span>
+          <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="index.html#solutions" class="mobile-nav-link">Phyto-solutions</a>
+      <a href="index.html#produits" class="mobile-nav-link">Éco-produits</a>
+      <a href="index.html#secteurs" class="mobile-nav-link">Secteurs</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="saules.html" class="mobile-nav-link">Les saules</a>
+            <a href="culture-carriere.html" class="mobile-nav-link">Carrières</a>
+      <a href="nous-joindre.html" class="mobile-nav-link">Nous joindre</a>
+      <div class="mobile-nav-lang">
+        <a href="index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+        <span class="nav-lang-sep">|</span>
+        <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main">
+
+  <section class="secteur-hero">
+    <div class="secteur-hero-content">
+      <svg class="secteur-icon-large" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4 36h32"/>
+        <path d="M20 5L5 14h30L20 5z"/>
+        <path d="M9 14v22M15 14v22M20 14v22M25 14v22M31 14v22"/>
+        <path d="M5 32h30"/>
+      </svg>
+      <span class="secteur-tag">Pour les donneurs d'ordre publics</span>
+      <h1 class="secteur-title">Villes<br>&amp; institutions</h1>
+      <p class="secteur-subtitle">Municipalités, MTMD, CDPQ, ingénieurs municipaux, urbanistes — solutions végétalisées pour vos infrastructures et aménagements publics</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="secteur-intro scroll-reveal">
+        <p class="secteur-intro-text">Vous gérez un parc d'infrastructures publiques, un projet d'aménagement urbain ou un mandat institutionnel ? Vous êtes confronté à des enjeux de <strong>bruit routier</strong>, de protection des berges, d'intégration paysagère, de valorisation locale des biosolides ou d'aménagement durable des espaces publics.</p>
+        <p class="secteur-intro-text">Ramo accompagne les <strong>municipalités, le MTMD, la CDPQ Infra</strong> et les autres donneurs d'ordre publics partout au Québec — Longueuil, Gatineau, Terrebonne, Trois-Rivières, etc. — avec des solutions végétales qui répondent à ces défis tout en créant des <strong>milieux de vie plus agréables</strong> et en favorisant la biodiversité urbaine.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="secteur-solutions-title scroll-reveal">Solutions adaptées à votre secteur</h2>
+      <div class="secteur-solutions-compact">
+        <a href="murs-antibruit.html" class="secteur-sol-link scroll-reveal" target="_blank" rel="noopener noreferrer">
+        <span class="secteur-sol-badge">Site dédié</span>
+        <div class="secteur-sol-img" style="background-image: url('assets/mur-antibruit-pilebyg-boucherville-residentiel-drone-quebec.jpg');"></div>
+        <div class="secteur-sol-body">
+          <div class="secteur-sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4v16"/><path d="M3 10c2 0 2 4 0 4"/><path d="M6 8c4 1 4 7 0 8"/><path d="M9 6c6 1 6 11 0 12"/></svg></div>
+          <div class="secteur-sol-text"><h3>Écrans verts </h3><span class="secteur-sol-tag">Murs antibruit, clôtures naturelles et haies brise-vent</span></div>
+          <svg class="secteur-sol-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </div>
+      </a>
+        <a href="barriere-vegetale.html" class="secteur-sol-link scroll-reveal" data-delay="80">
+        <div class="secteur-sol-img" style="background-image: url('assets/barriere-vegetale-compo-haut-richelieu-ecran-visuel-saules-quebec.jpg');"></div>
+        <div class="secteur-sol-body">
+          <div class="secteur-sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4v16"/><path d="M3 8h11a2 2 0 1 0-2-2"/><path d="M3 12h13"/><path d="M3 16h10"/></svg></div>
+          <div class="secteur-sol-text"><h3>Barrière végétale</h3><span class="secteur-sol-tag">Écrans végétaux pour parcs, zones résidentielles et infrastructures</span></div>
+          <svg class="secteur-sol-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+      </a>
+        <a href="vegetalisation-site-degrades-saules.html" class="secteur-sol-link scroll-reveal" data-delay="160">
+        <div class="secteur-sol-img" style="background-image: url('assets/vegetalisation-saules-site-degrade-restauration-drone-quebec.jpg');"></div>
+        <div class="secteur-sol-body">
+          <div class="secteur-sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 22V12"/><path d="M12 22V8"/><path d="M18 22V10"/><path d="M6 14c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M6 14c2.5 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/><path d="M12 11c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/><path d="M18 13c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M18 13c2.5 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg></div>
+          <div class="secteur-sol-text"><h3>Végétalisation</h3><span class="secteur-sol-tag">Stabilisation des berges et revégétalisation des espaces verts</span></div>
+          <svg class="secteur-sol-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+      </a>
+        <a href="boues-industrielles.html" class="secteur-sol-link scroll-reveal" data-delay="240">
+        <div class="secteur-sol-img" style="background-image: url('assets/img/brf-saules.jpg');"></div>
+        <div class="secteur-sol-body">
+          <div class="secteur-sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 5l-3 3 3 3"/><path d="M4 8h13a3 3 0 0 1 3 3v3"/><path d="M17 19l3-3-3-3"/><path d="M20 16H7a3 3 0 0 1-3-3v-3"/></svg></div>
+          <div class="secteur-sol-text"><h3>Gestion des MRF</h3><span class="secteur-sol-tag">Valorisation des biosolides municipaux dans les plantations</span></div>
+          <svg class="secteur-sol-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+      </a>
+        <a href="https://paillisramo.com/" class="secteur-sol-link scroll-reveal" data-delay="320" target="_blank" rel="noopener noreferrer">
+        <span class="secteur-sol-badge">Site dédié</span>
+        <div class="secteur-sol-img" style="background-image: url('assets/img/brf-saules.jpg');"></div>
+        <div class="secteur-sol-body">
+          <div class="secteur-sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="7" cy="8" rx="3" ry="1.5"/><ellipse cx="15" cy="10" rx="3" ry="1.5"/><ellipse cx="9" cy="13" rx="3" ry="1.5"/><ellipse cx="17" cy="15" rx="3" ry="1.5"/><ellipse cx="11" cy="18" rx="3" ry="1.5"/></svg></div>
+          <div class="secteur-sol-text"><h3>Paillis BRF </h3><span class="secteur-sol-tag">Paillis naturel pour aménagement paysager et plate-bandes</span></div>
+          <svg class="secteur-sol-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </div>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="secteur-cta scroll-reveal">
+        <h2 class="secteur-cta-title">Vous représentez une municipalité ?</h2>
+        <p class="secteur-cta-text">Contactez-nous pour découvrir comment nos solutions peuvent embellir et protéger votre territoire tout en respectant vos budgets.</p>
+        <a href="index.html#contact" class="btn btn--primary secteur-cta-btn">Nous joindre <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="index.html" aria-label="Ramo - Accueil"><img src="assets/Logo-Ramo-Blanc.png" alt="Ramo" class="footer-logo" style="height: 32px; width: auto; margin-bottom: 16px;"></a>
+        <p class="footer-address">457, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+        <p class="footer-contact">
+          <a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp;
+          <a href="tel:+18445880013">1 844 588-0013</a>
+        </p>
+        <p class="footer-contact"><a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ramo — Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

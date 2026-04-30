@@ -591,4 +591,118 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   })();
 
+  // === Gallery slider arrows (ev-gallery-nav--prev/--next + .ev-gallery scroll) ===
+  // Pour chaque .ev-gallery-wrap qui contient une .ev-gallery + des boutons nav
+  (function () {
+    document.querySelectorAll('.ev-gallery-wrap').forEach(function (wrap) {
+      var gallery = wrap.querySelector('.ev-gallery');
+      var prev = wrap.querySelector('.ev-gallery-nav--prev');
+      var next = wrap.querySelector('.ev-gallery-nav--next');
+      if (!gallery || !prev || !next) return;
+      // Skip si déjà handlé (ex. inline JS murs-antibruit)
+      if (gallery.dataset.navBound) return;
+      gallery.dataset.navBound = '1';
+      var scrollAmt = 400;
+      prev.addEventListener('click', function () {
+        gallery.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+      });
+      next.addEventListener('click', function () {
+        gallery.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+      });
+    });
+  })();
+
+  // === Gallery filters (ev-filter-btn + ev-gallery-item[data-category]) ===
+  // Comportement générique : un bloc .ev-gallery-filters + sa galerie soeur la plus proche.
+  (function () {
+    document.querySelectorAll('.ev-gallery-filters').forEach(function (filterBar) {
+      var scope = filterBar.parentElement;
+      var items = scope.querySelectorAll('.ev-gallery-item[data-category]');
+      var galleryEl = scope.querySelector('.ev-gallery');
+      if (!items.length) return;
+      // Skip si déjà handlé (ex. inline JS murs-antibruit)
+      if (filterBar.dataset.filterBound) return;
+      filterBar.dataset.filterBound = '1';
+      filterBar.querySelectorAll('.ev-filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var cat = btn.getAttribute('data-filter');
+          filterBar.querySelectorAll('.ev-filter-btn').forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          items.forEach(function (item) {
+            var c = item.getAttribute('data-category');
+            if (cat === 'all' || c === cat) {
+              item.classList.remove('is-hidden');
+              item.removeAttribute('hidden');
+            } else {
+              item.classList.add('is-hidden');
+              item.setAttribute('hidden', '');
+            }
+          });
+          // Reset le scroll de la galerie au début pour voir les nouvelles cartes
+          if (galleryEl) galleryEl.scrollTo({ left: 0, behavior: 'smooth' });
+        });
+      });
+    });
+  })();
+
+  // === Press list "Voir plus" toggle ===
+  // Affiche les 8 premiers items, le bouton révèle le reste.
+  (function () {
+    document.querySelectorAll('.press-list-toggle').forEach(function (btn) {
+      // Trouve la <ul.press-list> qui précède le bouton (sibling-prev du wrapper)
+      var actions = btn.closest('.press-list-actions');
+      if (!actions) return;
+      var list = actions.previousElementSibling;
+      while (list && !list.classList.contains('press-list')) {
+        list = list.previousElementSibling;
+      }
+      if (!list) return;
+      var totalItems = list.querySelectorAll('.press-item').length;
+      var visible = parseInt(list.getAttribute('data-visible') || '8', 10);
+      var hidden = totalItems - visible;
+      var countSpan = btn.querySelector('.press-list-toggle-count');
+      if (hidden <= 0) {
+        // Pas besoin du bouton, masquer
+        actions.style.display = 'none';
+        return;
+      }
+      if (countSpan) countSpan.textContent = '(' + hidden + ')';
+      btn.addEventListener('click', function () {
+        var collapsed = list.getAttribute('data-collapsed') === 'true';
+        if (collapsed) {
+          list.setAttribute('data-collapsed', 'false');
+          btn.firstChild.nodeValue = 'Voir moins ';
+          if (countSpan) countSpan.textContent = '';
+        } else {
+          list.setAttribute('data-collapsed', 'true');
+          btn.firstChild.nodeValue = 'Voir plus ';
+          if (countSpan) countSpan.textContent = '(' + hidden + ')';
+          // Scroll back to list top so user doesn't lose context
+          var listTop = list.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: listTop, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+
+  // === FAQ accordion : single-open per group ===
+  // Quand on ouvre une question, ferme automatiquement les autres du même groupe.
+  // Groupe = ensemble de <details> ayant la même classe parmi: faq-item, ev-faq-item, sol-faq-item.
+  (function () {
+    var FAQ_CLASSES = ['faq-item', 'ev-faq-item', 'sol-faq-item'];
+    document.querySelectorAll('details').forEach(function (det) {
+      var matchingClass = FAQ_CLASSES.find(function (c) { return det.classList.contains(c); });
+      if (!matchingClass) return;
+      det.addEventListener('toggle', function () {
+        if (!det.open) return;
+        // Ferme tous les autres details du même groupe (même parent + même classe)
+        var parent = det.parentElement;
+        if (!parent) return;
+        parent.querySelectorAll('details.' + matchingClass).forEach(function (other) {
+          if (other !== det && other.open) other.open = false;
+        });
+      });
+    });
+  })();
+
 });

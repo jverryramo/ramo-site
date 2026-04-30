@@ -1,43 +1,8 @@
     /* --- Team Page Styles --- */
-    .team-hero {
-      position: relative; min-height: 70vh;
-      display: flex; align-items: center; overflow: hidden;
-    }
-    .team-hero-bg {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #003c38 0%, #004a45 40%, #005550 70%, #003c38 100%);
-    }
-    .team-hero-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 70% 30%, rgba(220, 242, 30, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 70%, rgba(124, 198, 141, 0.08) 0%, transparent 50%);
-    }
-    .team-hero-content {
-      position: relative; z-index: 2;
-      max-width: var(--container-width); margin: 0 auto;
-      padding: clamp(140px, 18vw, 200px) clamp(20px, 4vw, 60px) clamp(80px, 10vw, 120px);
-    }
-    .team-hero-label {
-      font-size: 13px; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--color-accent-3);
-      margin-bottom: 24px; display: inline-block;
-      position: relative; padding-left: 32px;
-    }
-    .team-hero-label::before {
-      content: ''; position: absolute; left: 0; top: 50%;
-      width: 20px; height: 1px; background: var(--color-accent-3);
-    }
-    .team-hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(48px, 8vw, 96px); font-weight: 700;
-      color: var(--color-white); line-height: 1.05; margin-bottom: 28px;
-      max-width: 900px;
-    }
-    .team-hero-desc {
-      font-size: clamp(17px, 2vw, 22px); color: var(--color-text-light);
-      font-weight: 300; max-width: 650px; line-height: 1.7;
-    }
+    /* Note : le hero utilise désormais le composant standard .page-hero
+       (style.css) — partagé avec apropos / saules / culture-carriere /
+       ramo-nouvelles-articles-communiques-videos pour uniformiser les
+       en-têtes des pages "À propos". */
 
     /* --- Team Grid --- */
     .team-grid {

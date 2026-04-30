@@ -1,0 +1,682 @@
+/* ============================================================
+   PRODUITS — Composants Murs antibruit & Clôtures
+   Style cohérent avec Ramo dark theme principal.
+   Charge APRÈS ../css/style.css.
+   ============================================================ */
+
+/* ============================================================
+   1. HERO de page produit
+   ============================================================ */
+.ev-page-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 0 80px;
+  background-color: #001f1c;
+}
+.ev-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 30, 28, 0.6) 0%, rgba(0, 30, 28, 0.85) 100%);
+  z-index: 1;
+}
+.ev-page-hero--murs {
+  background-image: url('../assets/produits/hf1-mur-meleze-perspective-route-quebec.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.ev-page-hero--clotures {
+  background-image: url('../assets/cloture-saule-tresse-saint-constant-residentiel-drone-quebec.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.ev-page-hero--hf1,
+.ev-page-hero--ramo-pure {
+  background-image: url('../assets/produits/hf1-mur-antibruit-meleze-vue-aerienne-quebec.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.ev-page-hero--pilebyg,
+.ev-page-hero--ramo-nature {
+  background-image: url('../assets/mur-antibruit-pilebyg-boucherville-residentiel-drone-quebec.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.ev-page-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+.ev-page-hero-inner h1,
+.ev-page-hero-inner > * {
+  max-width: 760px;
+}
+.ev-page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  margin: 0 0 22px;
+}
+.ev-page-hero h1 em,
+.ev-page-hero h1 i {
+  color: var(--color-accent);
+  font-style: italic;
+  font-weight: 600;
+}
+.ev-page-hero-sub {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.55;
+  color: var(--color-text-light);
+  opacity: 0.92;
+  margin: 0 0 28px;
+  max-width: 620px;
+}
+.ev-hero-eyebrow {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 28px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.ev-hero-eyebrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+/* ============================================================
+   2. EV-SPLIT : 2 cartes côte à côte (comparatif Pure vs Nature)
+   ============================================================ */
+.ev-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ev-split-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(220, 242, 30, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s var(--ease-out);
+  text-decoration: none;
+  color: inherit;
+}
+.ev-split-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+  border-color: rgba(220, 242, 30, 0.3);
+}
+.ev-split-card-img {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.ev-split-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out);
+}
+.ev-split-card:hover .ev-split-card-img img { transform: scale(1.04); }
+.ev-split-card-flag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 60, 56, 0.85);
+  border: 1px solid rgba(220, 242, 30, 0.4);
+  color: var(--color-accent);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+.ev-split-card-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 24px 26px 6px;
+  display: block;
+}
+.ev-split-card-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0 26px 12px;
+}
+.ev-split-card-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  opacity: 0.88;
+  margin: 0 26px 18px;
+}
+.ev-split-card-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ev-split-card-specs li {
+  font-size: 13px;
+  color: var(--color-text-light);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
+}
+.ev-split-card-specs li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.ev-split-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin: auto 26px 26px;
+  letter-spacing: 0.04em;
+  transition: gap 0.3s var(--ease-out);
+}
+.ev-split-card-cta:hover { gap: 10px; }
+@media (max-width: 800px) {
+  .ev-split { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   3. EV-USAGES : Grille de cas d'usage
+   ============================================================ */
+.ev-usages {
+  background: rgba(0, 30, 28, 0.4);
+}
+.ev-usages-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 56px auto 0;
+}
+.ev-usage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px 20px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(220, 242, 30, 0.08);
+  border-radius: 12px;
+  transition: all 0.35s var(--ease-out);
+}
+.ev-usage-card:hover {
+  background: rgba(220, 242, 30, 0.05);
+  border-color: rgba(220, 242, 30, 0.25);
+  transform: translateY(-2px);
+}
+.ev-usage-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+  opacity: 0.85;
+}
+.ev-usage-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.ev-usage-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.25;
+}
+.ev-usage-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-light);
+  opacity: 0.82;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .ev-usages-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .ev-usages-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   4. EV-SPECS : liste de specs techniques
+   ============================================================ */
+.ev-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 32px;
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 32px 0;
+  border-top: 1px solid rgba(220, 242, 30, 0.12);
+  border-bottom: 1px solid rgba(220, 242, 30, 0.12);
+}
+.ev-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ev-spec-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.75;
+}
+.ev-spec-value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+/* ============================================================
+   5. EV-CONTENT-BLOCK : bloc de contenu générique
+   ============================================================ */
+.ev-content-block {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.ev-content-block p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  opacity: 0.9;
+  margin: 0 0 18px;
+}
+.ev-content-block strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+.ev-content-block h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 32px 0 12px;
+  letter-spacing: -0.005em;
+}
+
+/* ============================================================
+   6. EV-CALLOUT : citation / encart
+   ============================================================ */
+.ev-callout {
+  background: rgba(220, 242, 30, 0.05);
+  border-left: 3px solid var(--color-accent);
+  padding: 22px 28px;
+  margin: 32px 0;
+  border-radius: 0 8px 8px 0;
+}
+.ev-callout p {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--color-white);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================================
+   7. EV-FAQ : accordion FAQ
+   ============================================================ */
+.ev-faq {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.ev-faq-item {
+  border-bottom: 1px solid rgba(220, 242, 30, 0.12);
+  padding: 18px 0;
+}
+.ev-faq-item summary,
+.ev-faq-item .ev-faq-question {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-white);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0;
+}
+.ev-faq-item summary::-webkit-details-marker { display: none; }
+.ev-faq-item summary::after,
+.ev-faq-item .ev-faq-question::after {
+  content: '+';
+  color: var(--color-accent);
+  font-size: 22px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.ev-faq-item[open] summary::after,
+.ev-faq-item.is-open .ev-faq-question::after {
+  content: '−';
+}
+.ev-faq-answer {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-text-light);
+  opacity: 0.85;
+  padding: 14px 0 6px;
+}
+.ev-faq-answer p { margin: 0 0 12px; }
+
+/* ============================================================
+   8. EV-GALLERY : galerie filtrée
+   ============================================================ */
+.ev-gallery-wrap {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.ev-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.ev-filter-btn {
+  background: transparent;
+  border: 1px solid rgba(220, 242, 30, 0.18);
+  color: var(--color-text-light);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+}
+.ev-filter-btn:hover {
+  background: rgba(220, 242, 30, 0.06);
+  border-color: rgba(220, 242, 30, 0.4);
+  color: var(--color-white);
+}
+.ev-filter-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+/* Slider horizontal — défilement à la souris/tactile + flèches */
+.ev-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(220, 242, 30, 0.3) transparent;
+}
+.ev-gallery::-webkit-scrollbar { height: 6px; }
+.ev-gallery::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.04); border-radius: 3px; }
+.ev-gallery::-webkit-scrollbar-thumb { background: rgba(220, 242, 30, 0.35); border-radius: 3px; }
+.ev-gallery::-webkit-scrollbar-thumb:hover { background: rgba(220, 242, 30, 0.6); }
+.ev-gallery-item {
+  flex: 0 0 380px;
+  height: 280px;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  scroll-snap-align: start;
+  transition: transform 0.35s var(--ease-out);
+}
+.ev-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease-out);
+}
+.ev-gallery-item:hover img { transform: scale(1.04); }
+.ev-gallery-item[hidden],
+.ev-gallery-item.is-hidden { display: none; }
+@media (max-width: 800px) {
+  .ev-gallery-item { flex: 0 0 320px; height: 240px; }
+}
+@media (max-width: 500px) {
+  .ev-gallery-item { flex: 0 0 280px; height: 210px; }
+}
+
+/* Flèches navigation slider — visibles, toujours à l'écran */
+.ev-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: rgba(0, 30, 28, 0.85);
+  border: 1px solid rgba(220, 242, 30, 0.35);
+  color: var(--color-accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+.ev-gallery-nav:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+}
+.ev-gallery-nav--prev { left: -8px; }
+.ev-gallery-nav--next { right: -8px; }
+@media (max-width: 800px) {
+  .ev-gallery-nav { width: 38px; height: 38px; }
+  .ev-gallery-nav--prev { left: 4px; }
+  .ev-gallery-nav--next { right: 4px; }
+}
+
+/* ============================================================
+   9. EV-LIGHTBOX : modal de visualisation d'image
+   ============================================================ */
+.ev-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 20, 18, 0.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+.ev-lightbox.is-open,
+.ev-lightbox[open] {
+  display: flex;
+}
+.ev-lightbox img {
+  max-width: 92%;
+  max-height: 88%;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+.ev-lightbox-close,
+.ev-lightbox-prev,
+.ev-lightbox-next {
+  position: absolute;
+  background: rgba(220, 242, 30, 0.12);
+  border: 1px solid rgba(220, 242, 30, 0.3);
+  color: var(--color-accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  transition: all 0.2s ease;
+}
+.ev-lightbox-close:hover,
+.ev-lightbox-prev:hover,
+.ev-lightbox-next:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+.ev-lightbox-close { top: 24px; right: 24px; }
+.ev-lightbox-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+.ev-lightbox-next { right: 24px; top: 50%; transform: translateY(-50%); }
+
+/* ============================================================
+   10. Section --light : neutralisée pour rester dark
+   (la classe existe dans le markup migré mais on veut Ramo dark)
+   On override aussi les couleurs de texte pour rester lisibles.
+   ============================================================ */
+.section--light {
+  background: transparent !important;
+  color: var(--color-text-light) !important;
+}
+.section--light .section-title { color: var(--color-white) !important; }
+.section--light .section-subtitle { color: var(--color-text-light) !important; opacity: 0.85; }
+.section--light .section-label { color: var(--color-accent) !important; }
+.section--light .section-label::before { background: var(--color-accent) !important; }
+
+/* ============================================================
+   11. Cross-sell card (lien depuis murs antibruit -> clotures
+   et inversement)
+   ============================================================ */
+.cross-sell-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(220, 242, 30, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s var(--ease-out);
+}
+.cross-sell-card:hover {
+  border-color: rgba(220, 242, 30, 0.32);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(220, 242, 30, 0.04);
+}
+.cross-sell-img {
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+  background-color: #002824;
+  position: relative;
+  transition: transform 0.6s var(--ease-out);
+}
+.cross-sell-card:hover .cross-sell-img { transform: scale(1.04); }
+.cross-sell-body {
+  padding: 38px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.cross-sell-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.85;
+}
+.cross-sell-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.cross-sell-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  opacity: 0.88;
+  margin: 0;
+}
+.cross-sell-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  transition: gap 0.3s var(--ease-out);
+}
+.cross-sell-card:hover .cross-sell-link { gap: 10px; }
+@media (max-width: 800px) {
+  .cross-sell-card { grid-template-columns: 1fr; }
+  .cross-sell-img { min-height: 220px; }
+  .cross-sell-body { padding: 30px 28px; }
+}
+
+/* ============================================================
+   12. Lock case-card hover (pour ne pas que les liens passent en accent
+   et deviennent invisibles)
+   ============================================================ */
+.case-card:hover .case-card-title { color: var(--color-white); }
+.case-card:hover .case-card-desc { color: var(--color-text-light); }
+.case-card:hover .case-card-loc { color: var(--color-text-light); }
+.case-card:hover .case-card-link { color: var(--color-accent); }
