@@ -1503,6 +1503,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   gap: 18px;
 }
+.offer-grid--3,
 .offer-grid--5,
 .offer-grid--6 { grid-template-columns: repeat(3, 1fr); }
 .offer-grid--4 { grid-template-columns: repeat(4, 1fr); }
@@ -1622,11 +1623,13 @@ img { max-width: 100%; display: block; }
 .offer-card--external::after { content: '↗'; }
 
 @media (max-width: 1024px) {
+  .offer-grid--3,
   .offer-grid--5,
   .offer-grid--6 { grid-template-columns: repeat(2, 1fr); }
   .offer-grid--4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
+  .offer-grid--3,
   .offer-grid--5,
   .offer-grid--6,
   .offer-grid--4 { grid-template-columns: 1fr; }
