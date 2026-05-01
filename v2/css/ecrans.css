@@ -82,22 +82,40 @@
   align-items: center;
   gap: 4px;
 }
+/* Nav link : soulignement jaune qui se déploie de gauche à droite au hover */
 .ms-nav-link {
   font-family: var(--ms-font-display);
   font-size: 13.5px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.85);
-  padding: 10px 16px;
-  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.88);
+  padding: 10px 4px;
+  margin: 0 12px;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: color 0.3s ease;
   white-space: nowrap;
+  position: relative;
+}
+.ms-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 6px;
+  height: 2px;
+  background: var(--ms-yellow);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .ms-nav-link:hover {
   color: var(--ms-yellow);
-  background: rgba(220, 242, 30, 0.08);
 }
+.ms-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* CTA : arrière-plan qui se "remplit" depuis la gauche + arrow flottant */
 .ms-nav-cta {
   font-family: var(--ms-font-display);
   font-size: 13px;
@@ -105,34 +123,55 @@
   letter-spacing: 0.04em;
   color: var(--ms-green);
   background: var(--ms-yellow);
-  padding: 10px 22px;
+  padding: 11px 22px 11px 24px;
   border-radius: 100px;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 rgba(220, 242, 30, 0);
+}
+.ms-nav-cta svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .ms-nav-cta:hover {
   background: var(--ms-white);
+  box-shadow: 0 8px 24px rgba(220, 242, 30, 0.25);
   transform: translateY(-1px);
 }
+.ms-nav-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* Back : soulignement subtil + arrow recul au hover */
 .ms-nav-back {
   font-family: var(--ms-font-display);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 12px;
-  transition: color 0.25s ease;
+  gap: 8px;
+  padding: 10px 14px;
+  transition: color 0.3s ease;
+  position: relative;
 }
-.ms-nav-back:hover { color: var(--ms-yellow); }
+.ms-nav-back svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ms-nav-back:hover {
+  color: var(--ms-yellow);
+}
+.ms-nav-back:hover svg {
+  transform: translateX(-3px);
+}
 
 /* Mobile nav */
 .ms-nav-toggle {
