@@ -177,11 +177,19 @@
 /* =========================================================================
    PAGE BODY DEFAULTS
    ========================================================================= */
+/* Body bg : par défaut dark green pour les pages produits avec sections V2 ;
+   les pages mini-site internes (index, apropos, contact, projets-signatures)
+   ont leurs propres backgrounds via .ms-hero, .ms-page-hero, .ms-section--*  */
 .ms body, body.ms {
   font-family: var(--ms-font-body);
+  background: var(--ms-green);
+  color: var(--ms-text-on-green);
+  line-height: 1.6;
+}
+/* Pages mini-site internes : background jaune clair par défaut (cohérent avec leur design) */
+body.ms.ms-internal {
   background: var(--ms-yellow);
   color: var(--ms-text-dark);
-  line-height: 1.6;
 }
 .ms main {
   padding-top: 64px; /* offset pour le header fixe */
