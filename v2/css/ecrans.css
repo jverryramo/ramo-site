@@ -1065,7 +1065,7 @@ body.ms.ms-internal {
 .ms-product-hero-title em {
   font-style: italic;
   font-weight: 700;
-  color: var(--ms-green-deep);
+  color: #8a6f48;
   display: inline-block;
 }
 .ms-product-hero-desc {
