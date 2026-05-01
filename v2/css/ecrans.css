@@ -970,6 +970,107 @@
 }
 
 /* =========================================================================
+   PRODUCT HERO — split layout uniformisé (4 pages produits)
+   45% jaune (texte) + 55% photo full-bleed
+   ========================================================================= */
+.ms-product-hero {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  min-height: clamp(540px, 65vh, 720px);
+  position: relative;
+  margin-top: 64px; /* offset header fixe */
+}
+.ms-product-hero-content {
+  background: var(--ms-yellow);
+  padding: clamp(50px, 7vw, 90px) clamp(32px, 5vw, 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.ms-product-hero-content::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(0, 60, 56, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ms-product-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ms-font-display);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ms-green);
+  margin-bottom: 24px;
+  width: fit-content;
+}
+.ms-product-hero-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--ms-green);
+}
+.ms-product-hero-title {
+  font-family: var(--ms-font-display);
+  font-size: clamp(38px, 5.5vw, 76px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--ms-green);
+  margin: 0 0 24px;
+}
+.ms-product-hero-title em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--ms-green-deep);
+  display: inline-block;
+}
+.ms-product-hero-desc {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.6;
+  color: rgba(0, 60, 56, 0.85);
+  margin: 0 0 32px;
+  max-width: 520px;
+}
+.ms-product-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ms-product-hero-image {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ms-green);
+  position: relative;
+  min-height: 360px;
+}
+.ms-product-hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(220, 242, 30, 0.15) 0%, transparent 25%);
+  pointer-events: none;
+}
+@media (max-width: 880px) {
+  .ms-product-hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .ms-product-hero-content { padding: clamp(40px, 6vw, 60px) clamp(24px, 5vw, 48px); }
+  .ms-product-hero-image { min-height: 320px; order: -1; }
+  .ms-product-hero-image::after {
+    background: linear-gradient(180deg, transparent 70%, rgba(220, 242, 30, 0.15) 100%);
+  }
+}
+
+/* =========================================================================
    APROPOS — sections texte / image
    ========================================================================= */
 .ms-text-image {
