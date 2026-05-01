@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramo — Écrans antibruit et visuels | Murs antibruit HF1 et Pilebyg, clôtures en saule</title>
+  <meta name="description" content="Murs antibruit HF1 (mélèze) et Pilebyg (saule), clôtures écorcées et tressées. Performance acoustique, conformité MTMD, durabilité 40+ ans. Pour villes, promoteurs, ingénieurs, acousticiens et architectes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/murs-antibruit-clotures-ecrans/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ramo — Écrans antibruit et visuels">
+  <meta property="og:description" content="Murs antibruit HF1 et Pilebyg, clôtures en saule. Infrastructure verte performante et conforme.">
+  <meta property="og:image" content="../assets/Eco-produits.jpg">
+  <meta property="og:url" content="https://ramo.eco/murs-antibruit-clotures-ecrans/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Écrans antibruit et visuels",
+    "provider": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" },
+    "url": "https://ramo.eco/murs-antibruit-clotures-ecrans/",
+    "description": "Murs antibruit HF1 (mélèze) et Pilebyg (saule), clôtures en saule écorcé et tressé pour villes, promoteurs immobiliers, firmes d'ingénierie et architectes.",
+    "areaServed": { "@type": "Country", "name": "Canada" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/ecrans.css">
+</head>
+<body class="ms">
+
+  <!-- Header mini-site -->
+  <header class="ms-header">
+    <div class="ms-header-inner">
+      <a href="index.html" class="ms-logo" aria-label="Ramo Écrans antibruit et visuels">
+        <img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo">
+        <span class="ms-logo-divider"></span>
+        <span class="ms-logo-tagline">Écrans antibruit<br>et visuels</span>
+      </a>
+      <button class="ms-nav-toggle" aria-label="Menu" onclick="document.querySelector('.ms-nav').classList.toggle('is-open')">Menu</button>
+      <nav class="ms-nav" aria-label="Navigation mini-site">
+        <a href="../murs-antibruit.html" class="ms-nav-link">Murs antibruit</a>
+        <a href="../clotures-naturelles-saule-ecorce.html" class="ms-nav-link">Clôtures</a>
+        <a href="etudes-de-cas.html" class="ms-nav-link">Études de cas</a>
+        <a href="apropos.html" class="ms-nav-link">À propos</a>
+        <a href="../index.html" class="ms-nav-back" aria-label="Retour au site principal Ramo">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Site Ramo
+        </a>
+        <a href="contact.html" class="ms-nav-cta">
+          Contact
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="ms-hero">
+      <div class="ms-container">
+        <span class="ms-hero-eyebrow">Infrastructure verte performante</span>
+        <h1 class="ms-hero-title">Atténuer le bruit. Filtrer la vue. <em>Verdir</em> le bâti.</h1>
+        <p class="ms-hero-desc">Murs antibruit conformes MTMD et clôtures en saule pour les villes, promoteurs, firmes d'ingénierie, acousticiens et architectes paysagistes. Performance vérifiée, intégration paysagère, durabilité de 40 ans et plus.</p>
+        <div class="ms-hero-cta-group">
+          <a href="contact.html" class="ms-btn-primary">
+            Demander une étude
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#produits" class="ms-btn-secondary">Voir les produits</a>
+        </div>
+
+        <div class="ms-hero-stats">
+          <div>
+            <div class="ms-hero-stat-value">−18 dB</div>
+            <div class="ms-hero-stat-label">Atténuation acoustique typique</div>
+          </div>
+          <div>
+            <div class="ms-hero-stat-value">40+ ans</div>
+            <div class="ms-hero-stat-label">Durabilité documentée</div>
+          </div>
+          <div>
+            <div class="ms-hero-stat-value">MTMD</div>
+            <div class="ms-hero-stat-label">Conformité Transports Québec</div>
+          </div>
+          <div>
+            <div class="ms-hero-stat-value">100 %</div>
+            <div class="ms-hero-stat-label">Matériaux naturels et durables</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produits -->
+    <section class="ms-section ms-section--white" id="produits">
+      <div class="ms-container">
+        <span class="ms-section-label">Notre gamme</span>
+        <h2 class="ms-section-title">Quatre solutions pour quatre usages.</h2>
+        <p class="ms-section-subtitle">Du mur antibruit autoroutier au panneau visuel résidentiel — chaque produit répond à un cahier des charges précis : performance acoustique, intégration paysagère, conformité réglementaire et durabilité.</p>
+
+        <div class="ms-products">
+
+          <a href="../le-hf1.html" class="ms-product-card">
+            <div class="ms-product-card-img" style="background-image: url('../assets/produits/hf1-mur-antibruit-meleze-vue-aerienne-quebec.jpg');">
+              <span class="ms-product-card-tag">Mur antibruit · Mélèze</span>
+            </div>
+            <div class="ms-product-card-body">
+              <span class="ms-product-card-mark">Ramo Pure™</span>
+              <h3 class="ms-product-card-name">HF1 — panneau acoustique en mélèze</h3>
+              <p class="ms-product-card-desc">Mur antibruit en mélèze massif, conçu pour les autoroutes, postes électriques, sites industriels et sentiers piétonniers. Performance acoustique élevée, conforme aux standards MTMD.</p>
+              <span class="ms-product-card-link">Découvrir HF1
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="../le-pilebyg.html" class="ms-product-card">
+            <div class="ms-product-card-img" style="background-image: url('../assets/produits/pilebyg-mur-saule-zone-commerciale-drone-quebec.jpg');">
+              <span class="ms-product-card-tag">Mur antibruit · Saule</span>
+            </div>
+            <div class="ms-product-card-body">
+              <span class="ms-product-card-mark">Ramo Nature™</span>
+              <h3 class="ms-product-card-name">Pilebyg — mur antibruit en saule vivant</h3>
+              <p class="ms-product-card-desc">Système Pilebyg en saule vivant, mur antibruit qui se densifie et se végétalise avec le temps. Pour les milieux urbains denses, parcs, écoles et secteurs résidentiels.</p>
+              <span class="ms-product-card-link">Découvrir Pilebyg
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="../clotures-naturelles-saule-ecorce.html" class="ms-product-card">
+            <div class="ms-product-card-img" style="background-image: url('../assets/produits/cloture-saule-tresse-piste-cyclable-drone-quebec.jpg');">
+              <span class="ms-product-card-tag">Clôture · Saule tressé</span>
+            </div>
+            <div class="ms-product-card-body">
+              <span class="ms-product-card-mark">Tressée</span>
+              <h3 class="ms-product-card-name">Clôture en saule tressé</h3>
+              <p class="ms-product-card-desc">Clôture artisanale tressée en branches de saule. Aménagements paysagers, intimité résidentielle, délimitation de pistes cyclables et espaces publics.</p>
+              <span class="ms-product-card-link">Voir les clôtures tressées
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="../clotures-naturelles-saule-ecorce.html" class="ms-product-card">
+            <div class="ms-product-card-img" style="background-image: url('../assets/produits/cloture-saule-ecorce-costco-amenagement-quebec.jpg');">
+              <span class="ms-product-card-tag">Clôture · Saule écorcé</span>
+            </div>
+            <div class="ms-product-card-body">
+              <span class="ms-product-card-mark">Écorcée</span>
+              <h3 class="ms-product-card-name">Clôture en saule écorcé</h3>
+              <p class="ms-product-card-desc">Clôture rigide en saule écorcé, finition épurée et contemporaine. Sites commerciaux, hôtels, copropriétés et aménagements urbains haut de gamme.</p>
+              <span class="ms-product-card-link">Voir les clôtures écorcées
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Différenciateurs -->
+    <section class="ms-section ms-section--green">
+      <div class="ms-container">
+        <span class="ms-section-label">Pourquoi nous</span>
+        <h2 class="ms-section-title">Performance vérifiée. Intégration assumée.</h2>
+        <p class="ms-section-subtitle">Quatre raisons pour lesquelles les villes, firmes d'ingénierie et acousticiens choisissent Ramo plutôt qu'un panneau béton ou un écran vinyle.</p>
+
+        <div class="ms-features">
+          <div class="ms-feature">
+            <span class="ms-feature-num">01 · Acoustique</span>
+            <h3 class="ms-feature-title">Performance documentée</h3>
+            <p class="ms-feature-desc">Atténuation typique de 18 à 25 dB selon hauteur et configuration. Tests acoustiques disponibles pour études de bruit MTMD.</p>
+          </div>
+          <div class="ms-feature">
+            <span class="ms-feature-num">02 · Conformité</span>
+            <h3 class="ms-feature-title">Standards MTMD respectés</h3>
+            <p class="ms-feature-desc">Produits utilisés sur le réseau routier supérieur du Québec. Documentation technique complète pour vos cahiers des charges.</p>
+          </div>
+          <div class="ms-feature">
+            <span class="ms-feature-num">03 · Durabilité</span>
+            <h3 class="ms-feature-title">40+ ans en service actif</h3>
+            <p class="ms-feature-desc">Mélèze massif imputrescible, conception modulaire, faible entretien. Cycle de vie supérieur aux écrans béton et vinyle.</p>
+          </div>
+          <div class="ms-feature">
+            <span class="ms-feature-num">04 · Intégration</span>
+            <h3 class="ms-feature-title">Paysage avant infrastructure</h3>
+            <p class="ms-feature-desc">Texture, teinte et structure naturelles : l'écran s'intègre sans dénaturer. Acceptabilité sociale renforcée par rapport aux solutions béton.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Études de cas teaser -->
+    <section class="ms-section ms-section--cream">
+      <div class="ms-container">
+        <span class="ms-section-label">Sur le terrain</span>
+        <h2 class="ms-section-title">Quelques projets récents.</h2>
+        <p class="ms-section-subtitle">Murs antibruit autoroutiers, écrans pour parcs résidentiels, panneaux acoustiques en zone industrielle, clôtures pour aménagements urbains.</p>
+
+        <div class="ms-cases-grid">
+          <a href="etudes-de-cas.html" class="ms-case-card">
+            <div class="ms-case-card-img" style="background-image: url('../assets/produits/pilebyg-mur-antibruit-autoroute-a15-montreal.jpg');"></div>
+            <div class="ms-case-card-body">
+              <span class="ms-case-card-loc">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Laval, QC
+              </span>
+              <h3 class="ms-case-card-name">Mur antibruit Pilebyg — Autoroute A15</h3>
+              <p class="ms-case-card-desc">Mur antibruit Pilebyg en bordure de l'autoroute A15 — protection acoustique du secteur résidentiel.</p>
+              <div class="ms-case-card-tags">
+                <span class="ms-case-card-tag">Pilebyg</span>
+                <span class="ms-case-card-tag">MTMD</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="etudes-de-cas.html" class="ms-case-card">
+            <div class="ms-case-card-img" style="background-image: url('../assets/produits/pilebyg-mur-antibruit-costco-boucherville-quebec.jpg');"></div>
+            <div class="ms-case-card-body">
+              <span class="ms-case-card-loc">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Boucherville, QC
+              </span>
+              <h3 class="ms-case-card-name">Costco Boucherville — Pilebyg</h3>
+              <p class="ms-case-card-desc">Mur antibruit en saule entre la zone commerciale Costco et le secteur résidentiel adjacent.</p>
+              <div class="ms-case-card-tags">
+                <span class="ms-case-card-tag">Pilebyg</span>
+                <span class="ms-case-card-tag">Commercial</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="etudes-de-cas.html" class="ms-case-card">
+            <div class="ms-case-card-img" style="background-image: url('../assets/produits/cloture-saule-tresse-piste-cyclable-drone-quebec.jpg');"></div>
+            <div class="ms-case-card-body">
+              <span class="ms-case-card-loc">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Saint-Constant, QC
+              </span>
+              <h3 class="ms-case-card-name">Clôture en saule tressé — piste cyclable</h3>
+              <p class="ms-case-card-desc">Délimitation d'une piste cyclable par clôture en saule tressé, intégration paysagère assumée.</p>
+              <div class="ms-case-card-tags">
+                <span class="ms-case-card-tag">Clôture</span>
+                <span class="ms-case-card-tag">Municipal</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 56px;">
+          <a href="etudes-de-cas.html" class="ms-btn-secondary">
+            Toutes les études de cas
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA banner -->
+    <section class="ms-cta-banner">
+      <div class="ms-container">
+        <span class="ms-cta-eyebrow">Parlons de votre projet</span>
+        <h2 class="ms-cta-title">Une étude acoustique à mener ? Un cahier des charges à respecter ?</h2>
+        <p class="ms-cta-desc">Notre équipe technique répond aux firmes d'ingénierie, acousticiens, architectes et villes en moins de 48 h.</p>
+        <div class="ms-cta-actions">
+          <a href="contact.html" class="ms-btn-primary">
+            Demander une étude
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="apropos.html" class="ms-btn-secondary">En savoir plus sur Ramo</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer mini-site -->
+  <footer class="ms-footer">
+    <div class="ms-container">
+      <div class="ms-footer-grid">
+        <div class="ms-footer-info">
+          <a href="index.html" aria-label="Ramo Écrans antibruit et visuels"><img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo"></a>
+          <p class="ms-footer-tagline">Murs antibruit et clôtures en saule. Une division de Ramo phytotechnologies.</p>
+          <p>457, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+          <p><a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp; <a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+        </div>
+        <div>
+          <h4>Produits</h4>
+          <ul>
+            <li><a href="../le-hf1.html">HF1 (mélèze)</a></li>
+            <li><a href="../le-pilebyg.html">Pilebyg (saule vivant)</a></li>
+            <li><a href="../clotures-naturelles-saule-ecorce.html">Clôtures tressées</a></li>
+            <li><a href="../clotures-naturelles-saule-ecorce.html">Clôtures écorcées</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Mini-site</h4>
+          <ul>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="etudes-de-cas.html">Études de cas</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site principal Ramo</h4>
+          <ul>
+            <li><a href="../index.html">Accueil Ramo</a></li>
+            <li><a href="../apropos.html">Qui sommes-nous</a></li>
+            <li><a href="../nous-joindre.html">Nous joindre</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ms-footer-bottom">
+        <span>© 2026 Ramo phytotechnologies. Tous droits réservés.</span>
+        <span>
+          <a href="../index.html">ramo.eco</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

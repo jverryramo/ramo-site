@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ramo Écrans antibruit et visuels</title>
+  <meta name="description" content="Demandez une étude acoustique, une fiche technique ou un devis pour les murs antibruit HF1, Pilebyg et nos clôtures en saule. Réponse en moins de 48 h.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/murs-antibruit-clotures-ecrans/contact/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/ecrans.css">
+</head>
+<body class="ms">
+
+  <header class="ms-header">
+    <div class="ms-header-inner">
+      <a href="index.html" class="ms-logo" aria-label="Ramo Écrans antibruit et visuels">
+        <img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo">
+        <span class="ms-logo-divider"></span>
+        <span class="ms-logo-tagline">Écrans antibruit<br>et visuels</span>
+      </a>
+      <button class="ms-nav-toggle" aria-label="Menu" onclick="document.querySelector('.ms-nav').classList.toggle('is-open')">Menu</button>
+      <nav class="ms-nav" aria-label="Navigation mini-site">
+        <a href="../murs-antibruit.html" class="ms-nav-link">Murs antibruit</a>
+        <a href="../clotures-naturelles-saule-ecorce.html" class="ms-nav-link">Clôtures</a>
+        <a href="etudes-de-cas.html" class="ms-nav-link">Études de cas</a>
+        <a href="apropos.html" class="ms-nav-link">À propos</a>
+        <a href="../index.html" class="ms-nav-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Site Ramo
+        </a>
+        <a href="contact.html" class="ms-nav-cta">
+          Contact
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero secondaire -->
+    <section class="ms-page-hero">
+      <div class="ms-container">
+        <span class="ms-page-hero-eyebrow">Contact</span>
+        <h1 class="ms-page-hero-title">Parlons de votre projet d'écrans.</h1>
+        <p class="ms-page-hero-desc">Une étude acoustique à mener, un cahier des charges à respecter, une fiche technique à intégrer ? Notre équipe répond aux ingénieurs, acousticiens, architectes et villes en moins de 48 h.</p>
+      </div>
+    </section>
+
+    <!-- Formulaire -->
+    <section class="ms-section ms-section--white">
+      <div class="ms-container">
+        <div class="ms-contact-grid">
+
+          <!-- Colonne info -->
+          <div class="ms-contact-info">
+            <span class="ms-section-label">Coordonnées</span>
+            <h2 class="ms-section-title" style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 20px;">Une équipe technique disponible.</h2>
+            <p>Nos chargés de projets répondent aux demandes des firmes d'ingénierie, des acousticiens et des municipalités sous 48 heures ouvrables.</p>
+
+            <div class="ms-contact-info-block">
+              <h4>Téléphone</h4>
+              <a href="tel:+14505880013">1 450 588-0013</a>
+              <a href="tel:+18445880013">1 844 588-0013 (sans frais)</a>
+            </div>
+
+            <div class="ms-contact-info-block">
+              <h4>Courriel</h4>
+              <a href="mailto:info@ramo.eco">info@ramo.eco</a>
+              <a href="mailto:ecrans@ramo.eco">ecrans@ramo.eco</a>
+            </div>
+
+            <div class="ms-contact-info-block">
+              <h4>Adresse</h4>
+              <p>457, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC<br>J0K 3H0</p>
+            </div>
+
+            <div class="ms-contact-info-block">
+              <h4>Documentation pro</h4>
+              <p>Fiches techniques, tests acoustiques, devis types et détails d'installation disponibles sur demande pour les professionnels.</p>
+            </div>
+          </div>
+
+          <!-- Formulaire -->
+          <form class="ms-form" action="mailto:info@ramo.eco" method="post" enctype="text/plain">
+            <span class="ms-section-label">Demande de contact</span>
+            <h2 class="ms-section-title" style="font-size: clamp(24px, 3vw, 32px); margin-bottom: 28px;">Décrivez votre projet.</h2>
+
+            <div class="ms-form-row">
+              <div class="ms-form-field">
+                <label class="ms-form-label" for="nom">Nom complet *</label>
+                <input class="ms-form-input" type="text" id="nom" name="nom" required>
+              </div>
+              <div class="ms-form-field">
+                <label class="ms-form-label" for="entreprise">Organisation</label>
+                <input class="ms-form-input" type="text" id="entreprise" name="entreprise">
+              </div>
+            </div>
+
+            <div class="ms-form-row">
+              <div class="ms-form-field">
+                <label class="ms-form-label" for="email">Courriel *</label>
+                <input class="ms-form-input" type="email" id="email" name="email" required>
+              </div>
+              <div class="ms-form-field">
+                <label class="ms-form-label" for="tel">Téléphone</label>
+                <input class="ms-form-input" type="tel" id="tel" name="tel">
+              </div>
+            </div>
+
+            <div class="ms-form-field">
+              <label class="ms-form-label" for="profil">Vous êtes…</label>
+              <select class="ms-form-select" id="profil" name="profil">
+                <option value="">Sélectionnez…</option>
+                <option>Firme d'ingénierie</option>
+                <option>Acousticien</option>
+                <option>Architecte / paysagiste</option>
+                <option>Urbaniste</option>
+                <option>Municipalité / DG de ville</option>
+                <option>Promoteur immobilier</option>
+                <option>Entreprise / industriel</option>
+                <option>Particulier</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div class="ms-form-field">
+              <label class="ms-form-label" for="produit">Produit d'intérêt</label>
+              <select class="ms-form-select" id="produit" name="produit">
+                <option value="">Sélectionnez…</option>
+                <option>HF1 — mur antibruit en mélèze</option>
+                <option>Pilebyg — mur antibruit en saule vivant</option>
+                <option>Clôture en saule tressé</option>
+                <option>Clôture en saule écorcé</option>
+                <option>Combinaison / pas encore décidé</option>
+              </select>
+            </div>
+
+            <div class="ms-form-field">
+              <label class="ms-form-label" for="objet">Objet de la demande</label>
+              <select class="ms-form-select" id="objet" name="objet">
+                <option value="">Sélectionnez…</option>
+                <option>Devis / estimation</option>
+                <option>Documentation technique / fiches</option>
+                <option>Étude acoustique / dimensionnement</option>
+                <option>Visite de référence terrain</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div class="ms-form-field">
+              <label class="ms-form-label" for="message">Description du projet *</label>
+              <textarea class="ms-form-textarea" id="message" name="message" placeholder="Site, contexte, longueur estimée, hauteur visée, échéancier…" required></textarea>
+            </div>
+
+            <button type="submit" class="ms-form-submit">
+              Envoyer la demande
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ms-footer">
+    <div class="ms-container">
+      <div class="ms-footer-grid">
+        <div class="ms-footer-info">
+          <a href="index.html" aria-label="Ramo Écrans antibruit et visuels"><img src="../assets/Logo-Ramo-Blanc.png" alt="Ramo"></a>
+          <p class="ms-footer-tagline">Murs antibruit et clôtures en saule. Une division de Ramo phytotechnologies.</p>
+          <p>457, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+          <p><a href="tel:+14505880013">1 450 588-0013</a> &nbsp;|&nbsp; <a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+        </div>
+        <div>
+          <h4>Produits</h4>
+          <ul>
+            <li><a href="../le-hf1.html">HF1 (mélèze)</a></li>
+            <li><a href="../le-pilebyg.html">Pilebyg (saule vivant)</a></li>
+            <li><a href="../clotures-naturelles-saule-ecorce.html">Clôtures tressées</a></li>
+            <li><a href="../clotures-naturelles-saule-ecorce.html">Clôtures écorcées</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Mini-site</h4>
+          <ul>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="etudes-de-cas.html">Études de cas</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site principal Ramo</h4>
+          <ul>
+            <li><a href="../index.html">Accueil Ramo</a></li>
+            <li><a href="../apropos.html">Qui sommes-nous</a></li>
+            <li><a href="../nous-joindre.html">Nous joindre</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ms-footer-bottom">
+        <span>© 2026 Ramo phytotechnologies. Tous droits réservés.</span>
+        <span><a href="../index.html">ramo.eco</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
