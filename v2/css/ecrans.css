@@ -986,7 +986,7 @@ body.ms.ms-internal {
   grid-template-columns: 0.85fr 1fr;
   min-height: clamp(540px, 65vh, 720px);
   position: relative;
-  margin-top: 64px; /* offset header fixe */
+  /* margin-top: 64px retiré — body.ms main { padding-top: 64px; } gère déjà l'offset */
 }
 .ms-product-hero-content {
   background: var(--ms-yellow);
