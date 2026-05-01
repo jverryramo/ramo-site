@@ -201,23 +201,43 @@ body.ms.ms-internal {
 }
 
 /* =========================================================================
-   HERO
+   HERO — image dominante avec overlay sombre
    ========================================================================= */
 .ms-hero {
-  background: var(--ms-yellow);
-  padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 120px);
   position: relative;
   overflow: hidden;
+  padding: clamp(140px, 18vw, 220px) 0 clamp(80px, 10vw, 140px);
+  background-color: var(--ms-green);
+  background-image: url('../assets/Eco-produits.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--ms-white);
+  min-height: clamp(620px, 80vh, 820px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .ms-hero::before {
   content: '';
   position: absolute;
-  top: -150px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 60, 56, 0.06) 0%, transparent 70%);
+  inset: 0;
+  background: linear-gradient(115deg, rgba(0, 60, 56, 0.88) 0%, rgba(0, 60, 56, 0.62) 45%, rgba(0, 42, 39, 0.58) 100%);
   pointer-events: none;
+}
+.ms-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(220, 242, 30, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ms-hero > .ms-container {
+  position: relative;
+  z-index: 2;
 }
 .ms-hero-eyebrow {
   display: inline-flex;
@@ -230,8 +250,8 @@ body.ms.ms-internal {
   text-transform: uppercase;
   color: var(--ms-green);
   margin-bottom: 28px;
-  padding: 8px 16px;
-  background: rgba(0, 60, 56, 0.06);
+  padding: 8px 18px;
+  background: var(--ms-yellow);
   border-radius: 100px;
 }
 .ms-hero-eyebrow::before {
@@ -248,29 +268,34 @@ body.ms.ms-internal {
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.025em;
-  color: var(--ms-green);
+  color: var(--ms-white);
   margin: 0 0 28px;
   max-width: 1100px;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.18);
 }
 .ms-hero-title em {
   font-style: italic;
   font-weight: 700;
-  color: var(--ms-green-deep);
-  position: relative;
+  color: var(--ms-yellow);
   display: inline-block;
-  padding: 0 6px;
-  margin: 0 -6px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 4px;
 }
 .ms-hero-desc {
   font-family: var(--ms-font-body);
   font-size: clamp(17px, 1.8vw, 22px);
   line-height: 1.55;
-  color: rgba(0, 60, 56, 0.85);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 720px;
   margin: 0 0 40px;
   font-weight: 400;
+}
+.ms-hero .ms-btn-secondary {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--ms-white);
+}
+.ms-hero .ms-btn-secondary:hover {
+  background: var(--ms-white);
+  border-color: var(--ms-white);
+  color: var(--ms-green);
 }
 .ms-hero-cta-group {
   display: flex;
@@ -329,14 +354,14 @@ body.ms.ms-internal {
   gap: clamp(20px, 3vw, 40px);
   margin-top: clamp(60px, 8vw, 90px);
   padding-top: clamp(40px, 5vw, 60px);
-  border-top: 1px solid var(--ms-line-on-yellow);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 .ms-hero-stat-value {
   font-family: var(--ms-font-display);
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--ms-green);
+  color: var(--ms-yellow);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -346,7 +371,7 @@ body.ms.ms-internal {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(0, 60, 56, 0.65);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* =========================================================================
