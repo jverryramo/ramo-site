@@ -3541,18 +3541,20 @@ a:focus-visible { outline-offset: 2px; }
   box-shadow: 0 14px 36px rgba(0, 60, 56, 0.12);
 }
 .section--light .case-card-title {
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
+  opacity: 1 !important;
 }
 .section--light .case-card-loc {
-  color: var(--color-text-dark);
-  opacity: 0.65;
+  color: #555 !important;
+  opacity: 1 !important;
 }
 .section--light .case-card-desc {
-  color: #444;
-  opacity: 0.95;
+  color: #333 !important;
+  opacity: 1 !important;
 }
 .section--light .case-card-link {
-  color: var(--color-accent-2);
+  color: var(--color-accent-2) !important;
+  opacity: 1 !important;
 }
 
 /* === V2 — Valeurs (page À propos) === */
