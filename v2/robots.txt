@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+
+# Pages techniques à exclure
 Disallow: /APP SIGNATURE/
+Disallow: /communiques/template.html
 
 Sitemap: https://ramo.eco/sitemap.xml

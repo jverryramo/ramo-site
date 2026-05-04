@@ -2,3 +2,7 @@
 node_modules/
 .claude/
 *.log
+
+# Backups locaux (originaux pré-compression)
+v2/assets/_originals/
+v2/assets/_graded/

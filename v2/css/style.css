@@ -3529,6 +3529,32 @@ a:focus-visible { outline-offset: 2px; }
   .case-grid { grid-template-columns: 1fr; }
 }
 
+/* Case-card sur fond clair (section--light) — overrides contraste */
+.section--light .case-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 60, 56, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.section--light .case-card:hover {
+  background: #ffffff;
+  border-color: rgba(0, 60, 56, 0.25);
+  box-shadow: 0 14px 36px rgba(0, 60, 56, 0.12);
+}
+.section--light .case-card-title {
+  color: var(--color-primary);
+}
+.section--light .case-card-loc {
+  color: var(--color-text-dark);
+  opacity: 0.65;
+}
+.section--light .case-card-desc {
+  color: #444;
+  opacity: 0.95;
+}
+.section--light .case-card-link {
+  color: var(--color-accent-2);
+}
+
 /* === V2 — Valeurs (page À propos) === */
 .values-section { padding-top: clamp(60px, 8vw, 100px); padding-bottom: clamp(60px, 8vw, 100px); }
 .values-grid {

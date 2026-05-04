@@ -1,68 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ramo.eco/</loc><lastmod>2026-03-31</lastmod><priority>1.0</priority></url>
-  <url><loc>https://ramo.eco/apropos.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/carrieres.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/equipe.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/nouvelles.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/saules.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/solutions/evaplant.html</loc><lastmod>2026-03-31</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/solutions/evacap.html</loc><lastmod>2026-03-31</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/index.html</loc><lastmod>2026-04-10</lastmod><priority>0.95</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/murs-antibruit.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/hf1.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/pilebyg.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/clotures.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/etudes-de-cas.html</loc><lastmod>2026-04-10</lastmod><priority>0.85</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/apropos.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/ecrans-verts/contact.html</loc><lastmod>2026-04-10</lastmod><priority>0.85</priority></url>
-  <url><loc>https://ramo.eco/solutions/fourniture.html</loc><lastmod>2026-03-31</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/solutions/restauration.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/solutions/haie-saules.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/solutions/mrf.html</loc><lastmod>2026-04-13</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ramo.eco/secteurs/enfouissement.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/secteurs/municipal.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/secteurs/minier.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/secteurs/boues.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/secteurs/immobilier.html</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/secteurs/industriel.html</loc><lastmod>2026-04-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/saint-nicephore.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/saint-lambert-de-lauzon.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/sept-iles.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/boucherville.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/saint-constant.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/saint-jean-sur-richelieu.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/terrebonne.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/sainte-sophie.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/lavaltrie.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/etudes-de-cas/fermont.html</loc><lastmod>2026-04-17</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/equipe/francis-allard.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/benjamin-walczak.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/olivier-payette.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/xavier-lachapelle.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/jean-shoiry.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/mathieu-turcot.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/john-lavery.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/olivier-lalonde.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/jerome-verry.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/louis-clement-barbeau.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/kathleen-dube.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/karl-boucher.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/camille-girard.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/simon-piette.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/gabrielle-veillet.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/marie-poulin-ouellette.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/equipe/stephanie-duval.html</loc><lastmod>2026-03-31</lastmod><priority>0.6</priority></url>
-  <url><loc>https://ramo.eco/carrieres/charge-projets.html</loc><lastmod>2026-03-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/boucherville-mur-antibruit.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/wm-sainte-sophie-evaplant.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/clean50-2025.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/nomination-benjamin-walczak.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/neuville-saules.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/sable-villeneuve-restauration.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/sayona-partenariat.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/bionera-partenariat.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/solution-verte.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/novembre-2023.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ramo.eco/communiques/gatineau-mur-antibruit.html</loc><lastmod>2026-04-15</lastmod><priority>0.7</priority></url>
+
+  <!-- Pages principales -->
+  <url><loc>https://ramo.eco/</loc><lastmod>2026-05-04</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ramo.eco/apropos.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/saules.html</loc><lastmod>2026-05-04</lastmod><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/equipe-ramo.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/culture-carriere.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ramo.eco/nous-joindre.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/ramo-nouvelles-articles-communiques-videos.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Articles "Les saules" (knowledge hub) -->
+  <url><loc>https://ramo.eco/saule-superpouvoirs.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/saule-varietes.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/saule-culture.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/saule-histoire-ramo.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Phyto-solutions -->
+  <url><loc>https://ramo.eco/evaplant.html</loc><lastmod>2026-05-04</lastmod><priority>0.95</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/evacap-ruissellement-eaux-usees.html</loc><lastmod>2026-05-04</lastmod><priority>0.95</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/barriere-vegetale.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/vegetalisation-site-degrades-saules.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/sols-miniers-substrat-vegetalisation.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/paillis.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/plantation-et-fourniture.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/boues-industrielles.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Mini-site Écrans antibruit et visuels -->
+  <url><loc>https://ramo.eco/murs-antibruit-clotures-ecrans/</loc><lastmod>2026-05-04</lastmod><priority>0.95</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ramo.eco/murs-antibruit-clotures-ecrans/apropos.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/murs-antibruit-clotures-ecrans/contact.html</loc><lastmod>2026-05-04</lastmod><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/murs-antibruit-clotures-ecrans/projets-signatures.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Pages produits du tunnel mini-site -->
+  <url><loc>https://ramo.eco/murs-antibruit.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/le-hf1.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/le-pilebyg.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/clotures-naturelles-saule-ecorce.html</loc><lastmod>2026-05-04</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Secteurs -->
+  <url><loc>https://ramo.eco/secteur-enfouissement.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/secteur-minier.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/secteur-industriel.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/secteur-boues-industrielles.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/municipalites.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/developpeurs-immobiliers.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ramo.eco/particuliers.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Études de cas -->
+  <url><loc>https://ramo.eco/etudes-de-cas/saint-nicephore.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/saint-lambert-de-lauzon.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/sainte-sophie.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/sept-iles.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/boucherville.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/lavaltrie.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/saint-constant.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/saint-jean-sur-richelieu.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/fermont.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/terrebonne.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+
+  <!-- Communiqués -->
+  <url><loc>https://ramo.eco/communiques/clean50-2025.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/wm-sainte-sophie-evaplant.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/sayona-partenariat.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/bionera-partenariat.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/sable-villeneuve-restauration.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/neuville-saules.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/boucherville-mur-antibruit.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/gatineau-mur-antibruit.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/nomination-benjamin-walczak.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/solution-verte.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/communiques/novembre-2023.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+
+  <!-- Équipe (fiches individuelles) -->
+  <url><loc>https://ramo.eco/notre-equipe/francis-allard.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/benjamin-walczak.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/olivier-payette.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/xavier-lachapelle.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/jean-shoiry.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/jerome-verry.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/kathleen-dube.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/mathieu-turcot.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/olivier-lalonde.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/simon-piette.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/stephanie-duval.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/louis-clement-barbeau.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/karl-boucher.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/john-lavery.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/marie-poulin-ouellette.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/camille-girard.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/notre-equipe/gabrielle-veillet.html</loc><lastmod>2026-05-04</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+
+  <!-- Carrières (offres individuelles) -->
+  <url><loc>https://ramo.eco/carrieres/charge-projets.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>weekly</changefreq></url>
+
 </urlset>
