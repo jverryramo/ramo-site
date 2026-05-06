@@ -5,12 +5,32 @@
        en-têtes des pages "À propos". */
 
     /* --- Team Grid --- */
+    .team-shuffle-note {
+      font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+      font-size: clamp(15px, 1.4vw, 17px);
+      font-style: italic;
+      color: var(--color-text-light, #555);
+      max-width: 780px;
+      margin: 24px 0 0;
+      line-height: 1.55;
+      opacity: 0.85;
+    }
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 32px;
       margin-top: 48px;
     }
+    /* Cards utilisent un <img> portrait — on optimise le rendu */
+    .team-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    /* Petit helper pour le shuffle JS : empêche le flash de re-arrangement */
+    .team-grid[data-shuffle-after] { contain: layout; }
     .team-card {
       text-decoration: none;
       display: block;

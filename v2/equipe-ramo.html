@@ -131,8 +131,9 @@
     <div class="container">
       <span class="section-label scroll-reveal">Notre équipe</span>
       <h2 class="section-title scroll-reveal">L'équipe Ramo</h2>
+      <p class="team-shuffle-note scroll-reveal">À l'exception des fondateurs présentés en premier, l'ordre des membres change à chaque visite — chez Ramo, aucun poste n'est plus important qu'un autre.</p>
 
-      <div class="team-grid">
+      <div class="team-grid" data-shuffle-after="4">
 
 
                 <a href="notre-equipe/francis-allard.html" class="team-card scroll-reveal">
@@ -471,5 +472,31 @@
 </footer>
   <script src="js/main.js"></script>
   <script src="js/cookies.js" defer></script>
+  <script>
+    /* Shuffle des cartes équipe (sauf les N premières — fondateurs).
+       L'ordre change à chaque chargement de page. */
+    (function() {
+      const grid = document.querySelector('.team-grid[data-shuffle-after]');
+      if (!grid) return;
+      const keep = parseInt(grid.dataset.shuffleAfter, 10) || 0;
+      const cards = Array.from(grid.children);
+      const fixed = cards.slice(0, keep);
+      const shufflable = cards.slice(keep);
+      // Fisher–Yates
+      for (let i = shufflable.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shufflable[i], shufflable[j]] = [shufflable[j], shufflable[i]];
+      }
+      // Réécriture du DOM
+      const frag = document.createDocumentFragment();
+      [...fixed, ...shufflable].forEach((card, idx) => {
+        // Reset transition-delay pour que l'effet scroll-reveal reste cohérent
+        const delay = (idx % 8) * 0.05;
+        card.style.transitionDelay = delay > 0 ? delay + 's' : '';
+        frag.appendChild(card);
+      });
+      grid.appendChild(frag);
+    })();
+  </script>
 </body>
 </html>
