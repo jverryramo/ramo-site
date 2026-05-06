@@ -247,7 +247,7 @@ body.ms.ms-internal {
   overflow: hidden;
   padding: clamp(140px, 18vw, 220px) 0 clamp(80px, 10vw, 140px);
   background-color: var(--ms-green);
-  background-image: url('../assets/Eco-produits.jpg');
+  background-image: url('../assets/brand/Eco-produits.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
