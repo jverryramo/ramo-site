@@ -215,6 +215,13 @@
         <h2 class="ms-section-title">Quelques projets récents.</h2>
         <p class="ms-section-subtitle">Murs antibruit autoroutiers, écrans pour parcs résidentiels, panneaux acoustiques en zone industrielle, clôtures pour aménagements urbains.</p>
 
+        <div class="ms-cases-slider-wrap" data-at-start="true" data-at-end="false">
+        <button class="ms-cases-slider-btn ms-cases-slider-btn--prev" aria-label="Projet précédent" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="ms-cases-slider-btn ms-cases-slider-btn--next" aria-label="Projet suivant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
         <div class="ms-cases-grid ms-cases-grid--slider">
           <a href="../etudes-de-cas/boucherville.html" class="ms-case-card">
             <div class="ms-case-card-img" style="background-image: url('../assets/produits/murs-antibruit-pilebyg/pilebyg-mur-antibruit-costco-boucherville-quebec.jpg');"></div>
@@ -295,6 +302,11 @@
               </div>
             </div>
           </a>
+        </div>
+        <div class="ms-cases-slider-hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Faites défiler ou utilisez les flèches pour voir les autres projets
+        </div>
         </div>
 
         <div style="text-align: center; margin-top: 56px;">
@@ -383,5 +395,35 @@
   </footer>
 
   <script src="../js/cookies.js" defer></script>
+  <script>
+    /* Cases slider — flèches Prev/Next + état au-bord pour les fades */
+    (function() {
+      const wrap = document.querySelector('.ms-cases-slider-wrap');
+      if (!wrap) return;
+      const grid = wrap.querySelector('.ms-cases-grid--slider');
+      const btnPrev = wrap.querySelector('.ms-cases-slider-btn--prev');
+      const btnNext = wrap.querySelector('.ms-cases-slider-btn--next');
+      if (!grid || !btnPrev || !btnNext) return;
+
+      function updateState() {
+        const atStart = grid.scrollLeft <= 4;
+        const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+        wrap.dataset.atStart = atStart;
+        wrap.dataset.atEnd = atEnd;
+        btnPrev.disabled = atStart;
+        btnNext.disabled = atEnd;
+      }
+      function scrollByCard(dir) {
+        const card = grid.querySelector('.ms-case-card');
+        const step = (card ? card.offsetWidth : 320) + 24;
+        grid.scrollBy({ left: dir * step, behavior: 'smooth' });
+      }
+      btnPrev.addEventListener('click', () => scrollByCard(-1));
+      btnNext.addEventListener('click', () => scrollByCard(1));
+      grid.addEventListener('scroll', updateState, { passive: true });
+      window.addEventListener('resize', updateState);
+      updateState();
+    })();
+  </script>
 </body>
 </html>
