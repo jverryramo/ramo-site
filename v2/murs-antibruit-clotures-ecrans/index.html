@@ -392,7 +392,7 @@
 
   <script src="../js/cookies.js" defer></script>
   <script>
-    /* Cases slider — flèches Prev/Next + état au-bord pour les fades */
+    /* Cases slider — flèches Prev/Next contextuelles */
     (function() {
       const wrap = document.querySelector('.ms-cases-slider-wrap');
       if (!wrap) return;
@@ -401,12 +401,14 @@
       const btnNext = wrap.querySelector('.ms-cases-slider-btn--next');
       if (!grid || !btnPrev || !btnNext) return;
 
+      // Force le slider à démarrer au début (pas de restauration de scroll)
+      grid.scrollLeft = 0;
+
       function updateState() {
         const atStart = grid.scrollLeft <= 4;
         const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
         wrap.dataset.atStart = atStart;
         wrap.dataset.atEnd = atEnd;
-        // Utilisation directe de l'attribut hidden (plus fiable que CSS)
         btnPrev.hidden = atStart;
         btnNext.hidden = atEnd;
       }
@@ -419,7 +421,11 @@
       btnNext.addEventListener('click', () => scrollByCard(1));
       grid.addEventListener('scroll', updateState, { passive: true });
       window.addEventListener('resize', updateState);
+
+      // Multi-pass init : immédiat, après load, après un délai pour layout shifts
       updateState();
+      window.addEventListener('load', () => { grid.scrollLeft = 0; updateState(); });
+      setTimeout(() => { grid.scrollLeft = 0; updateState(); }, 300);
     })();
   </script>
 </body>

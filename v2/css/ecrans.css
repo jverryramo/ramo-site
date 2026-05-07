@@ -1121,12 +1121,18 @@ body.ms.ms-internal {
   display: flex;
   grid-template-columns: none;
   overflow-x: auto;
+  /* Important : overflow-y visible pour ne pas couper le hover-lift
+     des cards (CSS rule: si overflow-x:auto et overflow-y:visible,
+     le navigateur force overflow-y à auto. On contourne avec
+     padding-top qui donne assez de marge pour le -3px du hover.) */
   scroll-snap-type: x mandatory;
   scroll-padding: 0 16px;
   gap: 24px;
-  padding-bottom: 4px;
-  /* éviter que les cards collées au bord soient coupées */
-  margin: 0 -24px;
+  /* Padding-top + bottom : marge pour le translateY(-3px) du hover
+     + l'ombre 18px du hover sans clipping */
+  padding-top: 14px;
+  padding-bottom: 28px;
+  margin: -14px -24px -14px;
   padding-left: 24px;
   padding-right: 24px;
   scroll-behavior: smooth;
