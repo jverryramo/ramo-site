@@ -1116,28 +1116,6 @@ body.ms.ms-internal {
 .ms-cases-slider-wrap {
   position: relative;
 }
-/* Fade gradient à droite pour signaler "plus de contenu" */
-.ms-cases-slider-wrap::after {
-  content: '';
-  position: absolute;
-  right: 0; top: 0; bottom: 24px;
-  width: 80px;
-  background: linear-gradient(to right, transparent, var(--ms-cream) 90%);
-  pointer-events: none;
-  z-index: 2;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-.ms-cases-slider-wrap[data-at-end="true"]::after { opacity: 0; }
-.ms-cases-slider-wrap[data-at-start="false"]::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 24px;
-  width: 80px;
-  background: linear-gradient(to left, transparent, var(--ms-cream) 90%);
-  pointer-events: none;
-  z-index: 2;
-}
 
 .ms-cases-grid--slider {
   display: flex;
