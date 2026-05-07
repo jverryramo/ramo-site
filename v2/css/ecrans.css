@@ -1173,23 +1173,19 @@ body.ms.ms-internal {
   color: var(--ms-green);
   transform: translateY(-50%) scale(1.08);
 }
-/* État par défaut : Prev cachée (on est au début), Next visible.
-   On rend Prev visible UNIQUEMENT quand le wrapper a explicitement
-   data-at-start="false" (donc après un scroll vers la droite). */
+/* État par défaut : Prev cachée VRAIMENT (display none).
+   On la rend visible UNIQUEMENT après un scroll vers la droite. */
 .ms-cases-slider-btn--prev {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-50%) scale(0.85);
+  display: none !important;
 }
 .ms-cases-slider-wrap[data-at-start="false"] .ms-cases-slider-btn--prev {
+  display: flex !important;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(-50%) scale(1);
 }
 .ms-cases-slider-wrap[data-at-end="true"] .ms-cases-slider-btn--next {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-50%) scale(0.85);
+  display: none !important;
 }
 /* Boutons positionnés HORS des cards pour ne pas masquer le contenu */
 .ms-cases-slider-btn--prev { left: -28px; }
