@@ -1173,8 +1173,19 @@ body.ms.ms-internal {
   color: var(--ms-green);
   transform: translateY(-50%) scale(1.08);
 }
-/* État caché — au lieu de disabled, on disparaît */
-.ms-cases-slider-wrap[data-at-start="true"] .ms-cases-slider-btn--prev,
+/* État par défaut : Prev cachée (on est au début), Next visible.
+   On rend Prev visible UNIQUEMENT quand le wrapper a explicitement
+   data-at-start="false" (donc après un scroll vers la droite). */
+.ms-cases-slider-btn--prev {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.85);
+}
+.ms-cases-slider-wrap[data-at-start="false"] .ms-cases-slider-btn--prev {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
 .ms-cases-slider-wrap[data-at-end="true"] .ms-cases-slider-btn--next {
   opacity: 0;
   pointer-events: none;
