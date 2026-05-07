@@ -1174,6 +1174,9 @@ body.ms.ms-internal {
   opacity: 1;
   pointer-events: auto;
 }
+/* CRUCIAL : respect de l'attribut hidden (display:flex écrase
+   le display:none implicite de l'UA-stylesheet pour [hidden]) */
+.ms-cases-slider-btn[hidden] { display: none !important; }
 .ms-cases-slider-btn:hover {
   background: var(--ms-yellow);
   color: var(--ms-green);
