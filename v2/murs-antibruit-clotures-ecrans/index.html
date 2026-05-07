@@ -216,10 +216,10 @@
         <p class="ms-section-subtitle">Murs antibruit autoroutiers, écrans pour parcs résidentiels, panneaux acoustiques en zone industrielle, clôtures pour aménagements urbains.</p>
 
         <div class="ms-cases-slider-wrap" data-at-start="true" data-at-end="true">
-        <button class="ms-cases-slider-btn ms-cases-slider-btn--prev" aria-label="Projet précédent">
+        <button class="ms-cases-slider-btn ms-cases-slider-btn--prev" aria-label="Projet précédent" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-        <button class="ms-cases-slider-btn ms-cases-slider-btn--next" aria-label="Projet suivant">
+        <button class="ms-cases-slider-btn ms-cases-slider-btn--next" aria-label="Projet suivant" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"/></svg>
         </button>
         <div class="ms-cases-grid ms-cases-grid--slider">
@@ -406,8 +406,9 @@
         const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
         wrap.dataset.atStart = atStart;
         wrap.dataset.atEnd = atEnd;
-        btnPrev.disabled = atStart;
-        btnNext.disabled = atEnd;
+        // Utilisation directe de l'attribut hidden (plus fiable que CSS)
+        btnPrev.hidden = atStart;
+        btnNext.hidden = atEnd;
       }
       function scrollByCard(dir) {
         const card = grid.querySelector('.ms-case-card');

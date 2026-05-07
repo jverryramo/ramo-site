@@ -1173,20 +1173,8 @@ body.ms.ms-internal {
   color: var(--ms-green);
   transform: translateY(-50%) scale(1.08);
 }
-/* État par défaut : Prev cachée VRAIMENT (display none).
-   On la rend visible UNIQUEMENT après un scroll vers la droite. */
-.ms-cases-slider-btn--prev {
-  display: none !important;
-}
-.ms-cases-slider-wrap[data-at-start="false"] .ms-cases-slider-btn--prev {
-  display: flex !important;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(-50%) scale(1);
-}
-.ms-cases-slider-wrap[data-at-end="true"] .ms-cases-slider-btn--next {
-  display: none !important;
-}
+/* L'attribut hidden (HTML) gère l'affichage des boutons
+   (voir JS qui toggle btnPrev.hidden / btnNext.hidden). */
 /* Boutons positionnés HORS des cards pour ne pas masquer le contenu */
 .ms-cases-slider-btn--prev { left: -28px; }
 .ms-cases-slider-btn--next { right: -28px; }
