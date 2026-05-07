@@ -1152,9 +1152,10 @@ body.ms.ms-internal {
 /* Flèches navigation Prev/Next — affichage contextuel selon position */
 .ms-cases-slider-btn {
   position: absolute;
-  top: calc(50% - 12px);
+  /* Centré sur la zone IMAGE (220px), pas sur la carte entière */
+  top: 110px;
   transform: translateY(-50%);
-  width: 52px; height: 52px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   background: var(--ms-green);
   border: none;
@@ -1162,7 +1163,7 @@ body.ms.ms-internal {
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   z-index: 3;
-  box-shadow: 0 8px 24px rgba(0, 60, 56, 0.32);
+  box-shadow: 0 2px 6px rgba(0, 60, 56, 0.18);
   transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease, color 0.25s ease;
   opacity: 1;
   pointer-events: auto;
@@ -1179,14 +1180,18 @@ body.ms.ms-internal {
   pointer-events: none;
   transform: translateY(-50%) scale(0.85);
 }
-.ms-cases-slider-btn--prev { left: -10px; }
-.ms-cases-slider-btn--next { right: -10px; }
-.ms-cases-slider-btn svg { width: 24px; height: 24px; stroke-width: 2.5; }
+/* Boutons positionnés HORS des cards pour ne pas masquer le contenu */
+.ms-cases-slider-btn--prev { left: -28px; }
+.ms-cases-slider-btn--next { right: -28px; }
+.ms-cases-slider-btn svg { width: 22px; height: 22px; stroke-width: 2.5; }
+@media (max-width: 1100px) {
+  /* Sur écrans plus étroits, ramener les boutons à l'intérieur (mais sur l'image) */
+  .ms-cases-slider-btn--prev { left: 8px; }
+  .ms-cases-slider-btn--next { right: 8px; }
+}
 @media (max-width: 700px) {
-  .ms-cases-slider-btn { width: 44px; height: 44px; }
-  .ms-cases-slider-btn--prev { left: 4px; }
-  .ms-cases-slider-btn--next { right: 4px; }
-  .ms-cases-slider-btn svg { width: 20px; height: 20px; }
+  .ms-cases-slider-btn { width: 40px; height: 40px; top: 100px; }
+  .ms-cases-slider-btn svg { width: 18px; height: 18px; }
 }
 
 /* =========================================================================
