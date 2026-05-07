@@ -1146,30 +1146,18 @@ body.ms.ms-internal {
   scroll-snap-type: x mandatory;
   scroll-padding: 0 16px;
   gap: 24px;
-  padding-bottom: 18px;
+  padding-bottom: 4px;
   /* éviter que les cards collées au bord soient coupées */
   margin: 0 -24px;
   padding-left: 24px;
   padding-right: 24px;
   scroll-behavior: smooth;
-  /* scrollbar TOUJOURS visible et plus prononcée */
-  scrollbar-width: auto;
-  scrollbar-color: var(--ms-green) rgba(0, 60, 56, 0.12);
+  /* Scrollbar cachée (UX gérée par flèches Prev/Next) */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
 }
-.ms-cases-grid--slider::-webkit-scrollbar { height: 10px; }
-.ms-cases-grid--slider::-webkit-scrollbar-track {
-  background: rgba(0, 60, 56, 0.12);
-  border-radius: 100px;
-  margin: 0 24px;
-}
-.ms-cases-grid--slider::-webkit-scrollbar-thumb {
-  background: var(--ms-green);
-  border-radius: 100px;
-  border: 2px solid var(--ms-cream);
-  background-clip: content-box;
-}
-.ms-cases-grid--slider::-webkit-scrollbar-thumb:hover { background-color: #001f1c; }
+.ms-cases-grid--slider::-webkit-scrollbar { display: none; }
 
 .ms-cases-grid--slider .ms-case-card {
   flex: 0 0 calc((100% - 48px) / 3);
@@ -1183,12 +1171,12 @@ body.ms.ms-internal {
   .ms-cases-grid--slider .ms-case-card { flex-basis: 82%; }
 }
 
-/* Flèches navigation Prev/Next */
+/* Flèches navigation Prev/Next — affichage contextuel selon position */
 .ms-cases-slider-btn {
   position: absolute;
-  top: calc(50% - 24px);
+  top: calc(50% - 12px);
   transform: translateY(-50%);
-  width: 48px; height: 48px;
+  width: 52px; height: 52px;
   border-radius: 50%;
   background: var(--ms-green);
   border: none;
@@ -1196,43 +1184,32 @@ body.ms.ms-internal {
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   z-index: 3;
-  box-shadow: 0 6px 20px rgba(0, 60, 56, 0.25);
-  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0, 60, 56, 0.32);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease, color 0.25s ease;
+  opacity: 1;
+  pointer-events: auto;
 }
 .ms-cases-slider-btn:hover {
   background: var(--ms-yellow);
   color: var(--ms-green);
-  transform: translateY(-50%) scale(1.06);
+  transform: translateY(-50%) scale(1.08);
 }
-.ms-cases-slider-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-  transform: translateY(-50%);
+/* État caché — au lieu de disabled, on disparaît */
+.ms-cases-slider-wrap[data-at-start="true"] .ms-cases-slider-btn--prev,
+.ms-cases-slider-wrap[data-at-end="true"] .ms-cases-slider-btn--next {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.85);
 }
-.ms-cases-slider-btn--prev { left: -8px; }
-.ms-cases-slider-btn--next { right: -8px; }
-.ms-cases-slider-btn svg { width: 22px; height: 22px; stroke-width: 2.5; }
+.ms-cases-slider-btn--prev { left: -10px; }
+.ms-cases-slider-btn--next { right: -10px; }
+.ms-cases-slider-btn svg { width: 24px; height: 24px; stroke-width: 2.5; }
 @media (max-width: 700px) {
-  .ms-cases-slider-btn { width: 40px; height: 40px; }
+  .ms-cases-slider-btn { width: 44px; height: 44px; }
   .ms-cases-slider-btn--prev { left: 4px; }
   .ms-cases-slider-btn--next { right: 4px; }
+  .ms-cases-slider-btn svg { width: 20px; height: 20px; }
 }
-
-/* Hint au-dessus de la scrollbar : "Faites glisser pour voir plus" */
-.ms-cases-slider-hint {
-  font-family: var(--ms-font-display);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--ms-text-muted);
-  text-align: center;
-  margin-top: 14px;
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.ms-cases-slider-hint svg { width: 14px; height: 14px; stroke-width: 2; }
 
 /* =========================================================================
    FORMULAIRE CONTACT
