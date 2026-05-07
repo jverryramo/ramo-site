@@ -405,12 +405,12 @@
       grid.scrollLeft = 0;
 
       function updateState() {
-        const atStart = grid.scrollLeft <= 4;
-        const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+        // Seuil large (40px) pour absorber les offsets dus au scroll-snap,
+        // au scroll-padding et au padding-left de .ms-cases-grid--slider
+        const atStart = grid.scrollLeft <= 40;
+        const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 40;
         wrap.dataset.atStart = atStart;
         wrap.dataset.atEnd = atEnd;
-        // Approche par classe CSS — Prev/Next cachées par défaut,
-        // visibles uniquement si is-active est ajoutée.
         btnPrev.classList.toggle('is-active', !atStart);
         btnNext.classList.toggle('is-active', !atEnd);
       }
