@@ -14,5 +14,6 @@ Filenames attendus (tels que référencés dans les pages études de cas) :
 - sable-villeneuve.svg          → Terrebonne (végétalisation site)
 - sayona.svg                    → (futur — communiqué Sayona partenariat)
 - super-c.svg                   → Sherbrooke (Pilebyg Classic Super C, Belvédère Sud)
+- costco.svg                    → Saint-Hubert (Pilebyg Costco Wholesale, stationnement camions)
 
 Si l'image n'est pas trouvée, le badge texte stylé s'affiche à la place automatiquement.
