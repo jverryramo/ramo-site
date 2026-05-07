@@ -1177,6 +1177,9 @@ body.ms.ms-internal {
 /* CRUCIAL : respect de l'attribut hidden (display:flex écrase
    le display:none implicite de l'UA-stylesheet pour [hidden]) */
 .ms-cases-slider-btn[hidden] { display: none !important; }
+/* Prev cachée par défaut, ne devient visible qu'avec la classe is-active */
+.ms-cases-slider-btn--prev:not(.is-active) { display: none !important; }
+.ms-cases-slider-btn--next:not(.is-active) { display: none !important; }
 .ms-cases-slider-btn:hover {
   background: var(--ms-yellow);
   color: var(--ms-green);
