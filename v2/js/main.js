@@ -686,6 +686,36 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // === FAQ accordion : single-open per group ===
+  // --- Cases Sliders (uniformisé avec mini-site) ---
+  // Auto-init de tout .cases-slider-wrap : flèches Prev/Next contextuelles
+  (function () {
+    document.querySelectorAll('.cases-slider-wrap').forEach(function (wrap) {
+      var track = wrap.querySelector('.cases-track');
+      var btnPrev = wrap.querySelector('.cases-slider-btn--prev');
+      var btnNext = wrap.querySelector('.cases-slider-btn--next');
+      if (!track || !btnPrev || !btnNext) return;
+
+      function update() {
+        var atStart = track.scrollLeft <= 40;
+        var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 40;
+        btnPrev.classList.toggle('is-active', !atStart);
+        btnNext.classList.toggle('is-active', !atEnd);
+      }
+      function step(dir) {
+        var card = track.querySelector('.case-card');
+        var stepW = (card ? card.offsetWidth : 320) + 24;
+        track.scrollBy({ left: dir * stepW, behavior: 'smooth' });
+      }
+      btnPrev.addEventListener('click', function () { step(-1); });
+      btnNext.addEventListener('click', function () { step(1); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+      window.addEventListener('load', update);
+      setTimeout(update, 300);
+    });
+  })();
+
   // Quand on ouvre une question, ferme automatiquement les autres du même groupe.
   // Groupe = ensemble de <details> ayant la même classe parmi: faq-item, ev-faq-item, sol-faq-item.
   (function () {

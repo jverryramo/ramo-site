@@ -149,6 +149,70 @@
   scroll-snap-align: start;
 }
 
+/* === CASES SLIDER WRAP — uniformisé avec mini-site (peek + flèches) === */
+.cases-slider-wrap {
+  position: relative;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+/* Override des cards quand dans un slider-wrap : peek effect (3.3 visibles) */
+.cases-slider-wrap .cases-track {
+  max-width: none;
+  margin: -14px 0;
+  padding-top: 14px;
+  padding-bottom: 28px;
+}
+.cases-slider-wrap .cases-track .case-card {
+  flex: 0 0 calc((100% - 72px) / 3.3);
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+@media (max-width: 980px) {
+  .cases-slider-wrap .cases-track .case-card { flex-basis: calc((100% - 48px) / 2.3); }
+}
+@media (max-width: 700px) {
+  .cases-slider-wrap .cases-track .case-card { flex-basis: 82%; min-width: 240px; }
+}
+
+/* Flèches navigation */
+.cases-slider-btn {
+  position: absolute;
+  top: 124px; /* centré sur l'image (220px) + padding-top 14 */
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0, 60, 56, 0.18);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s, color 0.25s;
+}
+.cases-slider-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  transform: translateY(-50%) scale(1.08);
+}
+.cases-slider-btn--prev { left: -28px; }
+.cases-slider-btn--next { right: -28px; }
+.cases-slider-btn svg { width: 22px; height: 22px; stroke-width: 2.5; }
+@media (max-width: 1100px) {
+  .cases-slider-btn--prev { left: 8px; }
+  .cases-slider-btn--next { right: 8px; }
+}
+@media (max-width: 700px) {
+  .cases-slider-btn { width: 40px; height: 40px; top: 114px; }
+  .cases-slider-btn svg { width: 18px; height: 18px; }
+}
+/* Affichage contextuel : par défaut caché, visible avec .is-active */
+.cases-slider-btn--prev:not(.is-active) { display: none !important; }
+.cases-slider-btn--next:not(.is-active) { display: none !important; }
+.cases-slider-btn[hidden] { display: none !important; }
+
 .case-card {
   background: var(--color-bg-card); border-radius: 20px; overflow: hidden;
   border: 1px solid rgba(220, 242, 30, 0.08);
