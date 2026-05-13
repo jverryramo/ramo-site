@@ -310,6 +310,22 @@
               <input type="text" name="raison_autre" placeholder="Si « Autre », précisez…" class="form-reason-other" aria-label="Précisez si Autre">
             </div>
             <div class="form-group">
+              <label for="source" class="sr-only">Comment avez-vous entendu parler de Ramo ?</label>
+              <select id="source" name="source" required>
+                <option value="">Comment avez-vous entendu parler de Ramo ? *</option>
+                <option value="Recherche en ligne">Recherche en ligne (Google, Bing…)</option>
+                <option value="Référence">Référence d'un client, partenaire ou collègue</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Médias">Article ou reportage dans les médias</option>
+                <option value="Salon / événement">Salon ou événement professionnel</option>
+                <option value="Consultant / fournisseur">Recommandation d'un consultant ou fournisseur</option>
+                <option value="Bouche à oreille">Bouche à oreille</option>
+                <option value="Connaissance préalable">Je connaissais déjà Ramo</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="message" class="sr-only">Votre message</label>
               <textarea id="message" name="message" placeholder="Décrivez votre projet ou vos besoins..." rows="6"></textarea>
             </div>
