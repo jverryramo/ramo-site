@@ -235,19 +235,21 @@
   <!-- Hero Section -->
   <section class="hero" id="hero" aria-label="Accueil">
     <div class="hero-bg">
-      <video class="hero-bg-video" autoplay muted playsinline loop poster="assets/solutions/boues-industrielles/saules-4.jpg">
-        <source src="assets/brand/hero-video-pingpong.mp4" type="video/mp4">
-      </video>
+      <video class="hero-bg-video" muted playsinline loop preload="metadata" poster="assets/solutions/boues-industrielles/saules-4.jpg" data-src="assets/brand/hero-video-pingpong.mp4"></video>
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
       <div class="hero-label fade-in">Propulsé par la nature</div>
       <h1 class="hero-title">
-        <span class="text-split" data-animate="chars">Le saule au cœur</span>
-        <span class="text-split" data-animate="chars">de nos solutions.</span>
+        <span class="text-split" data-animate="chars">Transformer les passifs</span>
+        <span class="text-split" data-animate="chars">environnementaux en actifs durables.</span>
       </h1>
-      <p class="hero-subtitle fade-in">La nature comme point de départ pour répondre aux enjeux environnementaux.</p>
+      <p class="hero-subtitle fade-in">Gestion des eaux, atténuation du bruit, restauration des sites — par la puissance des saules, à grande échelle.</p>
       <div class="hero-actions fade-in">
+        <a href="etudes-de-cas.html" class="hero-cta">
+          Voir nos projets sur le terrain
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
         <button type="button" class="hero-cta hero-cta--play" id="heroPlayBtn" aria-label="Voir la vidéo">
           <span class="hero-play-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>
@@ -269,6 +271,23 @@
       <div class="scroll-line"></div>
     </div>
   </section>
+
+  <!-- Hero video : autoplay uniquement sur desktop (économie data ~10 Mo sur mobile) -->
+  <script>
+    (function(){
+      if (window.matchMedia('(min-width: 769px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var v = document.querySelector('.hero-bg-video');
+        if (v && v.dataset.src) {
+          var src = document.createElement('source');
+          src.src = v.dataset.src;
+          src.type = 'video/mp4';
+          v.appendChild(src);
+          v.load();
+          v.play().catch(function(){});
+        }
+      }
+    })();
+  </script>
 
   <!-- Bandeau chiffres -->
   <section class="ticker section--compact" aria-label="Chiffres clés">
