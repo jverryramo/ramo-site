@@ -4278,12 +4278,13 @@ html { scroll-behavior: smooth; }
   margin-bottom: 4px;
 }
 
-/* === V2 — Mur de clients (trust band) === */
+/* === V2 — Mur de clients (trust band marquee) === */
 .trust-band {
   background: var(--color-bg);
-  padding: clamp(36px, 5vw, 64px) 0;
+  padding: clamp(40px, 5vw, 64px) 0 clamp(44px, 5vw, 68px);
   border-top: 1px solid rgba(220, 242, 30, 0.08);
   border-bottom: 1px solid rgba(220, 242, 30, 0.08);
+  overflow: hidden;
 }
 .trust-band-label {
   text-align: center;
@@ -4293,31 +4294,54 @@ html { scroll-behavior: smooth; }
   text-transform: uppercase;
   color: var(--color-accent);
   opacity: 0.85;
-  margin: 0 0 28px;
+  margin: 0 0 36px;
+}
+.trust-band-marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 .trust-band-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 18px 36px;
+  gap: 56px;
+  width: max-content;
+  animation: trust-band-scroll 85s linear infinite;
+  will-change: transform;
+}
+.trust-band-marquee:hover .trust-band-list {
+  animation-play-state: paused;
 }
 .trust-band-list li {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(15px, 1.4vw, 19px);
+  font-size: clamp(17px, 1.4vw, 22px);
   font-weight: 400;
   color: var(--color-white);
-  opacity: 0.62;
+  opacity: 0.55;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s ease;
 }
 .trust-band-list li:hover {
-  opacity: 0.92;
+  opacity: 0.95;
+}
+@keyframes trust-band-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-band-list {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    gap: 18px 36px;
+  }
 }
 
 /* === V2 — Home cases grid (teaser 3 études) === */
