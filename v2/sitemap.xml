@@ -9,6 +9,7 @@
   <url><loc>https://ramo.eco/culture-carriere.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://ramo.eco/nous-joindre.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ramo.eco/ramo-nouvelles-articles-communiques-videos.html</loc><lastmod>2026-05-04</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas.html</loc><lastmod>2026-06-01</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
   <!-- Articles "Les saules" (knowledge hub) -->
   <url><loc>https://ramo.eco/saule-superpouvoirs.html</loc><lastmod>2026-05-04</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
@@ -60,6 +61,7 @@
   <url><loc>https://ramo.eco/etudes-de-cas/sherbrooke.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
   <url><loc>https://ramo.eco/etudes-de-cas/saint-hubert.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
   <url><loc>https://ramo.eco/etudes-de-cas/mirabel.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
+  <url><loc>https://ramo.eco/etudes-de-cas/malartic.html</loc><lastmod>2026-06-01</lastmod><priority>0.7</priority><changefreq>quarterly</changefreq></url>
 
   <!-- Communiqués -->
   <url><loc>https://ramo.eco/communiques/clean50-2025.html</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
