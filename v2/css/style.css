@@ -4317,18 +4317,24 @@ html { scroll-behavior: smooth; }
   animation-play-state: paused;
 }
 .trust-band-list li {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(17px, 1.4vw, 22px);
-  font-weight: 400;
-  color: var(--color-white);
-  opacity: 0.55;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  flex-shrink: 0;
+}
+.trust-band-logo {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
   transition: opacity 0.3s ease;
 }
-.trust-band-list li:hover {
-  opacity: 0.95;
+.trust-band-list li:hover .trust-band-logo {
+  opacity: 1;
 }
 @keyframes trust-band-scroll {
   from { transform: translate3d(0, 0, 0); }
