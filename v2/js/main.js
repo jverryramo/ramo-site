@@ -56,6 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         span.style.animationPlayState = 'paused';
         wrapper.appendChild(span);
         el.appendChild(wrapper);
+        // Espace texte réel entre les mots (sinon les inline-block se collent
+        // visuellement à cause des métriques de Styrene A et certaines polices)
+        if (i < words.length - 1) {
+          el.appendChild(document.createTextNode(' '));
+        }
       });
 
       observer.observe(el);

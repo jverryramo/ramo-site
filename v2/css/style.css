@@ -273,6 +273,8 @@ img { max-width: 100%; display: block; }
 .word-wrapper {
   display: inline-block; overflow: hidden; margin-right: 0.25em;
 }
+/* Espace réel entre les .word-wrapper (injecté par le JS text-split words) */
+.text-split[data-animate="words"] { word-spacing: 0.18em; }
 .word {
   display: inline-block;
   animation: wordReveal 0.7s var(--ease-out) forwards;
