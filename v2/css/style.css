@@ -3480,20 +3480,10 @@ a:focus-visible { outline-offset: 2px; }
 
 /* --- Home CTA final (dual card Contact + Carrières) --- */
 .home-cta {
-  background: var(--color-primary);
+  background: var(--color-bg);
   padding-top: clamp(70px, 8vw, 120px);
   padding-bottom: clamp(70px, 8vw, 120px);
   position: relative;
-  overflow: hidden;
-}
-.home-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(220, 242, 30, 0.06), transparent 45%),
-    radial-gradient(circle at 85% 90%, rgba(220, 242, 30, 0.05), transparent 50%);
-  pointer-events: none;
 }
 .home-cta .container { position: relative; }
 .home-cta-grid {
