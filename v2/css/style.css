@@ -433,20 +433,42 @@ img { max-width: 100%; display: block; }
 .ticker-track {
   max-width: var(--container-width); margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 60px);
-  display: flex; align-items: center; justify-content: center;
-  gap: clamp(24px, 4vw, 48px); flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
 }
-.ticker-item { text-align: center; padding: 8px 0; }
+.ticker-item {
+  text-align: center;
+  padding: 8px 8px;
+  position: relative;
+  min-width: 0;
+}
+.ticker-item + .ticker-item::before {
+  content: "";
+  position: absolute; left: calc(-1 * clamp(8px, 1.5vw, 16px)); top: 50%; transform: translateY(-50%);
+  width: 1px; height: 40px; background: rgba(0, 60, 56, 0.2);
+}
 .ticker-number {
-  font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px);
+  font-family: var(--font-display); font-size: clamp(20px, 2.6vw, 30px);
   font-weight: 700; color: var(--color-primary); display: block; line-height: 1.2;
+  white-space: nowrap;
 }
 .ticker-label {
   font-size: 12px; color: var(--color-primary);
   letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7;
+  line-height: 1.4;
 }
-.ticker-divider {
-  width: 1px; height: 40px; background: rgba(0, 60, 56, 0.2);
+/* Dividers existants en HTML : on les cache (le ::before les remplace, mieux scope au grid) */
+.ticker-track > .ticker-divider { display: none; }
+
+/* Responsive — 2 colonnes au-dessous de 900 px, 1 colonne au-dessous de 540 px */
+@media (max-width: 900px) {
+  .ticker-track { grid-template-columns: repeat(2, 1fr); }
+  .ticker-item + .ticker-item::before { display: none; }
+}
+@media (max-width: 540px) {
+  .ticker-track { grid-template-columns: 1fr; gap: 20px; }
 }
 
 /* --- Scroll Reveal --- */
