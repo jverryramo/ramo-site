@@ -1568,14 +1568,14 @@ img { max-width: 100%; display: block; }
 .offer-card:hover .offer-card-img { transform: scale(1.04); }
 .offer-card-mark {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--color-accent);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  line-height: 1.1;
 }
-.offer-card-mark sup { font-size: 0.75em; }
+.offer-card-mark sup { font-size: 0.55em; vertical-align: super; }
 .offer-card-name {
   font-family: var(--font-display);
   font-size: 18px;
