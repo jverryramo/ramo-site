@@ -147,6 +147,49 @@
   transform: translateX(4px);
 }
 
+/* Language switcher mini-site */
+.ms-nav-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+.ms-nav-lang-link {
+  font-family: var(--ms-font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.ms-nav-lang-link.is-active {
+  color: var(--ms-white);
+  cursor: default;
+}
+a.ms-nav-lang-link:hover {
+  color: var(--ms-yellow);
+}
+.ms-nav-lang-sep {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.22);
+}
+@media (max-width: 900px) {
+  .ms-nav-lang {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 14px;
+    padding-top: 18px;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 14px;
+  }
+  .ms-nav-lang-link { font-size: 16px; }
+  .ms-nav-lang-sep { font-size: 14px; }
+}
+
 /* Back : soulignement subtil + arrow recul au hover */
 .ms-nav-back {
   font-family: var(--ms-font-display);
