@@ -509,10 +509,8 @@ body.ms.ms-internal {
   height: 1px;
   background: var(--ms-green);
 }
-.ms-section--green .ms-section-label,
-.ms-section--green .ms-section-label::before {
+.ms-section--green .ms-section-label {
   color: var(--ms-yellow);
-  background: var(--ms-yellow);
 }
 .ms-section--green .ms-section-label::before { background: var(--ms-yellow); }
 
