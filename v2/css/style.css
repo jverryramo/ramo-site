@@ -4359,3 +4359,12 @@ html { scroll-behavior: smooth; }
 }
 /* Hover sur les cases-cards du teaser home */
 .home-cases-grid .case-card:hover .case-card-img img { transform: scale(1.04); }
+
+/* Texte sombre sur le fond clair de la section études de cas en home */
+.home-cases-grid .case-card-name {
+  color: var(--color-primary) !important;
+}
+.home-cases-grid .case-card-desc {
+  color: #4a5550 !important;
+  opacity: 1 !important;
+}
