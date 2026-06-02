@@ -72,7 +72,7 @@ img { max-width: 100%; display: block; }
   padding: 0 clamp(20px, 4vw, 60px);
 }
 
-.section { padding: clamp(100px, 14vw, 200px) 0; }
+.section { padding: clamp(70px, 8vw, 120px) 0; }
 .section--compact { padding: clamp(30px, 4vw, 50px) 0; }
 /* Tighter gap between dark consecutive sections on homepage */
 .solutions.section { padding-bottom: clamp(60px, 8vw, 120px); }
