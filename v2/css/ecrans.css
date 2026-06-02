@@ -20,9 +20,9 @@
   --ms-line-on-yellow: rgba(0, 60, 56, 0.18);
   --ms-line-on-green: rgba(220, 242, 30, 0.22);
 
-  /* Tipographie miroir : sans-serif partout (vs Playfair sur le site principal) */
-  --ms-font-display: 'Inter', system-ui, sans-serif;
-  --ms-font-body: 'Inter', system-ui, sans-serif;
+  /* Typographie Styrene (alignée avec ramo.eco et le site principal V2) */
+  --ms-font-display: 'Styrene A', 'Inter', system-ui, Helvetica, Arial, sans-serif;
+  --ms-font-body: 'Styrene B', 'Inter', system-ui, Helvetica, Arial, sans-serif;
 }
 
 /* ---------- Reset minisite-spécifique ---------- */

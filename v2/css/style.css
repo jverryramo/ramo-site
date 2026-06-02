@@ -10,6 +10,22 @@
   box-sizing: border-box;
 }
 
+/* === Styrene A & B (mêmes fichiers que ramo.eco) === */
+@font-face {
+  font-family: 'Styrene A';
+  src: url('../assets/fonts/StyreneA-Medium.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Styrene B';
+  src: url('../assets/fonts/StyreneB-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-bg: #003c38;
   --color-bg-light: #f5f1ec;
@@ -24,8 +40,8 @@
   --color-text-dark: #1a1a1a;
   --color-white: #ffffff;
   --color-warm: #D3CBBF;
-  --font-body: 'Inter', -apple-system, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Styrene B', 'Inter', -apple-system, Helvetica, Arial, sans-serif;
+  --font-display: 'Styrene A', 'Playfair Display', Georgia, Helvetica, Arial, sans-serif;
   --header-height: 72px;
   --container-width: 1280px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
