@@ -16,16 +16,31 @@ document.addEventListener('DOMContentLoaded', () => {
       el.textContent = '';
       el.setAttribute('aria-label', text);
 
-      [...text].forEach((char, i) => {
-        const wrapper = document.createElement('span');
-        wrapper.className = 'char-wrapper';
-        wrapper.style.perspective = '600px';
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.style.animationDelay = `${0.3 + (elIndex * 0.3) + (i * 0.04)}s`;
-        wrapper.appendChild(span);
-        el.appendChild(wrapper);
+      // Regrouper les caract\u00E8res par mot pour emp\u00EAcher la coupure
+      // intra-mot (chaque .char-wrapper est inline-block, le navigateur
+      // peut wrapper entre n'importe quels lettres si on n'isole pas
+      // chaque mot dans son propre conteneur).
+      const words = text.split(' ');
+      let charIdx = 0;
+      words.forEach((word, wIdx) => {
+        const wordGroup = document.createElement('span');
+        wordGroup.className = 'char-word';
+        [...word].forEach((char) => {
+          const wrapper = document.createElement('span');
+          wrapper.className = 'char-wrapper';
+          wrapper.style.perspective = '600px';
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = char;
+          span.style.animationDelay = `${0.3 + (elIndex * 0.3) + (charIdx * 0.04)}s`;
+          wrapper.appendChild(span);
+          wordGroup.appendChild(wrapper);
+          charIdx++;
+        });
+        el.appendChild(wordGroup);
+        if (wIdx < words.length - 1) {
+          el.appendChild(document.createTextNode(' '));
+        }
       });
     });
 
