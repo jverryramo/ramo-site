@@ -184,13 +184,12 @@
     <div class="container">
 
       <div class="cases-filters" role="tablist" aria-label="Filtrer les études de cas par solution ou produit">
-        <button class="cases-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Tous les projets <span class="cases-filter-count">(14)</span></button>
-        <button class="cases-filter-btn" data-filter="evaplant" role="tab" aria-selected="false">Evaplant® <span class="cases-filter-count">(3)</span></button>
-        <button class="cases-filter-btn" data-filter="evacap" role="tab" aria-selected="false">Evacap™ <span class="cases-filter-count">(1)</span></button>
-        <button class="cases-filter-btn" data-filter="barriere" role="tab" aria-selected="false">Barrière végétale <span class="cases-filter-count">(1)</span></button>
-        <button class="cases-filter-btn" data-filter="vegetalisation" role="tab" aria-selected="false">Végétalisation <span class="cases-filter-count">(3)</span></button>
-        <button class="cases-filter-btn" data-filter="murs-antibruit" role="tab" aria-selected="false">Murs antibruit <span class="cases-filter-count">(5)</span></button>
-        <button class="cases-filter-btn" data-filter="clotures" role="tab" aria-selected="false">Clôtures <span class="cases-filter-count">(1)</span></button>
+        <button class="cases-filter-btn" data-filter="evaplant" role="tab" aria-selected="false">Evaplant®</button>
+        <button class="cases-filter-btn" data-filter="evacap" role="tab" aria-selected="false">Evacap™</button>
+        <button class="cases-filter-btn" data-filter="barriere" role="tab" aria-selected="false">Barrière végétale</button>
+        <button class="cases-filter-btn" data-filter="vegetalisation" role="tab" aria-selected="false">Végétalisation</button>
+        <button class="cases-filter-btn" data-filter="murs-antibruit" role="tab" aria-selected="false">Murs antibruit</button>
+        <button class="cases-filter-btn" data-filter="clotures" role="tab" aria-selected="false">Clôtures</button>
       </div>
 
       <div class="cases-grid" id="casesGrid">
@@ -503,13 +502,20 @@
 
       btns.forEach(function(b){
         b.addEventListener('click', function(){
+          var wasActive = b.classList.contains('is-active');
+          // désactive tous les boutons
           btns.forEach(function(x){
             x.classList.remove('is-active');
             x.setAttribute('aria-selected', 'false');
           });
-          b.classList.add('is-active');
-          b.setAttribute('aria-selected', 'true');
-          applyFilter(b.dataset.filter);
+          if (wasActive) {
+            // 2e clic sur le filtre actif → on désactive tout, on revient à 'all'
+            applyFilter('all');
+          } else {
+            b.classList.add('is-active');
+            b.setAttribute('aria-selected', 'true');
+            applyFilter(b.dataset.filter);
+          }
         });
       });
     })();
