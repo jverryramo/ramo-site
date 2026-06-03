@@ -90,6 +90,17 @@
       color: var(--color-primary);
       font-weight: 600;
     }
+    .cases-filter-btn--reset {
+      color: var(--color-accent);
+      border-color: rgba(220, 242, 30, 0.45);
+      display: inline-flex;
+      align-items: center;
+    }
+    .cases-filter-btn--reset:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-primary);
+    }
     .cases-filter-btn .cases-filter-count {
       opacity: 0.65;
       margin-left: 4px;
@@ -184,6 +195,10 @@
     <div class="container">
 
       <div class="cases-filters" role="tablist" aria-label="Filtrer les études de cas par solution ou produit">
+        <button class="cases-filter-btn cases-filter-btn--reset" data-filter="all" role="tab" aria-selected="false" hidden>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 4px;"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          Tous les projets
+        </button>
         <button class="cases-filter-btn" data-filter="evaplant" role="tab" aria-selected="false">Evaplant®</button>
         <button class="cases-filter-btn" data-filter="evacap" role="tab" aria-selected="false">Evacap™</button>
         <button class="cases-filter-btn" data-filter="barriere" role="tab" aria-selected="false">Barrière végétale</button>
@@ -489,6 +504,7 @@
       var btns = document.querySelectorAll('.cases-filter-btn');
       var cards = document.querySelectorAll('#casesGrid .case-card');
       var empty = document.getElementById('casesEmpty');
+      var resetBtn = document.querySelector('.cases-filter-btn--reset');
 
       function applyFilter(filter){
         var visible = 0;
@@ -498,18 +514,24 @@
           else { c.setAttribute('hidden', ''); }
         });
         if (empty) empty.toggleAttribute('hidden', visible !== 0);
+        // Affiche le bouton 'Tous les projets' uniquement quand un filtre est actif
+        if (resetBtn) {
+          if (filter === 'all') resetBtn.setAttribute('hidden', '');
+          else resetBtn.removeAttribute('hidden');
+        }
       }
 
       btns.forEach(function(b){
         b.addEventListener('click', function(){
+          var isReset = b.classList.contains('cases-filter-btn--reset');
           var wasActive = b.classList.contains('is-active');
           // désactive tous les boutons
           btns.forEach(function(x){
             x.classList.remove('is-active');
             x.setAttribute('aria-selected', 'false');
           });
-          if (wasActive) {
-            // 2e clic sur le filtre actif → on désactive tout, on revient à 'all'
+          if (isReset || wasActive) {
+            // bouton reset OU 2e clic sur le filtre actif → 'all'
             applyFilter('all');
           } else {
             b.classList.add('is-active');
