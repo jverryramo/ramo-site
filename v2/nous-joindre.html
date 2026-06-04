@@ -370,7 +370,7 @@
                 <label class="form-check"><input type="checkbox" name="raison" value="Murs antibruit"> <span>Murs antibruit</span></label>
                 <label class="form-check"><input type="checkbox" name="raison" value="Clôtures"> <span>Clôtures en saule</span></label>
                 <label class="form-check"><input type="checkbox" name="raison" value="Paillis BRF" id="raison-paillis"> <span>Paillis BRF</span></label>
-                <label class="form-check"><input type="checkbox" name="raison" value="Boutures, fagots, tiges"> <span>Boutures, fagots, tiges</span></label>
+                <label class="form-check"><input type="checkbox" name="raison" value="Boutures, fagots, tiges" id="raison-boutures"> <span>Boutures, fagots, tiges</span></label>
 
                 <label class="form-check form-check--group"><span>Autre</span></label>
                 <label class="form-check"><input type="checkbox" name="raison" value="Administrative"> <span>Administrative</span></label>
@@ -439,6 +439,38 @@
         </a>
         <button type="button" class="btn btn--outline raison-modal-btn" data-close>
           Continuer ici
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Boutures, fagots, tiges — particuliers redirigés vers Saules Québec -->
+  <div class="raison-modal" id="bouturesModal" role="dialog" aria-modal="true" aria-labelledby="bouturesModalTitle" aria-hidden="true">
+    <div class="raison-modal-backdrop" data-close></div>
+    <div class="raison-modal-card" role="document">
+      <button type="button" class="raison-modal-close" aria-label="Fermer" data-close>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="raison-modal-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M12 22V10"/>
+          <path d="M12 10c-3 0-5-2-5-5 3 0 5 2 5 5z"/>
+          <path d="M12 14c3 0 5-2 5-5-3 0-5 2-5 5z"/>
+        </svg>
+      </div>
+      <h3 class="raison-modal-title" id="bouturesModalTitle">Vous êtes un particulier&nbsp;?</h3>
+      <p class="raison-modal-text">
+        Notre partenaire <strong>Saules Québec</strong> livre des boutures partout au Québec.
+        Vous y trouverez aussi toutes les informations pour choisir la bonne variété
+        et apprendre à planter.
+      </p>
+      <div class="raison-modal-actions">
+        <a href="https://saulesquebec.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary raison-modal-btn">
+          Visiter saulesquebec.com
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <button type="button" class="btn btn--outline raison-modal-btn" data-close>
+          Continuer ma demande d'information
         </button>
       </div>
     </div>
@@ -531,38 +563,46 @@
       });
     })();
 
-    // Modal Paillis BRF — redirige vers le site dédié
+    // Modals raison — redirection vers sites dédiés / partenaires
     (function () {
-      var checkbox = document.getElementById('raison-paillis');
-      var modal = document.getElementById('paillisModal');
-      if (!checkbox || !modal) return;
+      // Couples checkbox ↔ modal à brancher
+      var pairs = [
+        { checkboxId: 'raison-paillis',  modalId: 'paillisModal' },
+        { checkboxId: 'raison-boutures', modalId: 'bouturesModal' }
+      ];
 
-      function openModal() {
+      function openModal(modal) {
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('raison-modal-open');
-        // Focus le premier bouton actionnable pour l'a11y
         var firstBtn = modal.querySelector('a, button[type="button"]');
         if (firstBtn) firstBtn.focus({ preventScroll: true });
       }
-      function closeModal() {
+      function closeModal(modal) {
         modal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('raison-modal-open');
+        // Retire la classe seulement si plus aucun modal ouvert
+        var stillOpen = document.querySelector('.raison-modal[aria-hidden="false"]');
+        if (!stillOpen) document.body.classList.remove('raison-modal-open');
       }
 
-      checkbox.addEventListener('change', function () {
-        if (checkbox.checked) openModal();
+      pairs.forEach(function (pair) {
+        var checkbox = document.getElementById(pair.checkboxId);
+        var modal = document.getElementById(pair.modalId);
+        if (!checkbox || !modal) return;
+
+        checkbox.addEventListener('change', function () {
+          if (checkbox.checked) openModal(modal);
+        });
+
+        modal.querySelectorAll('[data-close]').forEach(function (el) {
+          el.addEventListener('click', function () { closeModal(modal); });
+        });
       });
 
-      // Tous les éléments avec data-close ferment le modal
-      modal.querySelectorAll('[data-close]').forEach(function (el) {
-        el.addEventListener('click', closeModal);
-      });
-
-      // Esc ferme le modal
+      // Esc ferme le modal actuellement ouvert
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
-          closeModal();
-        }
+        if (e.key !== 'Escape') return;
+        var openOne = document.querySelector('.raison-modal[aria-hidden="false"]');
+        if (openOne) closeModal(openOne);
       });
     })();
   </script>
