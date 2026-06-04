@@ -178,30 +178,31 @@
     }
     .raison-modal-card {
       position: relative;
-      background: var(--color-bg-light, #f5f1ec);
-      color: var(--color-primary, #003c38);
+      background: var(--color-primary, #003c38);
+      color: var(--color-white, #ffffff);
+      border: 1px solid rgba(220, 242, 30, 0.18);
       border-radius: 24px;
       padding: clamp(32px, 5vw, 48px) clamp(28px, 4vw, 44px);
       max-width: 460px; width: 100%;
       text-align: center;
-      box-shadow: 0 30px 90px rgba(0, 30, 28, 0.45);
+      box-shadow: 0 30px 90px rgba(0, 30, 28, 0.6);
       animation: raisonRise 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .raison-modal-close {
       position: absolute; top: 16px; right: 16px;
       width: 36px; height: 36px;
       background: transparent; border: none;
-      color: var(--color-primary, #003c38);
-      opacity: 0.5; cursor: pointer;
+      color: var(--color-white, #ffffff);
+      opacity: 0.55; cursor: pointer;
       display: inline-flex; align-items: center; justify-content: center;
       border-radius: 50%; transition: opacity 0.2s, background 0.2s;
     }
-    .raison-modal-close:hover { opacity: 1; background: rgba(0, 60, 56, 0.06); }
+    .raison-modal-close:hover { opacity: 1; background: rgba(255, 255, 255, 0.08); }
     .raison-modal-icon {
       width: 64px; height: 64px;
       border-radius: 50%;
-      background: rgba(220, 242, 30, 0.18);
-      color: var(--color-primary, #003c38);
+      background: rgba(220, 242, 30, 0.14);
+      color: var(--color-accent, #DCF21E);
       display: inline-flex; align-items: center; justify-content: center;
       margin: 0 auto 20px;
     }
@@ -212,15 +213,15 @@
       line-height: 1.2;
       letter-spacing: -0.01em;
       margin: 0 0 12px;
-      color: var(--color-primary, #003c38);
+      color: var(--color-white, #ffffff);
     }
     .raison-modal-text {
       font-size: 15px;
       line-height: 1.6;
-      color: var(--color-primary, #003c38);
-      opacity: 0.78;
+      color: var(--color-warm, #D3CBBF);
       margin: 0 0 28px;
     }
+    .raison-modal-text strong { color: var(--color-white, #ffffff); font-weight: 600; }
     .raison-modal-actions {
       display: flex; flex-direction: column; gap: 10px;
       align-items: stretch;
