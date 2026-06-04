@@ -382,11 +382,8 @@
   color: var(--color-white);
   cursor: pointer;
   list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 4px 0;
+  position: relative;
+  padding: 4px 40px 4px 0;
 }
 .ev-faq-item summary::-webkit-details-marker { display: none; }
 .ev-faq-item summary::after,
@@ -394,7 +391,11 @@
   content: '+';
   color: var(--color-accent);
   font-size: 22px;
-  flex-shrink: 0;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   transition: transform 0.25s ease;
 }
 .ev-faq-item[open] summary::after,
