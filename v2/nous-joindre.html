@@ -160,6 +160,83 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/favicon/apple-touch-icon.png">
   <link rel="manifest" href="assets/brand/favicon/site.webmanifest">
   <meta name="theme-color" content="#003c38">
+
+  <style>
+    /* Modal raison (Paillis BRF redirect vers site dédié) */
+    .raison-modal {
+      position: fixed; inset: 0; z-index: 9999;
+      display: none; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .raison-modal[aria-hidden="false"] { display: flex; }
+    .raison-modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0, 30, 28, 0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      animation: raisonFade 0.25s ease-out;
+    }
+    .raison-modal-card {
+      position: relative;
+      background: var(--color-bg, #f6f4ee);
+      color: var(--color-primary, #003c38);
+      border-radius: 24px;
+      padding: clamp(32px, 5vw, 48px) clamp(28px, 4vw, 44px);
+      max-width: 460px; width: 100%;
+      text-align: center;
+      box-shadow: 0 30px 90px rgba(0, 30, 28, 0.45);
+      animation: raisonRise 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .raison-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      background: transparent; border: none;
+      color: var(--color-primary, #003c38);
+      opacity: 0.5; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: opacity 0.2s, background 0.2s;
+    }
+    .raison-modal-close:hover { opacity: 1; background: rgba(0, 60, 56, 0.06); }
+    .raison-modal-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(220, 242, 30, 0.18);
+      color: var(--color-primary, #003c38);
+      display: inline-flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .raison-modal-title {
+      font-family: var(--font-display, 'Styrene A', sans-serif);
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px;
+      color: var(--color-primary, #003c38);
+    }
+    .raison-modal-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--color-primary, #003c38);
+      opacity: 0.78;
+      margin: 0 0 28px;
+    }
+    .raison-modal-actions {
+      display: flex; flex-direction: column; gap: 10px;
+      align-items: stretch;
+    }
+    .raison-modal-btn {
+      display: inline-flex !important;
+      align-items: center; justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-decoration: none;
+    }
+    @keyframes raisonFade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes raisonRise { from { opacity: 0; transform: translateY(16px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    body.raison-modal-open { overflow: hidden; }
+  </style>
+
 </head>
 <body>
 
@@ -292,7 +369,7 @@
                 <label class="form-check form-check--group"><span>Éco-produits</span></label>
                 <label class="form-check"><input type="checkbox" name="raison" value="Murs antibruit"> <span>Murs antibruit</span></label>
                 <label class="form-check"><input type="checkbox" name="raison" value="Clôtures"> <span>Clôtures en saule</span></label>
-                <label class="form-check"><input type="checkbox" name="raison" value="Paillis BRF"> <span>Paillis BRF</span></label>
+                <label class="form-check"><input type="checkbox" name="raison" value="Paillis BRF" id="raison-paillis"> <span>Paillis BRF</span></label>
                 <label class="form-check"><input type="checkbox" name="raison" value="Boutures, fagots, tiges"> <span>Boutures, fagots, tiges</span></label>
 
                 <label class="form-check form-check--group"><span>Autre</span></label>
@@ -335,6 +412,37 @@
   </section>
 
   </main>
+
+  <!-- Modal Paillis BRF — redirection site dédié -->
+  <div class="raison-modal" id="paillisModal" role="dialog" aria-modal="true" aria-labelledby="paillisModalTitle" aria-hidden="true">
+    <div class="raison-modal-backdrop" data-close></div>
+    <div class="raison-modal-card" role="document">
+      <button type="button" class="raison-modal-close" aria-label="Fermer" data-close>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="raison-modal-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <ellipse cx="7" cy="8" rx="3" ry="1.5"/><ellipse cx="15" cy="10" rx="3" ry="1.5"/>
+          <ellipse cx="9" cy="13" rx="3" ry="1.5"/><ellipse cx="17" cy="15" rx="3" ry="1.5"/>
+          <ellipse cx="11" cy="18" rx="3" ry="1.5"/>
+        </svg>
+      </div>
+      <h3 class="raison-modal-title" id="paillisModalTitle">Paillis BRF Ramo</h3>
+      <p class="raison-modal-text">
+        Notre paillis BRF est distribué partout au Québec à travers un réseau de points de vente.
+        Trouvez le plus proche de chez vous sur notre site dédié.
+      </p>
+      <div class="raison-modal-actions">
+        <a href="https://paillisramo.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary raison-modal-btn">
+          Visiter paillisramo.com
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <button type="button" class="btn btn--outline raison-modal-btn" data-close>
+          Continuer ici
+        </button>
+      </div>
+    </div>
+  </div>
 
 <footer class="footer footer--minimal">
   <div class="container">
@@ -420,6 +528,41 @@
       });
       input.addEventListener('blur', function () {
         input.value = format(input.value);
+      });
+    })();
+
+    // Modal Paillis BRF — redirige vers le site dédié
+    (function () {
+      var checkbox = document.getElementById('raison-paillis');
+      var modal = document.getElementById('paillisModal');
+      if (!checkbox || !modal) return;
+
+      function openModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('raison-modal-open');
+        // Focus le premier bouton actionnable pour l'a11y
+        var firstBtn = modal.querySelector('a, button[type="button"]');
+        if (firstBtn) firstBtn.focus({ preventScroll: true });
+      }
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('raison-modal-open');
+      }
+
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) openModal();
+      });
+
+      // Tous les éléments avec data-close ferment le modal
+      modal.querySelectorAll('[data-close]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+
+      // Esc ferme le modal
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+          closeModal();
+        }
       });
     })();
   </script>
