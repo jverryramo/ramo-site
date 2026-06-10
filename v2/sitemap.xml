@@ -104,4 +104,8 @@
   <url><loc>https://ramo.eco/carrieres/stage-agronomie.html</loc><lastmod>2026-05-06</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ramo.eco/carrieres/stage-genie-environnement.html</loc><lastmod>2026-05-06</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 
+  <!-- Pages légales -->
+  <url><loc>https://ramo.eco/politique-confidentialite.html</loc><lastmod>2026-06-10</lastmod><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://ramo.eco/plan-du-site.html</loc><lastmod>2026-06-10</lastmod><priority>0.3</priority><changefreq>monthly</changefreq></url>
+
 </urlset>
