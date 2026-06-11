@@ -1580,8 +1580,8 @@ body.ms.ms-internal {
 }
 .ms-site-band a {
   color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
+  font-weight: 700;
   white-space: nowrap;
   transition: opacity 0.2s ease;
 }
