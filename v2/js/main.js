@@ -796,3 +796,22 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
+
+// --- Mega-menu : éviter qu'il reste ouvert après un clic vers un autre onglet ---
+// Les liens target=_blank gardent le focus dans l'onglet d'origine, et
+// :focus-within maintient le menu ouvert au retour. On retire le focus
+// une fois la navigation déclenchée.
+(function () {
+  document.querySelectorAll('.mega-menu a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      setTimeout(function () { a.blur(); }, 50);
+    });
+  });
+  // Filet de sécurité : au retour sur l'onglet, si le focus est resté
+  // dans un mega-menu, on le retire.
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState !== 'visible') return;
+    var el = document.activeElement;
+    if (el && el.closest && el.closest('.mega-menu')) el.blur();
+  });
+})();
