@@ -1571,8 +1571,8 @@ body.ms.ms-band-on main { padding-top: 104px; }
   justify-content: center;
   flex-wrap: wrap;
   gap: 4px 14px;
-  background: var(--ms-green-deep);
-  color: var(--ms-yellow);
+  background: var(--ms-yellow);
+  color: var(--ms-green);
   font-family: var(--ms-font-display);
   font-size: 12px;
   font-weight: 600;
@@ -1580,7 +1580,7 @@ body.ms.ms-band-on main { padding-top: 104px; }
   padding: 7px clamp(40px, 4vw, 48px);
   text-align: center;
   line-height: 1.4;
-  border-bottom: 1px solid rgba(220, 242, 30, 0.14);
+  border-bottom: 1px solid rgba(0, 60, 56, 0.2);
   max-height: 90px;
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.3s ease;
