@@ -4513,3 +4513,21 @@ html { scroll-behavior: smooth; }
   opacity: 0.65;
   margin-top: 3px;
 }
+
+/* --- Mode lecture clair : articles « L'univers du saule » --- */
+body.article-light { background: var(--color-bg-light); color: #3e4a45; }
+body.article-light .sol-h2 { color: var(--color-primary); }
+body.article-light .sol-text { color: #3e4a45; }
+body.article-light .sol-text strong { color: var(--color-primary); }
+body.article-light .sol-text em { color: inherit; }
+body.article-light .sol-feature-number { color: var(--color-primary); }
+body.article-light .sol-feature-content h3 { color: var(--color-primary); }
+body.article-light .sol-feature-content p { color: #4a5550; }
+body.article-light .ref-link { color: var(--color-accent-2); }
+body.article-light .ref-link:hover { color: var(--color-primary); }
+body.article-light .solution-link { color: var(--color-accent-2); text-decoration-color: rgba(138, 111, 72, 0.4); }
+body.article-light .solution-link:hover { color: var(--color-primary); }
+body.article-light .references-list li { color: #4a5550; }
+body.article-light .references-list li:target { background: rgba(0, 60, 56, 0.07); }
+body.article-light .section-label { color: var(--color-accent-2); }
+body.article-light .section-label::before { background: var(--color-accent-2); }

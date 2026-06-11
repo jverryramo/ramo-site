@@ -671,6 +671,18 @@
       });
     })();
 
+    // Préremplissage : ?raison=<valeur> coche la case correspondante
+    // (passé par les CTA des pages solutions et études de cas)
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var raisons = params.getAll('raison');
+      if (!raisons.length) return;
+      raisons.forEach(function (valeur) {
+        var box = document.querySelector('input[name="raison"][value="' + valeur.replace(/"/g, '') + '"]');
+        if (box) box.checked = true;
+      });
+    })();
+
     // Formulaire en 2 étapes
     (function () {
       var form = document.querySelector('.contact-form');

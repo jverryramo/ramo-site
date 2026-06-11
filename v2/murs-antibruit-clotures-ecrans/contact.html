@@ -257,5 +257,23 @@
 
   <script src="../js/cookies.js" defer></script>
   <script src="../js/ms-band.js" defer></script>
+  <script>
+    // Préremplissage : ?produit=pilebyg|hf1|cloture présélectionne le produit
+    (function () {
+      var produit = new URLSearchParams(window.location.search).get('produit');
+      if (!produit) return;
+      var MAP = {
+        'pilebyg': 'Pilebyg® — mur antibruit en saule tressé',
+        'hf1': 'HF1 — mur antibruit en mélèze',
+        'cloture': 'Clôture en saule (tressée ou écorcée)'
+      };
+      var valeur = MAP[produit];
+      var select = document.getElementById('produit');
+      if (!valeur || !select) return;
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].text === valeur) { select.selectedIndex = i; break; }
+      }
+    })();
+  </script>
 </body>
 </html>
