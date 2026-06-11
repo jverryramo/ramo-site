@@ -775,3 +775,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el && el.closest && el.closest('.mega-menu')) el.blur();
   });
 })();
+
+// --- Marqueur d'univers : permet au mini-site de savoir qu'on vient du site principal ---
+// (les pages de l'univers ms portent un .ms-site-band et posent leur propre marqueur)
+(function () {
+  if (document.querySelector('.ms-site-band')) return;
+  try { sessionStorage.setItem('ramo_universe', 'main'); } catch (e) {}
+})();

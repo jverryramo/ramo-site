@@ -274,10 +274,12 @@ body.ms.ms-internal {
   color: var(--ms-text-dark);
 }
 .ms main {
-  padding-top: 104px; /* offset pour le header fixe + bandeau de contexte */
+  padding-top: 64px; /* offset pour le header fixe */
 }
+/* Bandeau de contexte affiché (arrivée via le site principal) */
+body.ms.ms-band-on main { padding-top: 104px; }
 @media (max-width: 600px) {
-  .ms main { padding-top: 126px; } /* bandeau sur 2 lignes en mobile */
+  body.ms.ms-band-on main { padding-top: 126px; } /* bandeau sur 2 lignes */
 }
 .ms .ms-container {
   max-width: 1240px;
@@ -1564,7 +1566,7 @@ body.ms.ms-internal {
    ========================================================================= */
 .ms-site-band {
   position: relative;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -1616,9 +1618,8 @@ body.ms.ms-internal {
   transition: opacity 0.2s ease;
 }
 .ms-site-band-close:hover { opacity: 1; }
-/* Bandeau fermé pour la session */
-body.ms.ms-band-off .ms-site-band { display: none; }
-body.ms.ms-band-off main { padding-top: 64px; }
+/* Affiché seulement quand on arrive via le site principal */
+body.ms.ms-band-on .ms-site-band { display: flex; }
 .ms main { transition: padding-top 0.3s ease; }
 @media (max-width: 600px) {
   .ms-site-band { font-size: 11px; padding: 6px 36px; }

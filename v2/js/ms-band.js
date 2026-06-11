@@ -1,19 +1,42 @@
 // --- Bandeau de contexte mini-site ---
-// 1. Se replie au scroll vers le bas, réapparaît en haut de page
-// 2. Bouton ✕ : fermé pour le reste de la session (sessionStorage)
+// Affiché seulement quand le visiteur arrive du site principal :
+//  - marqueur de session posé par les pages du site principal (main.js), ou
+//  - referrer même origine qui n'est pas une page de l'univers ms (filet)
+// Une fois affiché : se replie au scroll, ✕ le ferme pour la session.
 (function () {
   var band = document.querySelector('.ms-site-band');
   if (!band) return;
 
-  // Fermé plus tôt dans la session ?
+  var state = null, cameFromMain = false;
   try {
-    if (sessionStorage.getItem('ramo_ms_band') === 'off') {
-      document.body.classList.add('ms-band-off');
-      return;
-    }
+    state = sessionStorage.getItem('ramo_ms_band'); // 'on' | 'off' | null
+    cameFromMain = sessionStorage.getItem('ramo_universe') === 'main';
+    sessionStorage.setItem('ramo_universe', 'ms');
   } catch (e) {}
 
-  // Bouton fermer
+  if (state === 'off') return; // fermé manuellement plus tôt dans la session
+
+  // Filet de sécurité : referrer même origine hors univers ms
+  if (state !== 'on' && !cameFromMain && document.referrer) {
+    try {
+      var ref = new URL(document.referrer);
+      var MS_PAGES = [
+        '/murs-antibruit-clotures-ecrans/', 'le-pilebyg', 'le-hf1',
+        'murs-antibruit.html', 'clotures-naturelles-saule-ecorce',
+        'malartic', 'boucherville', 'lavaltrie',
+        'saint-hubert', 'sherbrooke', 'saint-constant'
+      ];
+      var isMs = MS_PAGES.some(function (s) { return ref.pathname.indexOf(s) !== -1; });
+      if (ref.origin === location.origin && !isMs) cameFromMain = true;
+    } catch (e) {}
+  }
+
+  if (state !== 'on' && !cameFromMain) return; // arrivée directe : pas de bandeau
+
+  try { sessionStorage.setItem('ramo_ms_band', 'on'); } catch (e) {}
+  document.body.classList.add('ms-band-on');
+
+  // Bouton fermer (pour la session)
   var btn = document.createElement('button');
   btn.className = 'ms-site-band-close';
   btn.setAttribute('aria-label', 'Masquer ce bandeau');
@@ -21,7 +44,7 @@
   band.appendChild(btn);
   btn.addEventListener('click', function () {
     try { sessionStorage.setItem('ramo_ms_band', 'off'); } catch (e) {}
-    document.body.classList.add('ms-band-off');
+    document.body.classList.remove('ms-band-on');
   });
 
   // Repli au scroll (avec hystérésis pour éviter le clignotement)
