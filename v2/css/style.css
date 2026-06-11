@@ -4588,3 +4588,14 @@ body.article-light .section-label::before { background: var(--color-accent-2); }
 .read-more--light .read-more-label { color: var(--color-accent-2); }
 .read-more--light .read-more-text { color: var(--color-primary); }
 .read-more--light .read-more-arrow { color: var(--color-primary); }
+
+/* Mode clair articles : neutraliser les couleurs inline héritées du thème sombre
+   (scopé .section pour préserver le hero et le CTA finaux, qui restent sombres) */
+body.article-light main .section [style*="color: var(--color-accent"],
+body.article-light main .section [style*="color:var(--color-accent"] { color: var(--color-accent-2) !important; }
+body.article-light main .section [style*="color: var(--color-white)"],
+body.article-light main .section [style*="color:var(--color-white)"] { color: var(--color-primary) !important; }
+body.article-light main .section [style*="var(--color-bg-card)"] {
+  background: rgba(0, 60, 56, 0.05) !important;
+  border-color: rgba(0, 60, 56, 0.15) !important;
+}
