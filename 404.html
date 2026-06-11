@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — Ramo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Cette page n'existe pas (ou plus). Ramo phytotechnologies — solutions basées sur la nature.">
+  <meta name="theme-color" content="#003c38">
+
+  <!-- Base dynamique : aperçu GitHub Pages (/ramo-site/v2/) ou production (/) -->
+  <script>
+    var RAMO_BASE = location.hostname.endsWith('github.io') ? '/ramo-site/v2/'
+      : (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '/v2/'
+      : '/';
+    // Feuille de style principale (variables, fonts Styrene)
+    document.write('<link rel="stylesheet" href="' + RAMO_BASE + 'css/style.css">');
+    document.write('<link rel="icon" type="image/png" sizes="32x32" href="' + RAMO_BASE + 'assets/brand/favicon/favicon-32.png">');
+    document.write('<link rel="apple-touch-icon" sizes="180x180" href="' + RAMO_BASE + 'assets/brand/favicon/apple-touch-icon.png">');
+  </script>
+
+  <style>
+    :root { --color-primary: #003c38; --color-accent: #DCF21E; }
+    body { background: var(--color-primary); color: #fff; min-height: 100vh; display: flex; flex-direction: column; margin: 0; font-family: var(--font-body, 'Inter', system-ui, sans-serif); }
+    .nf-main { flex: 1; display: flex; align-items: center; padding: clamp(40px, 8vw, 80px) clamp(20px, 4vw, 60px); }
+    .nf-container { max-width: 880px; margin: 0 auto; text-align: center; }
+    .nf-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 24px; display: block; }
+    .nf-code { font-family: var(--font-display, Georgia, serif); font-size: clamp(120px, 20vw, 220px); line-height: 0.9; font-weight: 500; color: var(--color-accent); margin: 0 0 24px; letter-spacing: -0.04em; }
+    .nf-title { font-family: var(--font-display, Georgia, serif); font-size: clamp(32px, 5vw, 56px); font-weight: 500; margin: 0 0 24px; line-height: 1.15; letter-spacing: -0.01em; }
+    .nf-desc { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; color: rgba(255,255,255,0.78); max-width: 580px; margin: 0 auto 48px; }
+    .nf-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
+    .nf-btn-primary { background: var(--color-accent); color: var(--color-primary); padding: 14px 28px; border-radius: 100px; font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+    .nf-btn-primary:hover { background: #fff; transform: translateY(-2px); }
+    .nf-btn-secondary { background: transparent; color: #fff; padding: 14px 28px; border-radius: 100px; font-weight: 500; text-decoration: none; font-size: 15px; border: 1px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+    .nf-btn-secondary:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .nf-suggestions { padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.12); }
+    .nf-suggestions-title { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .nf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 700px; margin: 0 auto; text-align: left; }
+    .nf-link { background: rgba(255,255,255,0.04); border: 1px solid rgba(220,242,30,0.18); border-radius: 14px; padding: 20px 22px; text-decoration: none; color: #fff; transition: all 0.3s; display: block; }
+    .nf-link:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+    .nf-link-title { font-family: var(--font-display, Georgia, serif); font-size: 18px; font-weight: 500; margin: 0 0 6px; }
+    .nf-link-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0; }
+  </style>
+</head>
+<body>
+  <main class="nf-main">
+    <div class="nf-container">
+      <span class="nf-eyebrow">Erreur 404</span>
+      <h1 class="nf-code">404</h1>
+      <h2 class="nf-title">On n'a pas planté de saule ici.</h2>
+      <p class="nf-desc">Cette page a été déplacée, supprimée, ou n'a jamais existé. Pas de panique — voici les chemins les plus fréquentés du site.</p>
+
+      <div class="nf-actions">
+        <a data-path="index.html" href="/" class="nf-btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          Retour à l'accueil
+        </a>
+        <a data-path="nous-joindre.html" href="/nous-joindre.html" class="nf-btn-secondary">
+          Nous joindre
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="nf-suggestions">
+        <h3 class="nf-suggestions-title">Sections principales</h3>
+        <div class="nf-grid">
+          <a data-path="index.html#solutions" href="/#solutions" class="nf-link">
+            <div class="nf-link-title">Phyto-solutions</div>
+            <p class="nf-link-desc">Evaplant®, Evacap™, barrière végétale…</p>
+          </a>
+          <a data-path="index.html#produits" href="/#produits" class="nf-link">
+            <div class="nf-link-title">Éco-produits</div>
+            <p class="nf-link-desc">Murs antibruit, clôtures, paillis BRF</p>
+          </a>
+          <a data-path="saules.html" href="/saules.html" class="nf-link">
+            <div class="nf-link-title">Les saules</div>
+            <p class="nf-link-desc">5 articles sur l'arbre au cœur de Ramo</p>
+          </a>
+          <a data-path="apropos.html" href="/apropos.html" class="nf-link">
+            <div class="nf-link-title">À propos</div>
+            <p class="nf-link-desc">Histoire, équipe, expertise depuis 2006</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Réécrit tous les liens avec la base détectée (aperçu vs production)
+    document.querySelectorAll('[data-path]').forEach(function (a) {
+      a.setAttribute('href', RAMO_BASE + a.getAttribute('data-path'));
+    });
+  </script>
+</body>
+</html>

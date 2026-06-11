@@ -24,24 +24,24 @@
   z-index: 1;
 }
 .ev-page-hero--murs {
-  background-image: url('../assets/produits/murs-antibruit-hf1/hf1-mur-meleze-perspective-route-quebec.jpg');
+  background-image: url('../assets/produits/murs-antibruit-hf1/hf1-mur-meleze-perspective-route-quebec.webp');
   background-size: cover;
   background-position: center;
 }
 .ev-page-hero--clotures {
-  background-image: url('../assets/etudes-de-cas/saint-constant/cloture-saule-tresse-saint-constant-residentiel-drone-quebec.jpg');
+  background-image: url('../assets/etudes-de-cas/saint-constant/cloture-saule-tresse-saint-constant-residentiel-drone-quebec.webp');
   background-size: cover;
   background-position: center;
 }
 .ev-page-hero--hf1,
 .ev-page-hero--ramo-pure {
-  background-image: url('../assets/produits/murs-antibruit-hf1/hf1-mur-antibruit-meleze-vue-aerienne-quebec.jpg');
+  background-image: url('../assets/produits/murs-antibruit-hf1/hf1-mur-antibruit-meleze-vue-aerienne-quebec.webp');
   background-size: cover;
   background-position: center;
 }
 .ev-page-hero--pilebyg,
 .ev-page-hero--ramo-nature {
-  background-image: url('../assets/etudes-de-cas/boucherville/mur-antibruit-pilebyg-boucherville-residentiel-drone-quebec.jpg');
+  background-image: url('../assets/etudes-de-cas/boucherville/mur-antibruit-pilebyg-boucherville-residentiel-drone-quebec.webp');
   background-size: cover;
   background-position: center;
 }
