@@ -69,6 +69,8 @@
     }
   }
   </script>
+  <link rel="preload" href="assets/fonts/StyreneA-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/StyreneB-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/solutions.css">
 
@@ -236,6 +238,51 @@
     @keyframes raisonFade { from { opacity: 0; } to { opacity: 1; } }
     @keyframes raisonRise { from { opacity: 0; transform: translateY(16px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
     body.raison-modal-open { overflow: hidden; }
+
+    /* Formulaire en 2 étapes */
+    .form-steps-progress {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 28px;
+    }
+    .form-steps-label {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-accent);
+    }
+    .form-steps-bar {
+      display: block; height: 3px; border-radius: 3px;
+      background: rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+    .form-steps-bar-fill {
+      display: block; height: 100%; width: 50%;
+      background: var(--color-accent);
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+    .form-step { border: none; padding: 0; margin: 0; min-width: 0; }
+    .form-step[hidden] { display: none; }
+    .form-step.is-active { animation: stepIn 0.35s ease-out; }
+    @keyframes stepIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .form-step-error {
+      color: #ff9d9d; font-size: 13.5px; margin: -8px 0 16px;
+    }
+    .form-step-actions {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .form-step-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; border: none; cursor: pointer;
+      font-family: var(--font-display); font-size: 14px; font-weight: 500;
+      color: var(--color-text-light); opacity: 0.8;
+      padding: 12px 8px;
+      transition: opacity 0.25s, color 0.25s;
+    }
+    .form-step-back:hover { opacity: 1; color: var(--color-accent); }
+    @media (prefers-reduced-motion: reduce) {
+      .form-step.is-active { animation: none; }
+      .form-steps-bar-fill { transition: none; }
+    }
   </style>
 
 </head>
@@ -265,8 +312,8 @@
   </header>
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
     <nav class="mobile-nav" aria-label="Menu mobile">
-      <a href="index.html#solutions" class="mobile-nav-link">Phyto-solutions</a>
-      <a href="index.html#produits" class="mobile-nav-link">Éco-produits</a>
+      <a href="index.html#solutions" class="mobile-nav-link">Phyto-solutions<span class="mobile-nav-sub">Eaux, sols, végétalisation, MRF</span></a>
+      <a href="index.html#produits" class="mobile-nav-link">Éco-produits<span class="mobile-nav-sub">Murs antibruit, clôtures, paillis, boutures</span></a>
       <a href="index.html#secteurs" class="mobile-nav-link">Secteurs</a>
       <a href="etudes-de-cas.html" class="mobile-nav-link">Études de cas</a>
       <a href="apropos.html" class="mobile-nav-link">À propos</a>
@@ -333,26 +380,14 @@
         <div class="contact-right scroll-reveal">
           <h2 class="section-title" style="margin-bottom: 24px; font-size: clamp(28px, 3.5vw, 38px);">Écrivez-nous</h2>
           <form class="contact-form" action="#" method="post" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nom" class="sr-only">Nom complet</label>
-                <input type="text" id="nom" name="nom" placeholder="Nom complet" autocomplete="name">
-              </div>
-              <div class="form-group">
-                <label for="email" class="sr-only">Courriel (obligatoire)</label>
-                <input type="email" id="email" name="email" placeholder="Courriel *" required autocomplete="email">
-              </div>
+
+            <div class="form-steps-progress" aria-hidden="true">
+              <span class="form-steps-label" id="formStepsLabel">Étape 1 sur 2 — Votre besoin</span>
+              <span class="form-steps-bar"><span class="form-steps-bar-fill" id="formStepsBarFill"></span></span>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="entreprise" class="sr-only">Entreprise</label>
-                <input type="text" id="entreprise" name="entreprise" placeholder="Entreprise" autocomplete="organization">
-              </div>
-              <div class="form-group">
-                <label for="telephone" class="sr-only">Téléphone</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" autocomplete="tel" inputmode="tel" maxlength="14">
-              </div>
-            </div>
+
+            <!-- Étape 1 : le besoin -->
+            <fieldset class="form-step is-active" data-step="1">
             <div class="form-group form-reason">
               <div class="form-reason-header">
                 <span class="form-reason-title">Raison du message</span>
@@ -382,6 +417,39 @@
               <input type="text" name="raison_autre" placeholder="Si « Autre », précisez…" class="form-reason-other" aria-label="Précisez si Autre">
             </div>
             <div class="form-group">
+              <label for="message" class="sr-only">Votre message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet ou vos besoins..." rows="6"></textarea>
+            </div>
+            <p class="form-step-error" id="step1Error" hidden>Cochez au moins une raison ou écrivez-nous un mot sur votre projet.</p>
+            <button type="button" class="form-submit" id="formNextBtn">
+              <span>Continuer</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            </fieldset>
+
+            <!-- Étape 2 : les coordonnées -->
+            <fieldset class="form-step" data-step="2" hidden>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom" class="sr-only">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Nom complet" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email" class="sr-only">Courriel (obligatoire)</label>
+                <input type="email" id="email" name="email" placeholder="Courriel *" required autocomplete="email">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="entreprise" class="sr-only">Entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" placeholder="Entreprise" autocomplete="organization">
+              </div>
+              <div class="form-group">
+                <label for="telephone" class="sr-only">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" autocomplete="tel" inputmode="tel" maxlength="14">
+              </div>
+            </div>
+            <div class="form-group">
               <label for="source" class="sr-only">Comment avez-vous entendu parler de Ramo ?</label>
               <select id="source" name="source" required>
                 <option value="">Comment avez-vous entendu parler de Ramo ? *</option>
@@ -397,14 +465,18 @@
                 <option value="Autre">Autre</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="message" class="sr-only">Votre message</label>
-              <textarea id="message" name="message" placeholder="Décrivez votre projet ou vos besoins..." rows="6"></textarea>
+            <div class="form-step-actions">
+              <button type="button" class="form-step-back" id="formBackBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Retour
+              </button>
+              <button type="submit" class="form-submit">
+                <span>Envoyer le message</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
             </div>
-            <button type="submit" class="form-submit">
-              <span>Envoyer le message</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
+            </fieldset>
+
           </form>
         </div>
 
@@ -591,6 +663,49 @@
         var openOne = document.querySelector('.raison-modal[aria-hidden="false"]');
         if (openOne) closeModal(openOne);
       });
+    })();
+
+    // Formulaire en 2 étapes
+    (function () {
+      var form = document.querySelector('.contact-form');
+      var step1 = form && form.querySelector('.form-step[data-step="1"]');
+      var step2 = form && form.querySelector('.form-step[data-step="2"]');
+      if (!step1 || !step2) return;
+
+      var nextBtn = document.getElementById('formNextBtn');
+      var backBtn = document.getElementById('formBackBtn');
+      var label = document.getElementById('formStepsLabel');
+      var barFill = document.getElementById('formStepsBarFill');
+      var err = document.getElementById('step1Error');
+
+      function show(step) {
+        var toStep2 = step === 2;
+        step1.hidden = toStep2;
+        step1.classList.toggle('is-active', !toStep2);
+        step2.hidden = !toStep2;
+        step2.classList.toggle('is-active', toStep2);
+        label.textContent = toStep2 ? 'Étape 2 sur 2 — Vos coordonnées' : 'Étape 1 sur 2 — Votre besoin';
+        barFill.style.width = toStep2 ? '100%' : '50%';
+        // Remonte en haut du formulaire pour ne pas perdre l'utilisateur
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (toStep2) {
+          var first = step2.querySelector('input');
+          if (first) first.focus({ preventScroll: true });
+        }
+      }
+
+      nextBtn.addEventListener('click', function () {
+        var hasRaison = form.querySelectorAll('input[name="raison"]:checked').length > 0;
+        var hasMessage = (form.querySelector('#message').value || '').trim().length > 0;
+        if (!hasRaison && !hasMessage) {
+          err.hidden = false;
+          return;
+        }
+        err.hidden = true;
+        show(2);
+      });
+
+      backBtn.addEventListener('click', function () { show(1); });
     })();
   </script>
   <script src="js/cookies.js" defer></script>
