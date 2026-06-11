@@ -274,7 +274,10 @@ body.ms.ms-internal {
   color: var(--ms-text-dark);
 }
 .ms main {
-  padding-top: 64px; /* offset pour le header fixe */
+  padding-top: 104px; /* offset pour le header fixe + bandeau de contexte */
+}
+@media (max-width: 600px) {
+  .ms main { padding-top: 126px; } /* bandeau sur 2 lignes en mobile */
 }
 .ms .ms-container {
   max-width: 1240px;
@@ -1555,3 +1558,34 @@ body.ms.ms-internal {
   margin: 0 0 16px;
 }
 .ms-section--green .ms-text-image p { color: rgba(255, 255, 255, 0.78); }
+
+/* =========================================================================
+   BANDEAU DE CONTEXTE — signale qu'on est sur l'espace dédié
+   ========================================================================= */
+.ms-site-band {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  background: var(--ms-yellow);
+  color: var(--ms-green);
+  font-family: var(--ms-font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 7px clamp(16px, 3vw, 32px);
+  text-align: center;
+  line-height: 1.4;
+}
+.ms-site-band a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+.ms-site-band a:hover { opacity: 0.7; }
+@media (max-width: 600px) {
+  .ms-site-band { font-size: 11px; padding: 6px 12px; }
+}
