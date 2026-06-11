@@ -1563,20 +1563,25 @@ body.ms.ms-internal {
    BANDEAU DE CONTEXTE — signale qu'on est sur l'espace dédié
    ========================================================================= */
 .ms-site-band {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 4px 14px;
-  background: var(--ms-yellow);
-  color: var(--ms-green);
+  background: var(--ms-green-deep);
+  color: var(--ms-yellow);
   font-family: var(--ms-font-display);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  padding: 7px clamp(16px, 3vw, 32px);
+  padding: 7px clamp(40px, 4vw, 48px);
   text-align: center;
   line-height: 1.4;
+  border-bottom: 1px solid rgba(220, 242, 30, 0.14);
+  max-height: 90px;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.3s ease;
 }
 .ms-site-band a {
   color: inherit;
@@ -1586,6 +1591,35 @@ body.ms.ms-internal {
   transition: opacity 0.2s ease;
 }
 .ms-site-band a:hover { opacity: 0.7; }
+/* Repli au scroll */
+.ms-site-band.is-collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  border-bottom-width: 0;
+}
+/* Bouton fermer (session) */
+.ms-site-band-close {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1;
+  padding: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+.ms-site-band-close:hover { opacity: 1; }
+/* Bandeau fermé pour la session */
+body.ms.ms-band-off .ms-site-band { display: none; }
+body.ms.ms-band-off main { padding-top: 64px; }
+.ms main { transition: padding-top 0.3s ease; }
 @media (max-width: 600px) {
-  .ms-site-band { font-size: 11px; padding: 6px 12px; }
+  .ms-site-band { font-size: 11px; padding: 6px 36px; }
 }
