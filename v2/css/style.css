@@ -4531,3 +4531,60 @@ body.article-light .references-list li { color: #4a5550; }
 body.article-light .references-list li:target { background: rgba(0, 60, 56, 0.07); }
 body.article-light .section-label { color: var(--color-accent-2); }
 body.article-light .section-label::before { background: var(--color-accent-2); }
+
+/* --- Encadré « Pour aller plus loin » (croisements articles saules) --- */
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(220, 242, 30, 0.05);
+  border: 1px solid rgba(220, 242, 30, 0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 8px 0;
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.read-more:hover {
+  border-color: rgba(220, 242, 30, 0.55);
+  transform: translateY(-2px);
+}
+.read-more-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(220, 242, 30, 0.12);
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.read-more-body { flex: 1; min-width: 0; }
+.read-more-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+.read-more-text {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.6vw, 17px);
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.4;
+}
+.read-more-arrow { flex-shrink: 0; color: var(--color-accent); }
+/* Variante sur fond clair */
+.read-more--light {
+  background: rgba(0, 60, 56, 0.04);
+  border-color: rgba(0, 60, 56, 0.15);
+}
+.read-more--light:hover { border-color: rgba(0, 60, 56, 0.4); }
+.read-more--light .read-more-icon { background: rgba(0, 60, 56, 0.08); color: var(--color-primary); }
+.read-more--light .read-more-label { color: var(--color-accent-2); }
+.read-more--light .read-more-text { color: var(--color-primary); }
+.read-more--light .read-more-arrow { color: var(--color-primary); }
