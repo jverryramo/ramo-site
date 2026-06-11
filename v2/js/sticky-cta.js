@@ -6,7 +6,7 @@
 
   var href = body.getAttribute('data-sticky-href') || 'nous-joindre.html';
   var label = body.getAttribute('data-sticky-label') || 'Un projet en tête ?';
-  var btnText = body.getAttribute('data-sticky-btn') || 'Parler de votre projet';
+  var btnText = body.getAttribute('data-sticky-btn') || 'Contactez-nous';
 
   var bar = document.createElement('div');
   bar.className = 'sticky-cta';
