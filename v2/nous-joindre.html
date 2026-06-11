@@ -260,8 +260,14 @@
       border-radius: 3px;
       transition: width 0.4s ease;
     }
-    .form-step { border: none; padding: 0; margin: 0; min-width: 0; }
+    .form-step {
+      border: none; padding: 0; margin: 0; min-width: 0;
+      display: flex; flex-direction: column; gap: 16px;
+    }
     .form-step[hidden] { display: none; }
+    /* Le champ « Si autre, précisez » n'apparaît que si « Autre » est coché */
+    .form-reason-other { display: none; }
+    .form-reason-other.is-visible { display: block; }
     .form-step.is-active { animation: stepIn 0.35s ease-out; }
     @keyframes stepIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .form-step-error {
@@ -692,6 +698,17 @@
           var first = step2.querySelector('input');
           if (first) first.focus({ preventScroll: true });
         }
+      }
+
+      // « Si autre, précisez » : visible seulement si « Autre » est coché
+      var autreCheck = document.getElementById('raison-autre');
+      var autreInput = form.querySelector('.form-reason-other');
+      if (autreCheck && autreInput) {
+        autreCheck.addEventListener('change', function () {
+          autreInput.classList.toggle('is-visible', autreCheck.checked);
+          if (autreCheck.checked) autreInput.focus({ preventScroll: true });
+          else autreInput.value = '';
+        });
       }
 
       nextBtn.addEventListener('click', function () {
