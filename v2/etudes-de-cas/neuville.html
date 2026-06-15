@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <!-- ramo-pw-gate -->
+<script>
+(function(){
+  var P='ramo2026';
+  if(sessionStorage.getItem('ramo_pw')===P)return;
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;background:#003c38;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2147483647;font-family:Inter,system-ui,sans-serif';
+    o.innerHTML='<form style="background:rgba(255,255,255,0.04);border:1px solid rgba(220,242,30,0.18);padding:48px 40px;border-radius:18px;text-align:center;max-width:420px;width:90%;backdrop-filter:blur(8px)"><h1 style="font-family:Playfair Display,Georgia,serif;font-weight:500;font-size:38px;margin:0 0 8px;letter-spacing:-0.01em">Ramo</h1><p style="opacity:0.65;margin:0 0 32px;font-size:14px;letter-spacing:0.02em">Site en mode aperçu</p><input type="password" placeholder="Mot de passe" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(220,242,30,0.22);color:#fff;padding:13px 18px;border-radius:100px;font-size:15px;width:100%;text-align:center;outline:none;box-sizing:border-box;font-family:inherit"><button type="submit" style="background:#DCF21E;color:#003c38;border:none;padding:13px 32px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;margin-top:14px;width:100%;font-family:inherit">Accéder</button><div class="err" style="color:#ff8a8a;font-size:13px;margin-top:14px;min-height:18px"></div></form>';
+    document.body.appendChild(o);
+    document.documentElement.style.visibility='visible';
+    var f=o.querySelector('form'),i=o.querySelector('input'),e=o.querySelector('.err');
+    i.focus();
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(i.value===P){sessionStorage.setItem('ramo_pw',P);o.remove();}
+      else{e.textContent='Mot de passe incorrect';i.value='';i.focus();}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',show);}
+  else{show();}
+})();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neuville — Étude de cas Evaplant® | Ramo</title>
+  <meta name="description" content="Complexe environnemental de Neuville : système Evaplant® de 96 000 saules sur 6 ha implanté sur un ancien lieu d'enfouissement, réduisant jusqu'à ~20 000 m³/an d'eau.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ramo.eco/etudes-de-cas/neuville/">
+    <link rel="alternate" hreflang="fr-ca" href="https://ramo.eco/etudes-de-cas/neuville/">
+    <link rel="alternate" hreflang="x-default" href="https://ramo.eco/etudes-de-cas/neuville/">
+  <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Neuville, Québec">
+  <meta name="geo.position" content="46.6886;-71.5694">
+  <meta name="ICBM" content="46.6886, -71.5694">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Neuville — Étude de cas Evaplant® | Ramo">
+  <meta property="og:description" content="Un système Evaplant® de 96 000 saules valorise un ancien lieu d'enfouissement du Complexe environnemental de Neuville et réduit jusqu'à ~20 000 m³/an d'eau.">
+  <meta property="og:image" content="https://ramo.eco/assets/etudes-de-cas/neuville/evaplant-neuville-complexe-environnemental-vue-aerienne-quebec.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Neuville — Étude de cas Evaplant® | Ramo">
+  <meta name="twitter:description" content="96 000 saules sur 6 ha, ancien lieu d'enfouissement valorisé, jusqu'à ~20 000 m³/an d'eau réduits.">
+  <meta name="twitter:image" content="https://ramo.eco/assets/etudes-de-cas/neuville/evaplant-neuville-complexe-environnemental-vue-aerienne-quebec.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Neuville — Étude de cas Evaplant®",
+    "description": "Complexe environnemental de Neuville : système Evaplant® de 96 000 saules sur 6 ha implanté sur le recouvrement final d'un ancien lieu d'enfouissement, réduisant jusqu'à ~20 000 m³/an d'eau.",
+    "image": "../assets/etudes-de-cas/neuville/evaplant-neuville-complexe-environnemental-vue-aerienne-quebec.jpg",
+    "author": { "@type": "Organization", "name": "Ramo" },
+    "publisher": { "@type": "Organization", "name": "Ramo", "url": "https://ramo.eco" },
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-06-15"
+  }
+  </script>
+  <link rel="preload" href="../assets/fonts/StyreneA-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/StyreneB-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/solutions.css">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://ramo.eco/index.html"}, {"@type": "ListItem", "position": 2, "name": "Études de cas", "item": "https://ramo.eco/index.html#etudes"}, {"@type": "ListItem", "position": 3, "name": "Neuville", "item": "https://ramo.eco/etudes-de-cas/neuville/"}]}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/brand/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/brand/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/brand/favicon/site.webmanifest">
+  <meta name="theme-color" content="#003c38">
+</head>
+<body data-sticky-cta data-sticky-href="../nous-joindre.html?raison=Eaux%20impact%C3%A9es" data-sticky-label="Un projet similaire en tête ?" data-sticky-btn="Contactez-nous">
+
+  <!-- Skip to content (a11y) -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Ramo - Accueil"><img src="../assets/brand/Logo-Ramo-Blanc.png" alt="Ramo" class="logo-img" style="height: 28px; width: auto;"></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <div class="nav-item"><a href="../index.html#solutions" class="nav-link">Phyto-solutions</a><div class="mega-menu mega-menu--branch"><div class="mega-menu-branch-grid"><a href="../evaplant.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M9 14h6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion eaux impactées</div><div class="mega-menu-desc">Technologie Evaplant<sup>®</sup></div></div></a><a href="../evacap-ruissellement-eaux-usees.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h18"/><path d="M3 14c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 5 2"/><path d="M3 19c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 5 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion eaux de ruissellement</div><div class="mega-menu-desc">Système Evacap<sup>™</sup></div></div></a><a href="../barriere-vegetale.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4v16"/><path d="M3 8h11a2 2 0 1 0-2-2"/><path d="M3 12h13"/><path d="M3 16h10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Barrière végétale</div><div class="mega-menu-desc">Poussière, déchets, vent — Intercept<sup>™</sup></div></div></a><a href="../vegetalisation-site-degrades-saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 22V12"/><path d="M12 22V8"/><path d="M18 22V10"/><path d="M6 14c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M6 14c2.5 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/><path d="M12 11c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/><path d="M18 13c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M18 13c2.5 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Végétalisation de sites dégradés</div><div class="mega-menu-desc">Plantation de saules</div></div></a><a href="../sols-miniers-substrat-vegetalisation.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 14h18M3 18h18M3 22h18"/><path d="M12 14V8"/><path d="M10 8c0-1.1 0.9-2 2-2s2 0.9 2 2"/><path d="M9 10c1 0 2-1 3-1s2 1 3 1"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Restauration des sols</div><div class="mega-menu-desc">Substrats de végétalisation</div></div></a><a href="../boues-industrielles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 5l-3 3 3 3"/><path d="M4 8h13a3 3 0 0 1 3 3v3"/><path d="M17 19l3-3-3-3"/><path d="M20 16H7a3 3 0 0 1-3-3v-3"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Gestion des MRF</div><div class="mega-menu-desc">Valorisation des boues</div></div></a></div></div></div>
+        <div class="nav-item"><a href="../index.html#produits" class="nav-link">Éco-produits</a><div class="mega-menu mega-menu--branch"><div class="mega-menu-branch-grid"><a href="../murs-antibruit-clotures-ecrans/" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4v16"/><path d="M3 10c2 0 2 4 0 4"/><path d="M6 8c4 1 4 7 0 8"/><path d="M9 6c6 1 6 11 0 12"/></svg></div><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Murs antibruit et clôtures</div><div class="mega-menu-desc">Murs antibruit + clôtures</div></div></a><a href="https://paillisramo.com/" target="_blank" rel="noopener noreferrer" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="7" cy="8" rx="3" ry="1.5"/><ellipse cx="15" cy="10" rx="3" ry="1.5"/><ellipse cx="9" cy="13" rx="3" ry="1.5"/><ellipse cx="17" cy="15" rx="3" ry="1.5"/><ellipse cx="11" cy="18" rx="3" ry="1.5"/></svg></div><div class="mega-menu-text"><span class="mega-menu-badge">Site dédié</span><div class="mega-menu-title">Amendement horticole</div><div class="mega-menu-desc">Paillis BRF Ramo</div></div></a><a href="../plantation-et-fourniture.html" class="mega-menu-link"><div class="mega-menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V10"/><path d="M12 10c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 14c3 0 5-2 5-5-3 0-5 2-5 5z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Fourniture végétale</div><div class="mega-menu-desc">Boutures, fagots, tiges</div></div></a></div></div></div>
+        <div class="nav-item"><a href="../index.html#secteurs" class="nav-link">Secteurs</a><div class="mega-menu" style="min-width:420px;"><a href="../secteur-enfouissement.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="14" height="8" rx="1"/><path d="M15 13V9a2 2 0 012-2h2l3 4v6a1 1 0 01-1 1h-1"/><circle cx="5.5" cy="21" r="2"/><circle cx="18.5" cy="21" r="2"/><path d="M8 21h7"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Enfouissement</div></div></a><a href="../municipalites.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 21V9h6v12M3 9l9-6 9 6"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Municipal</div></div></a><a href="../secteur-minier.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M10 9L6 3M14 9l4-6M12 22l-2-13M12 22l2-13"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Minier / Industriel</div></div></a><a href="../secteur-boues-industrielles.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c0-4 4-8 8-8s8 4 8 8"/><path d="M4 14h16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4z"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Générateurs de boues</div></div></a><a href="../developpeurs-immobiliers.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V18h6v4"/><path d="M8 6h2M8 10h2M8 14h2M14 6h2M14 10h2M14 14h2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Immobilier / Commercial</div></div></a></div></div>
+        <a href="../etudes-de-cas.html" class="nav-link">Études de cas</a>
+        <div class="nav-item"><a href="../apropos.html" class="nav-link">À propos</a><div class="mega-menu" style="min-width:480px; grid-template-columns:1fr 1fr; gap:4px 6px;"><a href="../apropos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Qui sommes-nous</div><div class="mega-menu-desc">Histoire, mission, équipe</div></div></a><a href="../saules.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 2v10"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Les saules</div><div class="mega-menu-desc">Au coeur de nos solutions</div></div></a><a href="../culture-carriere.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Carrières</div><div class="mega-menu-desc">Rejoignez l'équipe</div></div></a><a href="../ramo-nouvelles-articles-communiques-videos.html" class="mega-menu-link"><div class="mega-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M18 18h-8M18 10h-8"/></svg></div><div class="mega-menu-text"><div class="mega-menu-title">Actualités</div><div class="mega-menu-desc">Nouvelles et communiqués</div></div></a></div></div>
+        <a href="../nous-joindre.html" class="nav-link nav-link--cta">Nous joindre</a>
+        <div class="nav-lang">
+          <a href="../index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+          <span class="nav-lang-sep">|</span>
+          <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="../index.html#solutions" class="mobile-nav-link">Phyto-solutions<span class="mobile-nav-sub">Eaux, sols, végétalisation, MRF</span></a>
+      <a href="../index.html#produits" class="mobile-nav-link">Éco-produits<span class="mobile-nav-sub">Murs antibruit, clôtures, paillis, boutures</span></a>
+      <a href="../index.html#secteurs" class="mobile-nav-link">Secteurs</a>
+      <a href="../etudes-de-cas.html" class="mobile-nav-link">Études de cas</a>
+      <a href="../apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="../saules.html" class="mobile-nav-link">Les saules</a>
+            <a href="../culture-carriere.html" class="mobile-nav-link">Carrières</a>
+      <a href="../nous-joindre.html" class="mobile-nav-link">Nous joindre</a>
+      <div class="mobile-nav-lang">
+        <a href="../index.html" class="nav-lang-link nav-lang-link--active">FR</a>
+        <span class="nav-lang-sep">|</span>
+        <a href="https://ramo.eco/en/" class="nav-lang-link">EN</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main">
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <div class="cs-hero-content">
+<div class="cs-location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Neuville, QC
+      </div>
+      <h1 class="cs-title">Réduire les volumes d'eau d'un complexe environnemental</h1>
+      <p class="cs-subtitle" style="font-size: clamp(16px, 1.8vw, 20px); color: var(--color-warm); margin: 0 0 18px; max-width: 640px;">Complexe environnemental de Neuville</p>
+      <a href="../evaplant.html" class="cs-solution-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Revenir à Evaplant®
+      </a>
+      <div class="cs-meta">Plantation 2023 · En opération depuis 2024</div>
+</div>
+  </section>
+
+  <!-- Stats & Body -->
+  <section class="section">
+    <div class="container">
+      <div class="cs-body">
+
+        <div class="cs-stats scroll-reveal">
+          <div class="cs-stat">
+            <div class="cs-stat-value">96 000</div>
+            <div class="cs-stat-label">Saules plantés</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">~20 000 m³/an</div>
+            <div class="cs-stat-label">Capacité de réduction</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">6 ha</div>
+            <div class="cs-stat-label">Superficie de plantation</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">Ancien LET</div>
+            <div class="cs-stat-label">Valorisé par le projet</div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <h2 class="cs-h2 scroll-reveal">Le contexte</h2>
+          <p class="cs-text scroll-reveal">Le <strong>Complexe environnemental de Neuville</strong> traite plusieurs flux de matières résiduelles, incluant les boues de fosses septiques et les eaux générées par ses installations environnementales.</p>
+          <p class="cs-text scroll-reveal">Bien que les infrastructures de traitement existantes permettent de respecter les exigences réglementaires, le site cherchait à <strong>augmenter sa marge de manœuvre opérationnelle</strong> tout en réduisant les volumes d'eaux dirigés vers les filières conventionnelles de traitement et de rejet.</p>
+          <p class="cs-text scroll-reveal">L'objectif du projet était également de <strong>valoriser une ancienne cellule d'enfouissement fermée</strong> en y implantant une infrastructure environnementale productive.</p>
+
+          <!-- Photo -->
+          <div class="cs-photo-inline scroll-reveal">
+            <img src="../assets/etudes-de-cas/neuville/evaplant-neuville-complexe-environnemental-vue-aerienne-quebec.webp" alt="Vue aérienne du Complexe environnemental de Neuville en bordure de rivière, Québec" loading="lazy">
+            <div class="cs-photo-caption">Le Complexe environnemental de Neuville, en bordure de la rivière Jacques-Cartier.</div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <h2 class="cs-h2 scroll-reveal">La solution mise en place</h2>
+          <p class="cs-text scroll-reveal">Ramo a implanté un système <strong>Evaplant®</strong> sur le recouvrement final d'un <strong>ancien lieu d'enfouissement</strong> du Complexe environnemental de Neuville.</p>
+          <p class="cs-text scroll-reveal">Le système repose sur :</p>
+          <ul class="cs-text scroll-reveal" style="margin-left: 20px; line-height: 2;">
+            <li>irrigation contrôlée des effluents</li>
+            <li>distribution dans la zone racinaire des saules</li>
+            <li>gestion automatisée des apports hydriques</li>
+            <li>plantation à haute densité de saules à croissance rapide</li>
+          </ul>
+          <p class="cs-text scroll-reveal">La plantation agit comme une <strong>infrastructure de réduction volumique</strong> intégrée aux opérations du site, permettant de diminuer les volumes d'eau dirigés vers les installations conventionnelles de traitement.</p>
+
+          <!-- Photo -->
+          <div class="cs-photo-inline scroll-reveal">
+            <img src="../assets/etudes-de-cas/neuville/evaplant-neuville-centre-controle-plantation-saules-drone-quebec.webp" alt="Centre de contrôle Evaplant® et plantation de saules au Complexe environnemental de Neuville, Québec" loading="lazy">
+            <div class="cs-photo-caption">Centre de contrôle Evaplant® et plantation, intégrés aux opérations du complexe.</div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <h2 class="cs-h2 scroll-reveal">Résultats et performance</h2>
+
+          <h3 class="scroll-reveal" style="font-size: 18px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin: 8px 0 8px;">Réduction volumique</h3>
+          <p class="cs-text scroll-reveal" style="margin-bottom: 24px;">Capacité de réduction pouvant atteindre environ <strong>20 000 m³ par année</strong>.</p>
+
+          <h3 class="scroll-reveal" style="font-size: 18px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin: 8px 0 8px;">Valorisation du site</h3>
+          <p class="cs-text scroll-reveal" style="margin-bottom: 24px;">Transformation d'une ancienne cellule d'enfouissement en <strong>infrastructure environnementale active</strong>.</p>
+
+          <h3 class="scroll-reveal" style="font-size: 18px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin: 8px 0 8px;">Performance agronomique</h3>
+          <p class="cs-text scroll-reveal" style="margin-bottom: 24px;">Implantation d'environ <strong>96 000 saules</strong> sur une superficie de <strong>6 hectares</strong>.</p>
+
+          <h3 class="scroll-reveal" style="font-size: 18px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin: 8px 0 8px;">Flexibilité opérationnelle</h3>
+          <p class="cs-text scroll-reveal">Réduction de la pression sur les infrastructures conventionnelles de traitement des eaux du complexe.</p>
+
+          <!-- Photo -->
+          <div class="cs-photo-inline scroll-reveal">
+            <img src="../assets/etudes-de-cas/neuville/evaplant-neuville-saules-contre-jour-croissance-quebec.webp" alt="Saules Evaplant® à contre-jour en pleine croissance au Complexe environnemental de Neuville, Québec" loading="lazy">
+            <div class="cs-photo-caption">Saules à croissance rapide en pleine saison — la biomasse qui évapotranspire les effluents.</div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <h2 class="cs-h2 scroll-reveal">Co-bénéfices</h2>
+          <div class="scroll-reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 16px;">
+            <div style="padding: 22px; border-left: 3px solid var(--color-accent); background: var(--color-bg-card); border-radius: 0 12px 12px 0;">
+              <h3 style="font-size: 16px; color: var(--color-white); margin: 0 0 8px;">Valorisation d'un passif environnemental</h3>
+              <p style="margin: 0; color: var(--color-text-light); font-size: 14.5px; line-height: 1.6;">Réutilisation d'une ancienne cellule d'enfouissement comme infrastructure végétalisée productive.</p>
+            </div>
+            <div style="padding: 22px; border-left: 3px solid var(--color-accent); background: var(--color-bg-card); border-radius: 0 12px 12px 0;">
+              <h3 style="font-size: 16px; color: var(--color-white); margin: 0 0 8px;">Réduction des rejets à l'environnement</h3>
+              <p style="margin: 0; color: var(--color-text-light); font-size: 14.5px; line-height: 1.6;">Diminution des volumes d'eau dirigés vers le milieu récepteur.</p>
+            </div>
+            <div style="padding: 22px; border-left: 3px solid var(--color-accent); background: var(--color-bg-card); border-radius: 0 12px 12px 0;">
+              <h3 style="font-size: 16px; color: var(--color-white); margin: 0 0 8px;">Valorisation locale des matières résiduelles</h3>
+              <p style="margin: 0; color: var(--color-text-light); font-size: 14.5px; line-height: 1.6;">Potentiel d'intégration de matières organiques générées sur le site dans la production végétale.</p>
+            </div>
+            <div style="padding: 22px; border-left: 3px solid var(--color-accent); background: var(--color-bg-card); border-radius: 0 12px 12px 0;">
+              <h3 style="font-size: 16px; color: var(--color-white); margin: 0 0 8px;">Réduction des émissions associées au transport</h3>
+              <p style="margin: 0; color: var(--color-text-light); font-size: 14.5px; line-height: 1.6;">Valorisation sur place de matières résiduelles qui seraient autrement transportées vers d'autres filières de traitement.</p>
+            </div>
+            <div style="padding: 22px; border-left: 3px solid var(--color-accent); background: var(--color-bg-card); border-radius: 0 12px 12px 0;">
+              <h3 style="font-size: 16px; color: var(--color-white); margin: 0 0 8px;">Projet démonstrateur</h3>
+              <p style="margin: 0; color: var(--color-text-light); font-size: 14.5px; line-height: 1.6;">Application des phytotechnologies à la gestion intégrée des matières résiduelles et des eaux dans un complexe environnemental.</p>
+            </div>
+          </div>
+
+          <!-- Photo -->
+          <div class="cs-photo-inline scroll-reveal">
+            <img src="../assets/etudes-de-cas/neuville/evaplant-neuville-conference-annonce-projet-quebec.webp" alt="Annonce du projet Evaplant® sur le terrain au Complexe environnemental de Neuville, Québec" loading="lazy">
+            <div class="cs-photo-caption">Annonce du projet sur le site — un démonstrateur des phytotechnologies en gestion des matières résiduelles.</div>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <h2 class="cs-h2 scroll-reveal">Lecture technique du projet</h2>
+          <div class="scroll-reveal" style="display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 16px; border: 1px solid rgba(220, 242, 30, 0.12); border-radius: 14px; overflow: hidden;">
+            <div style="display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 24px; background: var(--color-bg-card);">
+              <div style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Effluent</div>
+              <div style="color: var(--color-text-light); font-size: 15px;">Filtrat issu du traitement des boues de fosses septiques</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 24px; background: var(--color-bg-card); border-top: 1px solid rgba(220, 242, 30, 0.08);">
+              <div style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Superficie</div>
+              <div style="color: var(--color-text-light); font-size: 15px;">6 ha</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 24px; background: var(--color-bg-card); border-top: 1px solid rgba(220, 242, 30, 0.08);">
+              <div style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Fonction principale</div>
+              <div style="color: var(--color-text-light); font-size: 15px;">Réduction de volume par évapotranspiration</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 24px; background: var(--color-bg-card); border-top: 1px solid rgba(220, 242, 30, 0.08);">
+              <div style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Mode d'opération</div>
+              <div style="color: var(--color-text-light); font-size: 15px;">Saisonnier (mai à octobre)</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 24px; background: var(--color-bg-card); border-top: 1px solid rgba(220, 242, 30, 0.08);">
+              <div style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Intégration</div>
+              <div style="color: var(--color-text-light); font-size: 15px;">Complément aux infrastructures existantes de traitement des eaux</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 24px; background: var(--color-bg-card); border-top: 1px solid rgba(220, 242, 30, 0.08);">
+              <div style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Plantation</div>
+              <div style="color: var(--color-text-light); font-size: 15px;">96 000 saules</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Link -->
+        <a href="../evaplant.html" class="cs-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Retour à la solution Evaplant®
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projet suivant -->
+  <section class="cs-next">
+    <div class="container">
+      <a href="sainte-sophie.html" class="cs-next-card scroll-reveal">
+        <div class="cs-next-img"><img src="../assets/etudes-de-cas/sainte-sophie/evaplant-sainte-sophie-systeme-lixiviat-vue-aerienne-quebec.webp" alt="" loading="lazy"></div>
+        <div class="cs-next-body">
+          <span class="cs-next-eyebrow">Projet suivant</span>
+          <p class="cs-next-title">Le plus grand système Evaplant®, 51 000 m³ réduits chaque année</p>
+        </div>
+        <span class="cs-next-arrow" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section--light" style="background: var(--color-bg-light); text-align: center;">
+    <div class="container">
+      <span class="section-label scroll-reveal">Parlons de votre projet</span>
+      <h2 class="section-title scroll-reveal" style="max-width: 600px; margin: 0 auto 20px;">Un enjeu similaire ?<br>Contactez-nous.</h2>
+      <p class="section-subtitle scroll-reveal" style="max-width: 500px; margin: 0 auto 32px;">Notre équipe est disponible pour discuter de vos besoins et vous proposer la solution adaptée.</p>
+      <div class="scroll-reveal" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="../nous-joindre.html?raison=Eaux%20impact%C3%A9es" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 8px;">
+          Nous joindre
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+14505880013" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          1 450 588-0013
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+<footer class="footer footer--minimal">
+  <div class="container">
+    <div class="footer-min">
+
+      <!-- Colonne 1 — Brand & contact -->
+      <div class="footer-min-brand">
+        <a href="../index.html" aria-label="Ramo - Accueil"><img src="../assets/brand/Logo-Ramo-Blanc.png" alt="Ramo" class="footer-logo" style="height: 32px; width: auto;"></a>
+        <p class="footer-min-tagline">Solutions végétalisées à grande échelle. Depuis 2006.</p>
+        <p class="footer-min-address">457, Rang du Ruisseau des Anges Sud<br>Saint-Roch-de-l'Achigan, QC J0K 3H0</p>
+        <p class="footer-min-contact"><a href="tel:+14505880013">1 450 588-0013</a> &nbsp;·&nbsp; <a href="mailto:info@ramo.eco">info@ramo.eco</a></p>
+        <div class="footer-min-social">
+          <a href="https://www.facebook.com/groupe.ramo" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/groupe-ramo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Colonne 2 — Navigation -->
+      <nav class="footer-min-nav" aria-label="Navigation principale">
+        <span class="footer-min-nav-title">Navigation</span>
+        <a href="../index.html#solutions">Phyto-solutions</a>
+        <a href="../index.html#produits">Éco-produits</a>
+        <a href="../index.html#secteurs">Secteurs</a>
+        <a href="../etudes-de-cas.html">Études de cas</a>
+        <a href="../apropos.html">À propos</a>
+        <a href="../ramo-nouvelles-articles-communiques-videos.html">Médias</a>
+        <a href="../culture-carriere.html">Carrières</a>
+        <a href="../nous-joindre.html">Nous joindre</a>
+      </nav>
+
+      <!-- Colonne 3 — Nos sites dédiés + partenaire distribution -->
+      <nav class="footer-min-family" aria-label="Nos sites dédiés">
+        <span class="footer-min-family-label">Nos sites dédiés</span>
+        <a href="../murs-antibruit-clotures-ecrans/index.html">
+          <strong>Ramo Murs antibruit et clôtures</strong>
+          <span>Mini-site B2B — murs antibruit &amp; clôtures</span>
+        </a>
+        <a href="https://paillisramo.com" target="_blank" rel="noopener noreferrer">
+          <strong>Paillis BRF Ramo <span aria-hidden="true" style="font-size:11px;">↗</span></strong>
+          <span>Mini-site externe — paillis horticole</span>
+        </a>
+        <span class="footer-min-family-divider" aria-hidden="true"></span>
+        <span class="footer-min-family-sublabel">Partenaire distribution</span>
+        <a href="https://saulesquebec.com" target="_blank" rel="noopener noreferrer">
+          <strong>Saules Québec <span aria-hidden="true" style="font-size:11px;">↗</span></strong>
+          <span>Distribution de boutures Ramo pour particuliers</span>
+        </a>
+      </nav>
+
+    </div>
+
+    <div class="footer-min-bottom">
+      <p>&copy; 2026 Groupe Ramo Inc. — Tous droits réservés.</p>
+      <p class="footer-min-legal">
+        <a href="../politique-confidentialite.html">Politique de confidentialité</a>
+        <span aria-hidden="true">·</span>
+        <a href="#" onclick="event.preventDefault(); if(window.RamoCookies) window.RamoCookies.open();">Préférences témoins (Loi 25)</a>
+        <span aria-hidden="true">·</span>
+        <a href="../plan-du-site.html">Plan du site</a>
+      </p>
+    </div>
+  </div>
+</footer>
+  <script src="../js/main.js"></script>
+  <script src="../js/cookies.js" defer></script>
+  <script src="../js/sticky-cta.js" defer></script>
+</body>
+</html>
