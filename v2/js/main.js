@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.getElementById('mobileMenu');
 
   if (menuToggle && mobileMenu) {
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
     menuToggle.addEventListener('click', () => {
       const isActive = menuToggle.classList.toggle('active');
       mobileMenu.classList.toggle('active');
@@ -114,14 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = isActive ? 'hidden' : '';
     });
 
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    // Fermer en touchant le fond (hors panneau)
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    // Fermer en suivant un lien (pas les <summary> d'accordéon)
+    mobileMenu.querySelectorAll('a[href]').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Échap ferme le menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
     });
   }
 
