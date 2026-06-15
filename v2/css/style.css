@@ -3816,7 +3816,9 @@ a:focus-visible { outline-offset: 2px; }
 }
 .case-card:hover .case-card-link { gap: 8px; }
 @media (max-width: 700px) {
-  .case-grid { grid-template-columns: 1fr; }
+  /* !important pour battre les grid-template-columns inline (repeat(2,1fr) / repeat(3,1fr)) */
+  .case-grid { grid-template-columns: 1fr !important; }
+  .ramo-highlights { grid-template-columns: 1fr !important; }
 }
 
 /* Case-card sur fond clair (section--light) — overrides contraste */
@@ -4672,3 +4674,11 @@ body.article-light main .section [style*="var(--color-bg-card)"] {
   background: rgba(0, 60, 56, 0.05) !important;
   border-color: rgba(0, 60, 56, 0.15) !important;
 }
+/* Texte de corps inline (descriptions de cartes) : était clair pour fond sombre */
+body.article-light main .section [style*="color: var(--color-text-light)"],
+body.article-light main .section [style*="color:var(--color-text-light)"],
+body.article-light main .section [style*="color: var(--color-warm)"],
+body.article-light main .section [style*="color:var(--color-warm)"] { color: #4a5550 !important; }
+
+/* Footer toujours en fond vert sur les articles (le body clair le rendait crème) */
+body.article-light .footer--minimal { background: var(--color-bg); }

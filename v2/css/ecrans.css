@@ -409,28 +409,30 @@ body.ms.ms-band-on main { padding-top: 104px; }
   }
 }
 
-/* Variantes jaune (pour heros sur photo / fonds sombres) */
-.ms-btn-primary--yellow {
+/* Variantes jaune (pour heros sur photo / fonds sombres)
+   Double classe = spécificité supérieure à la base .ms-btn-primary,
+   sinon la base (définie plus bas) écrasait le fond/texte au survol. */
+.ms-btn-primary.ms-btn-primary--yellow {
   background: var(--ms-yellow);
   color: var(--ms-green);
   box-shadow: 0 0 0 0 rgba(220, 242, 30, 0);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid var(--ms-yellow);
 }
-.ms-btn-primary--yellow:hover {
+.ms-btn-primary.ms-btn-primary--yellow:hover {
   background: var(--ms-yellow-soft);
   color: var(--ms-green);
   border-color: var(--ms-yellow-soft);
   box-shadow: 0 12px 32px rgba(220, 242, 30, 0.45);
   transform: translateY(-2px);
 }
-.ms-btn-secondary--yellow {
+.ms-btn-secondary.ms-btn-secondary--yellow {
   background: transparent;
   border: 2px solid var(--ms-yellow);
   color: var(--ms-yellow);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.ms-btn-secondary--yellow:hover {
+.ms-btn-secondary.ms-btn-secondary--yellow:hover {
   background: var(--ms-yellow);
   color: var(--ms-green);
   border-color: var(--ms-yellow);
