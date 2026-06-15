@@ -233,27 +233,52 @@ a.ms-nav-lang-link:hover {
 @media (max-width: 1000px) {
   .ms-nav { display: none; }
   .ms-nav-toggle { display: inline-flex; }
+  /* Panneau latéral coulissant — homogène avec le site principal */
   .ms-nav.is-open {
     display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
     flex-direction: column;
-    background: var(--ms-green);
-    padding: 12px 24px 24px;
-    border-bottom: 1px solid rgba(220, 242, 30, 0.12);
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(86vw, 340px);
+    z-index: 90; /* sous le header (100) : le bouton Menu reste cliquable pour fermer */
+    background: var(--ms-green-deep);
+    border-left: 1px solid rgba(220, 242, 30, 0.14);
+    box-shadow: -24px 0 70px rgba(0, 0, 0, 0.45);
+    padding: 84px 26px calc(28px + env(safe-area-inset-bottom));
     gap: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .ms-nav.is-open .ms-nav-link {
-    padding: 14px 0;
+    padding: 16px 0;
     border-radius: 0;
-    border-bottom: 1px solid rgba(220, 242, 30, 0.08);
+    border-top: 1px solid rgba(220, 242, 30, 0.08);
     width: 100%;
+    font-size: 18px;
   }
+  .ms-nav.is-open .ms-nav-link::after { display: none; } /* pas de soulignement animé en panneau */
   .ms-nav.is-open .ms-nav-cta {
-    margin-top: 14px;
+    margin-top: 22px;
     justify-content: center;
   }
+  .ms-nav.is-open .ms-nav-lang {
+    margin-top: auto;
+    padding-top: 24px;
+    justify-content: center;
+    border-top: 1px solid rgba(220, 242, 30, 0.12);
+    border-left: none;
+  }
+  /* Backdrop assombri */
+  .ms-nav-backdrop {
+    position: fixed; inset: 0; z-index: 80;
+    background: rgba(0, 24, 22, 0.5);
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  .ms-nav-backdrop.is-on { opacity: 1; pointer-events: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-nav-backdrop { transition: none; }
 }
 
 /* =========================================================================
@@ -917,7 +942,13 @@ body.ms.ms-band-on main { padding-top: 104px; }
   .ms-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 480px) {
-  .ms-footer-grid { grid-template-columns: 1fr; }
+  .ms-footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .ms-footer-grid > * + * { border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 24px; }
+}
+@media (max-width: 800px) {
+  .ms-footer li { margin-bottom: 2px; }
+  .ms-footer li a { display: inline-block; padding: 7px 0; }
+  .ms-footer-info a { display: inline-block; padding: 4px 0; }
 }
 .ms-footer-info img { height: 28px; margin-bottom: 16px; }
 .ms-footer-tagline {
@@ -1623,6 +1654,10 @@ body.ms.ms-band-on main { padding-top: 104px; }
 /* Affiché seulement quand on arrive via le site principal */
 body.ms.ms-band-on .ms-site-band { display: flex; }
 .ms main { transition: padding-top 0.3s ease; }
+/* Texte du bandeau : version courte sur mobile */
+.ms-band-short { display: none; }
 @media (max-width: 600px) {
   .ms-site-band { font-size: 11px; padding: 6px 36px; }
+  .ms-band-pre { display: none; }
+  .ms-band-short { display: inline; }
 }

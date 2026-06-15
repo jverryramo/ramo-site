@@ -2813,6 +2813,18 @@ img { max-width: 100%; display: block; }
     gap: 60px;
   }
 }
+/* Mobile : séparateurs entre colonnes empilées + cibles tactiles agrandies */
+@media (max-width: 759px) {
+  .footer--minimal .footer-min { gap: 0; }
+  .footer--minimal .footer-min > * + * {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 28px; margin-top: 28px;
+  }
+  .footer-min-nav { gap: 2px; }
+  .footer-min-nav a { display: block; padding: 9px 0; }
+  .footer-min-contact a { display: inline-block; padding: 6px 0; }
+  .footer-min-legal a { display: inline-block; padding: 6px 2px; }
+}
 @media (max-width: 600px) {
   .footer-min-bottom { flex-direction: column; align-items: flex-start; }
 }

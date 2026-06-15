@@ -55,3 +55,25 @@
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
+
+// --- Menu mobile mini-site : backdrop + fermeture (clic dehors / Échap / lien) ---
+(function () {
+  var nav = document.querySelector('.ms-nav');
+  var toggle = document.querySelector('.ms-nav-toggle');
+  if (!nav || !toggle) return;
+
+  var bd = document.createElement('div');
+  bd.className = 'ms-nav-backdrop';
+  document.body.appendChild(bd);
+
+  function sync() { bd.classList.toggle('is-on', nav.classList.contains('is-open')); }
+  function close() { nav.classList.remove('is-open'); bd.classList.remove('is-on'); }
+
+  // L'ouverture/fermeture est pilotée par le onclick inline du bouton ; on synchronise le backdrop après.
+  toggle.addEventListener('click', function () { setTimeout(sync, 0); });
+  bd.addEventListener('click', close);
+  nav.querySelectorAll('a[href]').forEach(function (a) { a.addEventListener('click', close); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) close();
+  });
+})();
