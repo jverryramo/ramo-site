@@ -336,14 +336,11 @@ a.case-card { text-decoration: none; color: inherit; display: block; }
 
 /* --- CS Stats Bar --- */
 .cs-stats {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px;
   padding: 32px 0; border-top: 1px solid rgba(220, 242, 30, 0.1); border-bottom: 1px solid rgba(220, 242, 30, 0.1); margin: 0 0 48px;
-  /* Élargir au-delà du cs-body (800px) pour que les valeurs tiennent sur une ligne */
-  width: min(1080px, calc(100vw - 2 * clamp(20px, 4vw, 60px)));
-  position: relative; left: 50%; transform: translateX(-50%);
 }
 .cs-stat { text-align: center; min-width: 0; }
-.cs-stat-value { font-family: var(--font-display); font-size: clamp(20px, 2.6vw, 28px); font-weight: 700; color: var(--color-accent-3); line-height: 1.1; white-space: nowrap; }
+.cs-stat-value { font-family: var(--font-display); font-size: clamp(19px, 2.2vw, 25px); font-weight: 700; color: var(--color-accent-3); line-height: 1.1; white-space: nowrap; }
 .cs-stat-label { font-size: 13px; color: var(--color-text-light); margin-top: 8px; }
 
 /* --- CS Body --- */
