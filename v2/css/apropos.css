@@ -182,9 +182,9 @@
 }
 .stats-edito-row {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
   justify-content: start;
-  gap: clamp(40px, 8vw, 120px);
+  gap: clamp(32px, 5vw, 80px);
   padding-top: clamp(28px, 3.5vw, 44px);
 }
 .stats-edito-item {
@@ -208,8 +208,11 @@
   color: var(--color-text-light);
   opacity: 0.75;
 }
+@media (max-width: 900px) {
+  .stats-edito-row { grid-template-columns: repeat(2, auto); gap: clamp(28px, 5vw, 56px); }
+}
 @media (max-width: 640px) {
-  .stats-edito-row { grid-template-columns: 1fr; gap: 28px; }
+  .stats-edito-row { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
   .stats-edito-hero { flex-direction: column; gap: 12px; }
   .stats-edito-hero-label { padding-bottom: 0; }
 }
