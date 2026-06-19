@@ -878,7 +878,7 @@ a.case-card { text-decoration: none; color: inherit; display: block; }
 .ba-slider {
   position: relative;
   width: 100%;
-  aspect-ratio: 1024 / 682;
+  aspect-ratio: 1010 / 676;
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid rgba(220, 242, 30, 0.16);
