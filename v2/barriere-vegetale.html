@@ -264,6 +264,22 @@
         </div>
 
         <div class="sol-section">
+          <h2 class="sol-h2 scroll-reveal">L'avant / après, en 2 ans</h2>
+          <p class="sol-text scroll-reveal">Au site Compo-Haut-Richelieu, la barrière Intercept<sup>™</sup> vue depuis la route : en deux saisons de croissance, la haie de saules s'est densifiée et a refermé l'écran. <strong>Glissez le curseur</strong> pour comparer.</p>
+          <div class="ba-wrap scroll-reveal">
+            <div class="ba-slider" data-ba aria-label="Comparaison avant/après — Compo-Haut-Richelieu, juillet 2023 et juillet 2025">
+              <img class="ba-after-img" src="assets/solutions/barriere-vegetale/barriere-vegetale-compo-apres-juillet-2025-street-view.webp" alt="Site Compo-Haut-Richelieu en juillet 2025 — haie de saules dense masquant le site depuis la route" loading="lazy">
+              <img class="ba-before-img" src="assets/solutions/barriere-vegetale/barriere-vegetale-compo-avant-juillet-2023-street-view.webp" alt="Site Compo-Haut-Richelieu en juillet 2023 — végétation clairsemée, bâtiments visibles depuis la route" loading="lazy">
+              <div class="ba-divider"><span class="ba-handle" aria-hidden="true">⟷</span></div>
+              <span class="ba-label ba-label--before">Juillet 2023</span>
+              <span class="ba-label ba-label--after">Juillet 2025</span>
+              <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Curseur de comparaison avant/après">
+            </div>
+            <p class="ba-credit">Avant / après sur 2 ans — vues Google Street View, site Compo-Haut-Richelieu</p>
+          </div>
+        </div>
+
+        <div class="sol-section">
           <h2 class="sol-h2 scroll-reveal">Les usages</h2>
           <div class="scroll-reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 24px;">
 
@@ -564,5 +580,23 @@
   <script src="js/main.js"></script>
   <script src="js/cookies.js" defer></script>
   <script src="js/sticky-cta.js" defer></script>
+  <script>
+  (function(){
+    function init(s){
+      if(s.dataset.baInit) return; s.dataset.baInit='1';
+      var before=s.querySelector('.ba-before-img'), div=s.querySelector('.ba-divider'), range=s.querySelector('.ba-range');
+      function set(v){ v=Math.max(0,Math.min(100,v)); before.style.clipPath='inset(0 '+(100-v)+'% 0 0)'; div.style.left=v+'%'; if(+range.value!==v) range.value=v; }
+      function fromX(x){ var r=s.getBoundingClientRect(); set((x-r.left)/r.width*100); }
+      var drag=false;
+      s.addEventListener('pointerdown', function(e){ drag=true; try{s.setPointerCapture(e.pointerId);}catch(_){} fromX(e.clientX); });
+      s.addEventListener('pointermove', function(e){ if(drag) fromX(e.clientX); });
+      s.addEventListener('pointerup', function(){ drag=false; });
+      s.addEventListener('pointercancel', function(){ drag=false; });
+      range.addEventListener('input', function(){ set(+range.value); });
+      set(50);
+    }
+    document.querySelectorAll('.ba-slider[data-ba]').forEach(init);
+  })();
+  </script>
 </body>
 </html>
