@@ -425,13 +425,6 @@
           <h2 class="section-title" style="margin-bottom: 24px; font-size: clamp(28px, 3.5vw, 38px);">Écrivez-nous</h2>
           <form class="contact-form" action="#" method="post" novalidate>
 
-            <div class="form-steps-progress" aria-hidden="true">
-              <span class="form-steps-label" id="formStepsLabel">Étape 1 sur 2 — Votre besoin</span>
-              <span class="form-steps-bar"><span class="form-steps-bar-fill" id="formStepsBarFill"></span></span>
-            </div>
-
-            <!-- Étape 1 : le besoin -->
-            <fieldset class="form-step is-active" data-step="1">
             <div class="form-group form-reason">
               <div class="form-reason-header">
                 <span class="form-reason-title">Raison du message</span>
@@ -464,15 +457,6 @@
               <label for="message" class="sr-only">Votre message</label>
               <textarea id="message" name="message" placeholder="Décrivez votre projet ou vos besoins..." rows="6"></textarea>
             </div>
-            <p class="form-step-error" id="step1Error" hidden>Cochez au moins une raison ou écrivez-nous un mot sur votre projet.</p>
-            <button type="button" class="form-submit" id="formNextBtn">
-              <span>Continuer</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            </fieldset>
-
-            <!-- Étape 2 : les coordonnées -->
-            <fieldset class="form-step" data-step="2" hidden>
             <div class="form-row">
               <div class="form-group">
                 <label for="nom" class="sr-only">Nom complet</label>
@@ -494,9 +478,9 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="source" class="sr-only">Comment avez-vous entendu parler de Ramo ?</label>
-              <select id="source" name="source" required>
-                <option value="">Comment avez-vous entendu parler de Ramo ? *</option>
+              <label for="source" class="sr-only">Comment avez-vous entendu parler de Ramo ? (facultatif)</label>
+              <select id="source" name="source">
+                <option value="">Comment avez-vous entendu parler de Ramo ? (facultatif)</option>
                 <option value="Recherche en ligne">Recherche en ligne (Google, Bing…)</option>
                 <option value="Référence">Référence d'un client, partenaire ou collègue</option>
                 <option value="LinkedIn">LinkedIn</option>
@@ -509,17 +493,10 @@
                 <option value="Autre">Autre</option>
               </select>
             </div>
-            <div class="form-step-actions">
-              <button type="button" class="form-step-back" id="formBackBtn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                Retour
-              </button>
-              <button type="submit" class="form-submit">
-                <span>Envoyer le message</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-            </fieldset>
+            <button type="submit" class="form-submit">
+              <span>Envoyer le message</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
 
           </form>
         </div>
@@ -721,36 +698,10 @@
       });
     })();
 
-    // Formulaire en 2 étapes
+    // « Si autre, précisez » : visible seulement si « Autre » est coché
     (function () {
       var form = document.querySelector('.contact-form');
-      var step1 = form && form.querySelector('.form-step[data-step="1"]');
-      var step2 = form && form.querySelector('.form-step[data-step="2"]');
-      if (!step1 || !step2) return;
-
-      var nextBtn = document.getElementById('formNextBtn');
-      var backBtn = document.getElementById('formBackBtn');
-      var label = document.getElementById('formStepsLabel');
-      var barFill = document.getElementById('formStepsBarFill');
-      var err = document.getElementById('step1Error');
-
-      function show(step) {
-        var toStep2 = step === 2;
-        step1.hidden = toStep2;
-        step1.classList.toggle('is-active', !toStep2);
-        step2.hidden = !toStep2;
-        step2.classList.toggle('is-active', toStep2);
-        label.textContent = toStep2 ? 'Étape 2 sur 2 — Vos coordonnées' : 'Étape 1 sur 2 — Votre besoin';
-        barFill.style.width = toStep2 ? '100%' : '50%';
-        // Remonte en haut du formulaire pour ne pas perdre l'utilisateur
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (toStep2) {
-          var first = step2.querySelector('input');
-          if (first) first.focus({ preventScroll: true });
-        }
-      }
-
-      // « Si autre, précisez » : visible seulement si « Autre » est coché
+      if (!form) return;
       var autreCheck = document.getElementById('raison-autre');
       var autreInput = form.querySelector('.form-reason-other');
       if (autreCheck && autreInput) {
@@ -760,19 +711,6 @@
           else autreInput.value = '';
         });
       }
-
-      nextBtn.addEventListener('click', function () {
-        var hasRaison = form.querySelectorAll('input[name="raison"]:checked').length > 0;
-        var hasMessage = (form.querySelector('#message').value || '').trim().length > 0;
-        if (!hasRaison && !hasMessage) {
-          err.hidden = false;
-          return;
-        }
-        err.hidden = true;
-        show(2);
-      });
-
-      backBtn.addEventListener('click', function () { show(1); });
     })();
   </script>
   <script src="js/cookies.js" defer></script>
