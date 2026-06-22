@@ -909,6 +909,7 @@ body.ms.ms-band-on main { padding-top: 104px; }
 }
 .ms-discover-cta-actions .ms-btn-primary--yellow:hover {
   background: var(--ms-green-deep);
+  color: var(--ms-yellow);
   border-color: var(--ms-green-deep);
   box-shadow: 0 12px 28px rgba(0, 60, 56, 0.2);
 }
