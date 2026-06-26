@@ -890,7 +890,7 @@
       function createPlayer() {
         player = new YT.Player('heroVideoIframe', {
           videoId: 'p2LeNi5-1uc',
-          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1 },
+          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, vq: 'hd1080' },
           events: {
             onStateChange: function (e) {
               if (e.data === YT.PlayerState.ENDED) closeVideo();
